@@ -8,10 +8,10 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s · Alec Hemenway',
-    default: 'Alec Hemenway — GTM operator building AI-native sales systems',
+    default: 'Alec Hemenway — Enterprise AE with an AI-native edge',
   },
   description:
-    'Alec Hemenway: GTM operator shipping AI-augmented sales, marketing, and operator workflows. 60+ open-source Claude Code skills, Apollo pipelines, eval harnesses, and more.',
+    'Enterprise Account Executive with a four-year quota streak and an AI-native edge. Self-sourced $1.6M of pipeline at Coram AI using Claude-powered buyer-signal research. 60+ open-source Claude Code skills.',
 }
 
 export default function RootLayout({

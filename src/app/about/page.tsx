@@ -7,7 +7,6 @@ import { Container } from '@/components/Container'
 import {
   GitHubIcon,
   LinkedInIcon,
-  XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 
@@ -69,72 +68,63 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I&rsquo;m Alec. I build AI-native GTM systems and run them in real
-            revenue motions.
+            Enterprise AE who self-sources pipeline with AI.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              {/* TODO: replace with your real bio. Below is a starter draft — keep what fits, rewrite what doesn't. */}
-              I&rsquo;m a GTM operator, not a heads-down engineer. My edge is
-              that I can take an AI capability and wire it into a real sales,
-              marketing, or operator workflow — and ship it the same week. Most
-              &ldquo;AI for sales&rdquo; output I see is theater. I want to
-              build the systems that actually move pipeline.
+              I&rsquo;m Alec. I&rsquo;ve spent the last six years selling
+              enterprise SaaS — Jamf, Staffbase, and most recently Coram AI —
+              and the last two of those years rebuilding my workflow around
+              AI. At Coram I self-sourced $1.6M of pipeline in six months by
+              wiring Claude into buyer-signal research and intent data. The
+              part most reps still treat as cold outbound, I treat as a system
+              problem.
             </p>
             <p>
-              Most recently at Coram AI, where I worked across GTM and ran
-              AI-augmented workflows in production. Before that, [TODO: prior
-              roles, in 2–3 sentences. Focus on outcomes you delivered, not
-              titles you held.]
+              Before Coram, I closed $676K at Staffbase (#2 of 22 reps, 98%
+              attainment) and ran a four-year quota streak at Jamf (SDR → AE →
+              Sr AE), including Pinnacle Club in 2023 on 112% attainment.
+              Carlson School of Management, B.S. in Marketing &amp;
+              Information Systems.
             </p>
             <p>
-              I work in Claude Code daily — 60+ open-source skills published,
-              an MCP-heavy stack, and a multi-tier memory system that keeps my
-              tools coherent across months and projects. I publish what I
-              build.
+              I don&rsquo;t just talk about AI in sales — I ship the
+              infrastructure. Sixty-plus open-source Claude Code skills, a
+              multi-tier memory system, custom MCPs, eval harnesses I run in
+              production. The Projects page is the catalogue.
             </p>
             <p>
-              Outside of GTM, I trade systematically (TAO subnet scanner,
-              CANSLIM + VCP screeners, dividend pullback alerts) and care a lot
-              about disciplined operators. If that sounds like the kind of
-              person you want on your team, the work-with-me page is{' '}
+              Looking for the next high-stakes enterprise AE seat where the
+              loop is fast and the team values builders. The{' '}
               <a
                 href="/work-with-me"
                 className="text-teal-500 hover:text-teal-600 dark:text-teal-400"
               >
-                here
-              </a>
-              .
+                work-with-me page
+              </a>{' '}
+              has the details.
             </p>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://x.com/" icon={XIcon}>
-              Follow on X
+            <SocialLink href="https://www.linkedin.com/in/alec-hemenway/" icon={LinkedInIcon}>
+              Connect on LinkedIn
             </SocialLink>
             <SocialLink
-              href="https://github.com/"
+              href="https://github.com/alechemenway"
               icon={GitHubIcon}
               className="mt-4"
             >
               Follow on GitHub
             </SocialLink>
             <SocialLink
-              href="https://linkedin.com/in/"
-              icon={LinkedInIcon}
-              className="mt-4"
-            >
-              Follow on LinkedIn
-            </SocialLink>
-            <SocialLink
-              href="mailto:alec.hemenway@gmail.com"
+              href="mailto:hemenway.alec@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              alec.hemenway@gmail.com
+              hemenway.alec@gmail.com
             </SocialLink>
-            {/* TODO: confirm all four social URLs above */}
           </ul>
         </div>
       </div>

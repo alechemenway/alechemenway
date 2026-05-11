@@ -1,15 +1,11 @@
-import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
   LinkedInIcon,
-  XIcon,
 } from '@/components/SocialIcons'
-import logoCoram from '@/images/logos/planetaria.svg' // TODO: replace with Coram logo
 
 function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -63,7 +59,8 @@ function SocialLink({
 interface Role {
   company: string
   title: string
-  logo: ImageProps['src']
+  monogram: string
+  monogramBg: string
   start: string | { label: string; dateTime: string }
   end: string | { label: string; dateTime: string }
 }
@@ -79,8 +76,10 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+      <div
+        className={`relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full text-xs font-semibold text-white shadow-md ring-1 ring-zinc-900/5 ${role.monogramBg} dark:ring-0`}
+      >
+        {role.monogram}
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -106,21 +105,30 @@ function Role({ role }: { role: Role }) {
 }
 
 function Resume() {
-  // TODO: confirm prior roles, dates, and replace logos
   let resume: Array<Role> = [
     {
       company: 'Coram AI',
-      title: 'GTM (role to confirm)',
-      logo: logoCoram,
-      start: '2024',
+      title: 'Enterprise Account Executive',
+      monogram: 'C',
+      monogramBg: 'bg-teal-600',
+      start: { label: 'Oct 2025', dateTime: '2025-10' },
       end: { label: 'Apr 2026', dateTime: '2026-04' },
     },
     {
-      company: 'Prior role — TODO',
-      title: 'Role',
-      logo: logoCoram,
-      start: 'YYYY',
-      end: 'YYYY',
+      company: 'Staffbase',
+      title: 'Enterprise Account Executive',
+      monogram: 'S',
+      monogramBg: 'bg-indigo-600',
+      start: { label: 'Jul 2024', dateTime: '2024-07' },
+      end: { label: 'Sep 2025', dateTime: '2025-09' },
+    },
+    {
+      company: 'Jamf',
+      title: 'SDR → AE → Sr AE',
+      monogram: 'J',
+      monogramBg: 'bg-zinc-700',
+      start: { label: 'Sep 2019', dateTime: '2019-09' },
+      end: { label: 'Jun 2024', dateTime: '2024-06' },
     },
   ]
 
@@ -200,28 +208,28 @@ export default function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            GTM operator building AI-native sales and marketing systems.
+            Enterprise AE with an AI-native edge.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&rsquo;m Alec Hemenway. I ship AI-augmented GTM workflows — Apollo
-            pipelines, outbound systems, eval harnesses, and 60+ open-source
-            Claude Code skills — and operate them in real revenue motions.
-            Currently between roles after Coram AI, looking for the next AI-GTM
-            seat where the bar is high and the loop is fast.
+            I&rsquo;m Alec Hemenway. I sell enterprise SaaS and use AI to do it
+            better. Self-sourced $1.6M of pipeline at Coram in 6 months by
+            wiring Claude into buyer-signal research, intent data, and
+            outbound. Four-year quota streak at Jamf. Top-2 of 22 reps at
+            Staffbase. The AI part isn&rsquo;t theater: 60+ open-source Claude
+            Code skills, custom MCPs, and eval harnesses I run in production.
+          </p>
+          <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
+            Looking for the next high-stakes enterprise AE seat — ideally at a
+            company building or selling AI.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://x.com/" // TODO: real X handle
-              aria-label="Follow on X"
-              icon={XIcon}
-            />
-            <SocialLink
-              href="https://github.com/" // TODO: real GitHub
+              href="https://github.com/alechemenway"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com/in/" // TODO: real LinkedIn
+              href="https://www.linkedin.com/in/alec-hemenway/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
