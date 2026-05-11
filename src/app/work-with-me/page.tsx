@@ -81,7 +81,7 @@ export default function WorkWithMe() {
           <div className="mt-6 flex flex-wrap gap-4">
             <Button href="mailto:hemenway.alec@gmail.com">Email me</Button>
             <Button
-              href="https://calendar.app.google/" // TODO: paste real Google Calendar booking URL
+              href="https://calendar.app.google/zCg8ECLTpJqgCNPk9"
               variant="secondary"
             >
               Book 20 min
