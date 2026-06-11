@@ -183,6 +183,60 @@ const featuredProjects = [
   },
 ]
 
+function Hero() {
+  return (
+    <section className="relative isolate flex min-h-screen items-center overflow-hidden bg-black px-6 py-28 sm:px-10 lg:px-16">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source
+          src="https://res.cloudinary.com/dfonotyfb/video/upload/v1775585556/dds3_1_rqhg7x.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div className="absolute inset-0 z-10 bg-black/65" />
+      <div className="absolute inset-0 z-10 bg-linear-to-r from-black via-black/75 to-black/15" />
+      <div className="relative z-20 mx-auto w-full max-w-5xl">
+        <div className="max-w-3xl">
+          <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
+            Enterprise AE with an AI-native edge.
+          </h1>
+          <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-200 sm:text-lg">
+            I&rsquo;m Alec Hemenway. I sell enterprise SaaS and use AI to do it
+            better. Self-sourced $1.6M of pipeline at Coram in 6 months by
+            wiring Claude into buyer-signal research, intent data, and
+            outbound.
+          </p>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
+            Four-year quota streak at Jamf. Top-2 of 22 reps at Staffbase. The
+            AI part isn&rsquo;t theater: 60+ open-source Claude Code skills,
+            custom MCPs, and eval harnesses I run in production.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-6">
+            <Button href="/work-with-me">Work with me</Button>
+            <div className="flex gap-5">
+              <SocialLink
+                href="https://github.com/alechemenway"
+                aria-label="Follow on GitHub"
+                icon={GitHubIcon}
+              />
+              <SocialLink
+                href="https://www.linkedin.com/in/alec-hemenway/"
+                aria-label="Follow on LinkedIn"
+                icon={LinkedInIcon}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
@@ -245,37 +299,7 @@ function FeaturedProjects() {
 export default function Home() {
   return (
     <>
-      <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Enterprise AE with an AI-native edge.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&rsquo;m Alec Hemenway. I sell enterprise SaaS and use AI to do it
-            better. Self-sourced $1.6M of pipeline at Coram in 6 months by
-            wiring Claude into buyer-signal research, intent data, and
-            outbound. Four-year quota streak at Jamf. Top-2 of 22 reps at
-            Staffbase. The AI part isn&rsquo;t theater: 60+ open-source Claude
-            Code skills, custom MCPs, and eval harnesses I run in production.
-          </p>
-          <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-            Looking for the next high-stakes enterprise AE seat — ideally at a
-            company building or selling AI.
-          </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://github.com/alechemenway"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/alec-hemenway/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
-          </div>
-        </div>
-      </Container>
+      <Hero />
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
