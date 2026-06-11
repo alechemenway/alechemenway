@@ -164,6 +164,12 @@ function Resume() {
 
 const featuredProjects = [
   {
+    name: 'RepCoach',
+    description:
+      "Attainment tells you what happened. Your week tells you what's coming. If coaching keeps losing to forecast calls, next quarter's number is already written. CRM-agnostic sales intelligence platform — the coaching-action layer that sits on top of call capture and closes the loop from call → diagnosis → weekly plan → verified behavior change.",
+    href: '/projects#repcoach',
+  },
+  {
     name: 'Apollo prospecting skill',
     description:
       'Plain-English ICP → 50 ranked, enriched leads in under 5 minutes. Cuts a half-day workflow to one coffee.',
