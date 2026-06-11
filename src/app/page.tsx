@@ -185,7 +185,10 @@ const featuredProjects = [
 
 function Hero() {
   return (
-    <section className="relative isolate flex min-h-screen items-center overflow-hidden bg-black px-6 py-28 sm:px-10 lg:px-16">
+    <section
+      className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-black px-6 py-28 text-center sm:px-10 lg:px-16"
+      style={{ marginTop: 'calc(-1 * var(--content-offset))' }}
+    >
       <video
         autoPlay
         loop
@@ -198,40 +201,26 @@ function Hero() {
           type="video/mp4"
         />
       </video>
-      <div className="absolute inset-0 z-10 bg-black/65" />
-      <div className="absolute inset-0 z-10 bg-linear-to-r from-black via-black/75 to-black/15" />
-      <div className="relative z-20 mx-auto w-full max-w-5xl">
-        <div className="max-w-3xl">
-          <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-            Enterprise AE with an AI-native edge.
+      <div className="absolute inset-0 z-10 bg-black/45" />
+      <div className="absolute inset-0 z-10 bg-radial-[at_50%_45%] from-transparent via-black/20 to-black/80" />
+      <div className="absolute inset-x-0 bottom-0 z-10 h-48 bg-linear-to-t from-black to-transparent" />
+      <div className="relative z-20 mx-auto flex w-full max-w-5xl flex-col items-center">
+        <p className="rounded-full bg-white/10 px-4 py-1.5 text-[0.65rem] font-semibold tracking-[0.22em] text-zinc-200 uppercase ring-1 ring-white/15 backdrop-blur-md">
+          AI-native GTM operator
+        </p>
+        <div className="mt-6 max-w-4xl">
+          <h1 className="font-serif text-6xl leading-[0.92] font-medium tracking-tight text-white drop-shadow-2xl sm:text-8xl lg:text-9xl">
+            Enterprise sales,
+            <br />
+            AI-native.
           </h1>
-          <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-200 sm:text-lg">
-            I&rsquo;m Alec Hemenway. I sell enterprise SaaS and use AI to do it
-            better. Self-sourced $1.6M of pipeline at Coram in 6 months by
-            wiring Claude into buyer-signal research, intent data, and
-            outbound.
-          </p>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
-            Four-year quota streak at Jamf. Top-2 of 22 reps at Staffbase. The
-            AI part isn&rsquo;t theater: 60+ open-source Claude Code skills,
-            custom MCPs, and eval harnesses I run in production.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-6">
-            <Button href="/work-with-me">Work with me</Button>
-            <div className="flex gap-5">
-              <SocialLink
-                href="https://github.com/alechemenway"
-                aria-label="Follow on GitHub"
-                icon={GitHubIcon}
-              />
-              <SocialLink
-                href="https://www.linkedin.com/in/alec-hemenway/"
-                aria-label="Follow on LinkedIn"
-                icon={LinkedInIcon}
-              />
-            </div>
-          </div>
         </div>
+        <p className="mt-8 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base">
+          Enterprise AE building and running AI-powered revenue workflows.
+        </p>
+        <Button href="/work-with-me" className="mt-8">
+          Work with me
+        </Button>
       </div>
     </section>
   )
