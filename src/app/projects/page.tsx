@@ -7,6 +7,15 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 // Edit copy, swap href to real demo/GitHub, and replace logos.
 const projects = [
   {
+    id: 'repcoach',
+    name: 'RepCoach',
+    description:
+      "Attainment tells you what happened. Your week tells you what's coming. If coaching keeps losing to forecast calls, next quarter's number is already written. CRM-agnostic sales intelligence platform — the coaching-action layer that sits on top of call capture (Gong/Chorus) and closes the loop from call → diagnosis → weekly plan → verified behavior change.",
+    outcome: 'Coaching-action layer for sales teams',
+    stack: ['Sales intelligence', 'Call capture', 'Coaching workflows'],
+    link: { href: 'https://www.repcoaching.io/', label: 'Visit site' },
+  },
+  {
     id: 'apollo',
     name: 'Apollo prospecting skill',
     description:
