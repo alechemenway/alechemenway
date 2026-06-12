@@ -224,9 +224,17 @@ function Hero() {
         <p className="mt-8 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base">
           Enterprise AE building and running AI-powered revenue workflows.
         </p>
-        <Button href="/work-with-me" className="mt-8">
-          Work with me
-        </Button>
+        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
+          <Button href="/work-with-me">Get in Touch</Button>
+          <Button
+            href="https://www.linkedin.com/in/alec-hemenway/"
+            variant="secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Connect on LinkedIn
+          </Button>
+        </div>
       </div>
     </section>
   )
