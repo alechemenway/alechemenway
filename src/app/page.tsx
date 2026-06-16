@@ -103,7 +103,13 @@ export default function Home() {
               <PremiumButton href="/work-with-me" variant="solid" arrow="→">
                 Work with me
               </PremiumButton>
-              <PremiumButton href="/resume.pdf" variant="ghost" arrow="↓">
+              <PremiumButton
+                href="/alechemenway_resume2026.pdf"
+                variant="ghost"
+                arrow="↓"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Download résumé
               </PremiumButton>
             </div>
@@ -171,7 +177,14 @@ export default function Home() {
           ))}
         </div>
 
-        <SectionHead more={{ label: 'Download résumé →', href: '/resume.pdf' }}>
+        <SectionHead
+          more={{
+            label: 'Download résumé →',
+            href: '/alechemenway_resume2026.pdf',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          }}
+        >
           Where I’ve <em className="text-accent italic">sold.</em>
         </SectionHead>
         <div className="mt-9 border-t border-line">

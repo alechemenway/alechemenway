@@ -9,7 +9,7 @@ export function SectionHead({
   more,
 }: {
   children: React.ReactNode
-  more?: { label: string; href: string }
+  more?: { label: string; href: string; target?: string; rel?: string }
 }) {
   return (
     <div className="flex items-baseline justify-between pt-18 pb-2 max-[880px]:flex-col max-[880px]:gap-3">
@@ -19,6 +19,8 @@ export function SectionHead({
       {more && (
         <Link
           href={more.href}
+          target={more.target}
+          rel={more.rel}
           className="text-[13px] font-semibold tracking-[0.06em] whitespace-nowrap text-soft uppercase transition-colors hover:text-accent"
         >
           {more.label}
