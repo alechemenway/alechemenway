@@ -42,11 +42,15 @@ const strip = [
   { src: image1, alt: 'Alec on the course' },
 ]
 
-const contactLinks = [
+const contactLinks: { label: string; href: string; newTab?: boolean }[] = [
   { label: 'Email me ↗', href: 'mailto:alec@hemenway.io' },
   { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/alec-hemenway/' },
   { label: 'GitHub ↗', href: 'https://github.com/alechemenway' },
-  { label: 'Download résumé ↓', href: '/resume.pdf' },
+  {
+    label: 'Download résumé ↓',
+    href: '/alechemenway_resume2026.docx',
+    newTab: true,
+  },
 ]
 
 export default function About() {
@@ -140,6 +144,9 @@ export default function About() {
               <a
                 key={link.label}
                 href={link.href}
+                {...(link.newTab
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 className="inline-flex items-center gap-[9px] rounded-full border border-line bg-card px-[18px] py-[10px] text-sm font-semibold transition-colors hover:border-espresso hover:text-accent"
               >
                 {link.label}
