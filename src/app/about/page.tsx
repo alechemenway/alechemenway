@@ -48,7 +48,7 @@ const contactLinks: { label: string; href: string; newTab?: boolean }[] = [
   { label: 'GitHub ↗', href: 'https://github.com/alechemenway' },
   {
     label: 'Download résumé ↓',
-    href: '/alechemenway_resume2026.docx',
+    href: '/alechemenway_resume2026.pdf',
     newTab: true,
   },
 ]

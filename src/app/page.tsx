@@ -104,7 +104,7 @@ export default function Home() {
                 Work with me
               </PremiumButton>
               <PremiumButton
-                href="/alechemenway_resume2026.docx"
+                href="/alechemenway_resume2026.pdf"
                 variant="ghost"
                 arrow="↓"
                 target="_blank"
@@ -180,7 +180,7 @@ export default function Home() {
         <SectionHead
           more={{
             label: 'Download résumé →',
-            href: '/alechemenway_resume2026.docx',
+            href: '/alechemenway_resume2026.pdf',
             target: '_blank',
             rel: 'noopener noreferrer',
           }}
