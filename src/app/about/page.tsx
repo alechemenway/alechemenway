@@ -8,6 +8,7 @@ import image1 from '@/images/photos/image-1.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
+import studioImage11 from '@/images/photos/studio-image-11.png'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -55,8 +56,8 @@ export default function About() {
         <div className="sticky top-[110px] max-[880px]:static">
           <div className="aspect-[4/5] -rotate-3 overflow-hidden rounded-[20px] border-[7px] border-card shadow-figure max-[880px]:rotate-0">
             <Image
-              src={image1}
-              alt="Alec Hemenway on the course"
+              src={studioImage11}
+              alt="Alec Hemenway, studio portrait"
               className="h-full w-full object-cover"
               sizes="(max-width: 880px) 100vw, 460px"
               priority
