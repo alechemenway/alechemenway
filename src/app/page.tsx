@@ -1,288 +1,208 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import { Wrap } from '@/components/Wrap'
+import { Eyebrow } from '@/components/Eyebrow'
+import { PremiumButton } from '@/components/PremiumButton'
+import { SectionHead } from '@/components/SectionHead'
+import { ProjectCard, type Project } from '@/components/ProjectCard'
+import { ClosingBand } from '@/components/ClosingBand'
+import portrait from '@/images/photos/image-2.jpg'
 
-function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
-
-function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-function SocialLink({
-  icon: Icon,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Link> & {
-  icon: React.ComponentType<{ className?: string }>
-}) {
-  return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
-  )
-}
-
-interface Role {
-  company: string
-  title: string
-  monogram: string
-  monogramBg: string
-  start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
-}
-
-function Role({ role }: { role: Role }) {
-  let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
-  let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
-
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
-
-  return (
-    <li className="flex gap-4">
-      <div
-        className={`relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full text-xs font-semibold text-white shadow-md ring-1 ring-zinc-900/5 ${role.monogramBg} dark:ring-0`}
-      >
-        {role.monogram}
-      </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {role.company}
-        </dd>
-        <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
-        </dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-          aria-label={`${startLabel} until ${endLabel}`}
-        >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
-          <time dateTime={endDate}>{endLabel}</time>
-        </dd>
-      </dl>
-    </li>
-  )
-}
-
-function Resume() {
-  let resume: Array<Role> = [
-    {
-      company: 'Coram AI',
-      title: 'Enterprise Account Executive',
-      monogram: 'C',
-      monogramBg: 'bg-teal-600',
-      start: { label: 'Oct 2025', dateTime: '2025-10' },
-      end: { label: 'Apr 2026', dateTime: '2026-04' },
-    },
-    {
-      company: 'Staffbase',
-      title: 'Enterprise Account Executive',
-      monogram: 'S',
-      monogramBg: 'bg-indigo-600',
-      start: { label: 'Jul 2024', dateTime: '2024-07' },
-      end: { label: 'Sep 2025', dateTime: '2025-09' },
-    },
-    {
-      company: 'Jamf',
-      title: 'SDR → AE → Sr AE',
-      monogram: 'J',
-      monogramBg: 'bg-zinc-700',
-      start: { label: 'Sep 2019', dateTime: '2019-09' },
-      end: { label: 'Jun 2024', dateTime: '2024-06' },
-    },
-  ]
-
-  return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
-        ))}
-      </ol>
-      <Button href="/resume.pdf" variant="secondary" className="group mt-6 w-full">
-        Download résumé
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
-    </div>
-  )
-}
-
-const featuredProjects = [
+const featuredProjects: Project[] = [
   {
-    name: 'Apollo prospecting skill',
+    title: 'Apollo prospecting skill',
+    index: '01',
     description:
-      'Plain-English ICP → 50 ranked, enriched leads in under 5 minutes. Cuts a half-day workflow to one coffee.',
-    href: '/projects#apollo',
+      'Plain-English ICP → 50 ranked, enriched leads in under five minutes. Cuts a half-day workflow to one coffee.',
+    outcome: '4–6 hrs saved per ICP build',
+    chips: ['Claude', 'Apollo API', 'Vercel Functions'],
+    href: '/projects',
   },
   {
-    name: 'TAO subnet scanner',
-    description:
-      'Cross-subnet concentration scoring + tier ranking for Bittensor positions. Flags entries before they run.',
-    href: '/projects#tao-scanner',
-  },
-  {
-    name: 'GTM skill library',
+    title: 'GTM skill library',
+    index: '02',
     description:
       '60+ open-source Claude Code skills for sales, marketing, and operator workflows. Drop-in for any Claude stack.',
-    href: '/projects#skill-library',
+    outcome: 'Public catalogue, free to install',
+    chips: ['Claude Code', 'Bash', 'MDX'],
+    href: '/projects',
+  },
+  {
+    title: 'TAO subnet scanner',
+    index: '03',
+    description:
+      'Cross-subnet concentration scoring + tier ranking for Bittensor positions. Flags entries before they run.',
+    outcome: '3 of 5 top subnets caught pre-runup',
+    chips: ['Python', 'Bittensor SDK', 'Notion sync'],
+    href: '/projects',
+  },
+  {
+    title: 'Skill eval harness',
+    index: '04',
+    description:
+      'Manual-eval-first framework tracking per-skill quality with backoff for rate limits and structured grading.',
+    outcome: '58 tracked tasks, Phase 0 live',
+    chips: ['Claude API', 'Skills API', 'Notion DB'],
+    href: '/projects',
   },
 ]
 
-function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+const metrics = [
+  { main: '$1.6', unit: 'M', label: 'Self-sourced pipeline at Coram in 6 months' },
+  { main: '#2', unit: '/22', label: 'Ranked rep at Staffbase · 98% attainment' },
+  { main: '4', unit: 'yr', label: 'Consecutive quota streak at Jamf' },
+  { main: '60', unit: '+', label: 'Open-source Claude Code skills' },
+]
 
-  return (
-    <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
-            )}
-          >
-            <div className="aspect-9/10">
-              <Image
-                src={image}
-                alt=""
-                sizes="(min-width: 640px) 18rem, 11rem"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function FeaturedProjects() {
-  return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        Featured projects
-      </h2>
-      <ul className="mt-6 space-y-6">
-        {featuredProjects.map((project) => (
-          <li key={project.name}>
-            <Link
-              href={project.href}
-              className="block group"
-            >
-              <h3 className="text-sm font-medium text-zinc-900 group-hover:text-teal-500 dark:text-zinc-100">
-                {project.name}
-              </h3>
-              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                {project.description}
-              </p>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <Button href="/projects" variant="secondary" className="mt-6 w-full">
-        See all projects
-      </Button>
-    </div>
-  )
-}
+const roles = [
+  {
+    years: '2025 — 2026',
+    company: 'Coram AI',
+    title: 'Enterprise Account Executive',
+  },
+  {
+    years: '2024 — 2025',
+    company: 'Staffbase',
+    title: 'Enterprise Account Executive · Top-2 of 22',
+  },
+  {
+    years: '2019 — 2024',
+    company: 'Jamf',
+    title: 'SDR → AE → Sr AE · Four-year quota streak',
+  },
+]
 
 export default function Home() {
   return (
     <>
-      <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Enterprise AE with an AI-native edge.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&rsquo;m Alec Hemenway. I sell enterprise SaaS and use AI to do it
-            better. Self-sourced $1.6M of pipeline at Coram in 6 months by
-            wiring Claude into buyer-signal research, intent data, and
-            outbound. Four-year quota streak at Jamf. Top-2 of 22 reps at
-            Staffbase. The AI part isn&rsquo;t theater: 60+ open-source Claude
-            Code skills, custom MCPs, and eval harnesses I run in production.
-          </p>
-          <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-            Looking for the next high-stakes enterprise AE seat — ideally at a
-            company building or selling AI.
-          </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://github.com/alechemenway"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/alec-hemenway/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
+      <Wrap>
+        <section className="grid grid-cols-[1.15fr_0.85fr] items-center gap-[60px] pt-[70px] pb-16 max-[880px]:grid-cols-1">
+          <div>
+            <Eyebrow>Enterprise AE · AI-native</Eyebrow>
+            <h1 className="font-serif text-[clamp(46px,6.6vw,90px)] leading-none tracking-[-0.01em]">
+              I sell enterprise software — and build the{' '}
+              <em className="text-accent italic">AI</em> that sells it.
+            </h1>
+            <p className="mt-7 max-w-[42ch] text-lg leading-[1.65] text-prose-2">
+              I’m Alec. I self-sourced{' '}
+              <b className="font-semibold text-espresso">$1.6M of pipeline</b> at
+              Coram in six months by wiring Claude into buyer-signal research,
+              intent data, and outbound. Four-year quota streak at Jamf. The AI
+              part isn’t theater.
+            </p>
+            <div className="mt-[34px] flex flex-wrap gap-[14px]">
+              <PremiumButton href="/work-with-me" variant="solid" arrow="→">
+                Work with me
+              </PremiumButton>
+              <PremiumButton href="/resume.pdf" variant="ghost" arrow="↓">
+                Download résumé
+              </PremiumButton>
+            </div>
+            <div className="mt-[30px] flex gap-5 text-[13px] font-semibold tracking-[0.04em] text-soft">
+              <a
+                href="https://github.com/alechemenway"
+                className="transition-colors hover:text-accent"
+              >
+                GitHub ↗
+              </a>
+              <a
+                href="https://www.linkedin.com/in/alec-hemenway/"
+                className="transition-colors hover:text-accent"
+              >
+                LinkedIn ↗
+              </a>
+            </div>
           </div>
+
+          <div className="relative justify-self-center max-[880px]:order-first max-[880px]:mb-5">
+            <div className="relative aspect-[4/5] w-[340px] max-w-[42vw] rotate-3 overflow-hidden rounded-[18px] border-[6px] border-card shadow-portrait">
+              <Image
+                src={portrait}
+                alt="Alec Hemenway"
+                fill
+                sizes="340px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="absolute bottom-[-18px] left-[-26px] -rotate-2 rounded-[14px] border border-line bg-card px-[18px] py-[14px] shadow-tagchip">
+              <div className="font-serif text-[30px] leading-none text-accent">
+                $1.6M
+              </div>
+              <div className="mt-[5px] text-[11.5px] font-semibold tracking-[0.05em] text-soft uppercase">
+                Pipeline · 6 months
+              </div>
+            </div>
+          </div>
+        </section>
+      </Wrap>
+
+      {/* Metric band — full bleed */}
+      <div className="grid grid-cols-4 border-y border-line [&>div:last-child]:border-r-0 [&>div]:border-r [&>div]:border-line max-[880px]:grid-cols-2 max-[880px]:[&>div:nth-child(2)]:border-r-0">
+        {metrics.map((metric) => (
+          <div key={metric.label} className="px-[26px] py-[34px]">
+            <div className="font-serif text-[52px] leading-none tracking-[-0.01em]">
+              {metric.main}
+              <span className="text-accent">{metric.unit}</span>
+            </div>
+            <div className="mt-3 max-w-[22ch] text-[13.5px] leading-[1.5] text-soft">
+              {metric.label}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <Wrap>
+        <SectionHead more={{ label: 'All projects →', href: '/projects' }}>
+          AI systems I’ve <em className="text-accent italic">shipped.</em>
+        </SectionHead>
+        <div className="mt-8 grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
         </div>
-      </Container>
-      <Photos />
-      <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            <FeaturedProjects />
-          </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Resume />
-          </div>
+
+        <SectionHead more={{ label: 'Download résumé →', href: '/resume.pdf' }}>
+          Where I’ve <em className="text-accent italic">sold.</em>
+        </SectionHead>
+        <div className="mt-9 border-t border-line">
+          {roles.map((role) => (
+            <div
+              key={role.company}
+              className="grid grid-cols-[140px_1fr_auto] items-center gap-6 border-b border-line px-[6px] py-[26px] max-[880px]:grid-cols-[1fr_auto]"
+            >
+              <span className="text-[13px] font-semibold tracking-[0.06em] text-soft max-[880px]:col-span-2">
+                {role.years}
+              </span>
+              <div>
+                <div className="font-serif text-[26px]">{role.company}</div>
+                <div className="mt-0.5 text-sm text-soft">{role.title}</div>
+              </div>
+              <span className="h-[9px] w-[9px] justify-self-end rounded-full bg-accent" />
+            </div>
+          ))}
         </div>
-      </Container>
+
+        <ClosingBand
+          heading={
+            <>
+              Let’s talk about the{' '}
+              <em className="text-accent-soft italic">next seat.</em>
+            </>
+          }
+          paragraph="Hiring an enterprise AE who self-sources pipeline and builds the AI behind it? I reply to every real message within 48 hours."
+          primary={{
+            label: 'Get in touch',
+            arrow: '→',
+            href: 'mailto:alec@hemenway.io',
+          }}
+          secondary={{
+            label: 'Connect on LinkedIn',
+            arrow: '↗',
+            href: 'https://www.linkedin.com/in/alec-hemenway/',
+          }}
+        />
+      </Wrap>
     </>
   )
 }

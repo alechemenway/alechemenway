@@ -1,23 +1,23 @@
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
+import { Wrap } from '@/components/Wrap'
+import { PremiumButton } from '@/components/PremiumButton'
 
 export default function NotFound() {
   return (
-    <Container className="flex h-full items-center pt-16 sm:pt-32">
-      <div className="flex flex-col items-center">
-        <p className="text-base font-semibold text-zinc-400 dark:text-zinc-500">
+    <Wrap>
+      <div className="flex flex-col items-center py-[120px] text-center max-[880px]:py-20">
+        <span className="text-[13px] font-semibold tracking-[0.18em] text-accent uppercase">
           404
-        </p>
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Page not found
+        </span>
+        <h1 className="mt-4 font-serif text-[clamp(40px,5.4vw,76px)] leading-none tracking-[-0.01em]">
+          Page <em className="text-accent italic">not found.</em>
         </h1>
-        <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
-          Sorry, we couldn’t find the page you’re looking for.
+        <p className="mt-6 max-w-[42ch] text-lg leading-[1.65] text-prose-2">
+          Sorry, I couldn’t find the page you’re looking for.
         </p>
-        <Button href="/" variant="secondary" className="mt-4">
+        <PremiumButton href="/" variant="solid" arrow="→" className="mt-8">
           Go back home
-        </Button>
+        </PremiumButton>
       </div>
-    </Container>
+    </Wrap>
   )
 }

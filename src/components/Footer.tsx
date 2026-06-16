@@ -1,43 +1,28 @@
-import Link from 'next/link'
+import { Wrap } from '@/components/Wrap'
 
-import { ContainerInner, ContainerOuter } from '@/components/Container'
-
-function NavLink({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
-    >
-      {children}
-    </Link>
-  )
-}
+const links = [
+  { href: 'https://github.com/alechemenway', label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/alec-hemenway/', label: 'LinkedIn' },
+  { href: 'mailto:alec@hemenway.io', label: 'Email' },
+]
 
 export function Footer() {
   return (
-    <footer className="mt-32 flex-none">
-      <ContainerOuter>
-        <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
-          <ContainerInner>
-            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/work-with-me">Work with me</NavLink>
-              </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Alec Hemenway
-              </p>
-            </div>
-          </ContainerInner>
+    <Wrap>
+      <footer className="flex flex-wrap items-center justify-between gap-y-3 border-t border-line pt-7 pb-[60px] text-[13px] text-soft">
+        <span>© 2026 Alec Hemenway</span>
+        <div className="flex gap-6">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="transition-colors hover:text-accent"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
-      </ContainerOuter>
-    </footer>
+      </footer>
+    </Wrap>
   )
 }
