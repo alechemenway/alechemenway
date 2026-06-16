@@ -1,9 +1,25 @@
 import { type Metadata } from 'next'
+import { Hanken_Grotesk, Instrument_Serif } from 'next/font/google'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
+
+const hanken = Hanken_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-hanken',
+  display: 'swap',
+})
+
+const instrument = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-instrument',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -20,8 +36,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
+    <html
+      lang="en"
+      className={`h-full antialiased ${hanken.variable} ${instrument.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="flex h-full bg-cream font-sans text-espresso">
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

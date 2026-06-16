@@ -7,6 +7,32 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* Premium direction — fonts (wired to next/font CSS variables in layout.tsx) */
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+
+  /* Premium direction — palette (single source of truth: design/premium.css) */
+  --color-cream: #f3ede2;
+  --color-cream-2: #ece3d4;
+  --color-espresso: #2a231b;
+  --color-soft: #857b6c;
+  --color-line: #d9cfbd;
+  --color-accent: oklch(0.55 0.13 48); /* warm terracotta */
+  --color-accent-soft: oklch(0.72 0.13 52);
+  --color-card: #faf6ee;
+  /* long-form prose browns */
+  --color-prose: #4d4438;
+  --color-prose-2: #534a3d;
+  --color-prose-3: #594f41;
+  --color-band-muted: #c9bda9; /* muted text on espresso closing band */
+
+  /* Premium direction — soft shadows */
+  --shadow-card-hover: 0 28px 50px -30px rgba(42, 35, 27, 0.42);
+  --shadow-portrait: 0 40px 70px -34px rgba(42, 35, 27, 0.5);
+  --shadow-figure: 0 44px 80px -36px rgba(42, 35, 27, 0.5);
+  --shadow-strip: 0 20px 40px -26px rgba(42, 35, 27, 0.4);
+  --shadow-tagchip: 0 14px 30px -16px rgba(42, 35, 27, 0.4);
+
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5rem;
   --text-sm: 0.875rem;
@@ -33,4 +59,13 @@
   --text-8xl--line-height: 1;
   --text-9xl: 8rem;
   --text-9xl--line-height: 1;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    line-height: 1.6;
+  }
 }
