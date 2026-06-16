@@ -150,7 +150,11 @@ export default function WorkWithMe() {
           arrow: '→',
           href: 'mailto:alec@hemenway.io',
         }}
-        secondary={{ label: 'Book 20 minutes', arrow: '↗' }}
+        secondary={{
+          label: 'Book 20 minutes',
+          arrow: '↗',
+          href: 'https://calendar.app.google/LRtfdRkHE6gBtwR67',
+        }}
       />
     </Wrap>
   )
