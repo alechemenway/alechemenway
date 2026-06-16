@@ -15,8 +15,18 @@ const GITHUB = 'https://github.com/alechemenway'
 
 const projects: Project[] = [
   {
-    title: 'Apollo prospecting skill',
+    title: 'Deal-Intelligence + Rep Coaching',
     index: '01',
+    description:
+      'A live product that reads your pipeline to flag deal risk and next-best actions, then coaches reps in the flow of the deal — the same AI-native playbook as the rest of this catalogue, shipped as something you can use today.',
+    outcome: 'Live now at repcoaching.io',
+    chips: ['Deal intelligence', 'Rep coaching', 'Sales AI'],
+    link: 'Visit Rep Coaching',
+    href: 'https://www.repcoaching.io/',
+  },
+  {
+    title: 'Apollo prospecting skill',
+    index: '02',
     description:
       'Plain-English ICP → 50 ranked, enriched leads in under five minutes. Cuts a half-day prospecting workflow to one coffee. Live demo accepts your own Anthropic + Apollo keys.',
     outcome: '4–6 hrs saved per ICP build',
@@ -26,7 +36,7 @@ const projects: Project[] = [
   },
   {
     title: 'TAO subnet scanner',
-    index: '02',
+    index: '03',
     description:
       'Cross-subnet concentration scoring + tier ranking for Bittensor positions. Flags structurally healthy subnets before momentum traders pile in.',
     outcome: '3 of 5 top subnets caught pre-runup',
@@ -36,7 +46,7 @@ const projects: Project[] = [
   },
   {
     title: 'GTM skill library',
-    index: '03',
+    index: '04',
     description:
       '60+ open-source Claude Code skills for sales, marketing, and operator workflows. Drop-in skillpack for any Claude stack. Published v2-generalized branch.',
     outcome: 'Public skill catalogue, free to install',
@@ -46,7 +56,7 @@ const projects: Project[] = [
   },
   {
     title: 'Skill eval harness',
-    index: '04',
+    index: '05',
     description:
       'Manual-eval-first framework for Claude Code skills. Tracks per-skill quality with delay + backoff for rate limits and structured grader output.',
     outcome: '58 tracked tasks, Phase 0 live',
@@ -56,7 +66,7 @@ const projects: Project[] = [
   },
   {
     title: 'Three-layer memory system',
-    index: '05',
+    index: '06',
     description:
       'Local auto-memory + Notion AI Memory Vault + weekly archive. Personal infrastructure for keeping Claude useful across months and projects.',
     outcome: 'Survives every model + workspace migration',
@@ -66,7 +76,7 @@ const projects: Project[] = [
   },
   {
     title: 'Land-the-screen outbound',
-    index: '06',
+    index: '07',
     description:
       'Job-application-to-recruiter outreach pipeline. Daily auto-drafts post-application bumps from a Notion Applications Tracker.',
     outcome: '25+ tracked applications, automated follow-up',

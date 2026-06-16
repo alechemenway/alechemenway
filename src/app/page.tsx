@@ -10,8 +10,17 @@ import portrait from '@/images/photos/image-2.jpg'
 
 const featuredProjects: Project[] = [
   {
-    title: 'Apollo prospecting skill',
+    title: 'Deal-Intelligence + Rep Coaching',
     index: '01',
+    description:
+      'Reads live pipeline to flag deal risk and next-best actions, then coaches reps in the flow of the deal.',
+    outcome: 'Live now at repcoaching.io',
+    chips: ['Deal intelligence', 'Rep coaching', 'Sales AI'],
+    href: 'https://www.repcoaching.io/',
+  },
+  {
+    title: 'Apollo prospecting skill',
+    index: '02',
     description:
       'Plain-English ICP → 50 ranked, enriched leads in under five minutes. Cuts a half-day workflow to one coffee.',
     outcome: '4–6 hrs saved per ICP build',
@@ -20,7 +29,7 @@ const featuredProjects: Project[] = [
   },
   {
     title: 'GTM skill library',
-    index: '02',
+    index: '03',
     description:
       '60+ open-source Claude Code skills for sales, marketing, and operator workflows. Drop-in for any Claude stack.',
     outcome: 'Public catalogue, free to install',
@@ -29,7 +38,7 @@ const featuredProjects: Project[] = [
   },
   {
     title: 'TAO subnet scanner',
-    index: '03',
+    index: '04',
     description:
       'Cross-subnet concentration scoring + tier ranking for Bittensor positions. Flags entries before they run.',
     outcome: '3 of 5 top subnets caught pre-runup',
@@ -38,7 +47,7 @@ const featuredProjects: Project[] = [
   },
   {
     title: 'Skill eval harness',
-    index: '04',
+    index: '05',
     description:
       'Manual-eval-first framework tracking per-skill quality with backoff for rate limits and structured grading.',
     outcome: '58 tracked tasks, Phase 0 live',
