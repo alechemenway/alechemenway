@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 const principles = [
   {
     lead: 'Self-sourced pipeline.',
-    body: '$1.6M generated at Coram in six months without waiting on marketing or SDR coverage.',
+    body: '$3M+ generated across my last two roles without waiting on marketing or SDR coverage.',
   },
   {
     lead: 'Consistent attainment.',
-    body: 'Four-year quota streak at Jamf; #2 of 22 reps at 98% attainment at Staffbase.',
+    body: 'Four-year quota streak at Jamf; #2 of 22 reps at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
   },
   {
     lead: 'Receipts over hype.',
@@ -71,7 +71,7 @@ export default function About() {
             <b className="block font-serif text-[17px] font-normal text-espresso">
               Alec Hemenway
             </b>
-            Denver, CO · Enterprise AE
+            Minneapolis, MN · Enterprise AE
           </div>
         </div>
 
@@ -93,13 +93,26 @@ export default function About() {
           <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
             At Coram I self-sourced{' '}
             <span className="font-semibold text-accent underline decoration-accent-soft">
-              $1.6M of pipeline in six months
+              $1.6M of pipeline in 7 months
             </span>{' '}
-            by wiring Claude into every step that used to eat my week —
+            and closed{' '}
+            <b className="font-semibold text-espresso">$102K net-new ARR</b> by
+            wiring Claude into every step that used to eat my week —
             buyer-signal research, intent data, account prioritization, and the
             first-touch outbound itself. The result isn’t a prompt I copy-paste.
             It’s infrastructure: skills, MCPs, and eval harnesses I actually run
             in production against real accounts.
+          </p>
+          <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
+            At Staffbase I ranked{' '}
+            <b className="font-semibold text-espresso">#2 of 22 AEs at 97%</b> of
+            $690K quota, generating{' '}
+            <span className="font-semibold text-accent underline decoration-accent-soft">
+              $1.4M in self-sourced pipeline
+            </span>{' '}
+            with 75% from net-new logos. I multi-threaded into CHRO, CIO, VP IT,
+            Procurement, and CFO buying committees, displacing SharePoint and
+            Workplace by Meta through competitive ROI positioning.
           </p>
           <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
             The AI part isn’t theater. I’ve published{' '}
@@ -108,8 +121,9 @@ export default function About() {
             </b>
             , built a manual-eval-first harness to keep them honest, and run a
             three-layer memory system so the tooling compounds instead of
-            resetting every month. I sell the category I build in — and I can
-            talk to a CRO and an engineer in the same meeting.
+            resetting every month. Every AI claim ships with a number, a live
+            link, or open-source code you can read. I sell the category I build
+            in — and I can talk to a CRO and an engineer in the same meeting.
           </p>
 
           <h2 className="mt-11 mb-2 font-serif text-[30px]">
@@ -134,9 +148,9 @@ export default function About() {
 
           <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
             Outside the pipeline you’ll find me on a golf course, on a trail
-            somewhere above Denver, or shipping the next skill. I’m looking for
-            the next high-stakes enterprise AE seat — ideally at a company
-            building or selling AI.
+            somewhere, or shipping the next skill. I’m looking for the next
+            high-stakes enterprise AE seat — ideally at a company building or
+            selling AI.
           </p>
 
           <div className="mt-[30px] flex flex-wrap gap-3">

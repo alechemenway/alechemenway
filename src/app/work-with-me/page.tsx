@@ -18,19 +18,19 @@ const panels = [
     items: [
       {
         lead: 'Self-sourced pipeline',
-        body: '$1.6M generated at Coram in six months by wiring Claude into research, intent, and outbound.',
+        body: '$3M+ generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
       },
       {
         lead: 'A four-year quota streak',
-        body: 'Never missed a number from SDR through Senior AE at Jamf; #2 of 22 at Staffbase.',
+        body: 'Never missed a number from SDR through Senior AE at Jamf; #2 of 22 at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
       },
       {
         lead: 'Real AI infrastructure',
-        body: '60+ open-source skills, custom MCPs, and eval harnesses I run in production — not slideware.',
+        body: '60+ open-source skills, custom MCPs, and eval harnesses I run in production — not slideware. Live product at repcoaching.io.',
       },
       {
         lead: 'Full-cycle enterprise motion',
-        body: 'Comfortable from cold first-touch to multi-threaded close with CROs and engineers alike.',
+        body: 'Comfortable from cold first-touch to multi-threaded close with CROs and engineers alike. Displaced SharePoint, Workplace by Meta, and Microsoft through competitive positioning.',
       },
     ],
   },

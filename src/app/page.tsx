@@ -13,71 +13,81 @@ const featuredProjects: Project[] = [
     title: 'Deal-Intelligence + Rep Coaching',
     index: '01',
     description:
-      'Reads live pipeline to flag deal risk and next-best actions, then coaches reps in the flow of the deal.',
+      'A live product that reads your pipeline to flag deal risk and next-best actions, then coaches reps in the flow of the deal — the same AI-native playbook as the rest of this catalogue, shipped as something you can use today.',
     outcome: 'Live now at repcoaching.io',
     chips: ['Deal intelligence', 'Rep coaching', 'Sales AI'],
+    link: 'Visit Rep Coaching',
     href: 'https://www.repcoaching.io/',
   },
   {
     title: 'Apollo prospecting skill',
     index: '02',
     description:
-      'Plain-English ICP → 50 ranked, enriched leads in under five minutes. Cuts a half-day workflow to one coffee.',
+      'Plain-English ICP → 50 ranked, enriched leads in under five minutes. Cuts a half-day prospecting workflow to one coffee. Live demo accepts your own Anthropic + Apollo keys.',
     outcome: '4–6 hrs saved per ICP build',
     chips: ['Claude', 'Apollo API', 'Vercel Functions'],
-    href: '/projects',
+    link: 'Open demo',
+    href: 'https://github.com/alechemenway',
   },
   {
     title: 'GTM skill library',
     index: '03',
     description:
-      '60+ open-source Claude Code skills for sales, marketing, and operator workflows. Drop-in for any Claude stack.',
-    outcome: 'Public catalogue, free to install',
+      '60+ open-source Claude Code skills for sales, marketing, and operator workflows. Drop-in skillpack for any Claude stack. Published v2-generalized branch.',
+    outcome: 'Public skill catalogue, free to install',
     chips: ['Claude Code', 'Bash', 'MDX'],
-    href: '/projects',
-  },
-  {
-    title: 'TAO subnet scanner',
-    index: '04',
-    description:
-      'Cross-subnet concentration scoring + tier ranking for Bittensor positions. Flags entries before they run.',
-    outcome: '3 of 5 top subnets caught pre-runup',
-    chips: ['Python', 'Bittensor SDK', 'Notion sync'],
-    href: '/projects',
+    link: 'View on GitHub',
+    href: 'https://github.com/alechemenway',
   },
   {
     title: 'Skill eval harness',
-    index: '05',
+    index: '04',
     description:
-      'Manual-eval-first framework tracking per-skill quality with backoff for rate limits and structured grading.',
+      'Manual-eval-first framework tracking per-skill quality with backoff for rate limits and structured grading. 58 tracked tasks, Phase 0 live.',
     outcome: '58 tracked tasks, Phase 0 live',
     chips: ['Claude API', 'Skills API', 'Notion DB'],
-    href: '/projects',
+    link: 'See approach',
+    href: 'https://github.com/alechemenway',
   },
 ]
 
 const metrics = [
-  { main: '$1.6', unit: 'M', label: 'Self-sourced pipeline at Coram in 6 months' },
-  { main: '#2', unit: '/22', label: 'Ranked rep at Staffbase · 98% attainment' },
-  { main: '4', unit: 'yr', label: 'Consecutive quota streak at Jamf' },
-  { main: '60', unit: '+', label: 'Open-source Claude Code skills' },
+  { main: '$3', unit: 'M+', label: 'Self-sourced pipeline across my last two roles' },
+  { main: '$1.6', unit: 'M', label: 'Self-sourced pipeline at Coram in 7 months' },
+  { main: '#2', unit: '/22', label: '97% of $690K quota at Staffbase' },
+  { main: '112', unit: '%', label: 'Quota at Jamf · Pinnacle Club · top 5% globally' },
 ]
 
 const roles = [
   {
-    years: '2025 — 2026',
+    years: 'Oct 2025 – May 2026',
     company: 'Coram AI',
     title: 'Enterprise Account Executive',
+    metric: '$1.6M self-sourced pipeline in 7 months',
   },
   {
-    years: '2024 — 2025',
+    years: 'Jul 2024 – Sep 2025',
     company: 'Staffbase',
     title: 'Enterprise Account Executive · Top-2 of 22',
+    metric: '97% of $690K quota',
   },
   {
-    years: '2019 — 2024',
+    years: 'Jan 2023 – Jun 2024',
     company: 'Jamf',
-    title: 'SDR → AE → Sr AE · Four-year quota streak',
+    title: 'Senior Account Executive',
+    metric: '112% quota · Pinnacle Club · top 5% globally',
+  },
+  {
+    years: 'Jul 2020 – Dec 2022',
+    company: 'Jamf',
+    title: 'Account Executive (Mid-Market)',
+    metric: '#3 of ~30 AEs · 100%+ both years',
+  },
+  {
+    years: 'Sep 2019 – Jun 2020',
+    company: 'Jamf',
+    title: 'Sales Development Representative',
+    metric: '125% of quota · promoted in under 12 months',
   },
 ]
 
@@ -92,12 +102,11 @@ export default function Home() {
               I sell enterprise software — and build the{' '}
               <em className="text-accent italic">AI</em> that sells it.
             </h1>
-            <p className="mt-7 max-w-[42ch] text-lg leading-[1.65] text-prose-2">
-              I’m Alec. I self-sourced{' '}
-              <b className="font-semibold text-espresso">$1.6M of pipeline</b> at
-              Coram in six months by wiring Claude into buyer-signal research,
-              intent data, and outbound. Four-year quota streak at Jamf. The AI
-              part isn’t theater.
+            <p className="mt-7 max-w-[44ch] text-lg leading-[1.65] text-prose-2">
+              Enterprise AE with 6+ years of quota-carrying success in technical
+              SaaS. Self-sourced{' '}
+              <b className="font-semibold text-espresso">$3M+ pipeline</b> across
+              my last two roles with zero SDR support.
             </p>
             <div className="mt-[34px] flex flex-wrap gap-[14px]">
               <PremiumButton href="/work-with-me" variant="solid" arrow="→">
@@ -145,7 +154,7 @@ export default function Home() {
                 $1.6M
               </div>
               <div className="mt-[5px] text-[11.5px] font-semibold tracking-[0.05em] text-soft uppercase">
-                Pipeline · 6 months
+                Pipeline · 7 months
               </div>
             </div>
           </div>
@@ -190,17 +199,19 @@ export default function Home() {
         <div className="mt-9 border-t border-line">
           {roles.map((role) => (
             <div
-              key={role.company}
-              className="grid grid-cols-[140px_1fr_auto] items-center gap-6 border-b border-line px-[6px] py-[26px] max-[880px]:grid-cols-[1fr_auto]"
+              key={role.years}
+              className="grid grid-cols-[150px_1fr_auto] items-center gap-6 border-b border-line px-[6px] py-[26px] max-[880px]:grid-cols-1 max-[880px]:gap-2"
             >
-              <span className="text-[13px] font-semibold tracking-[0.06em] text-soft max-[880px]:col-span-2">
+              <span className="text-[13px] font-semibold tracking-[0.06em] text-soft">
                 {role.years}
               </span>
               <div>
                 <div className="font-serif text-[26px]">{role.company}</div>
                 <div className="mt-0.5 text-sm text-soft">{role.title}</div>
               </div>
-              <span className="h-[9px] w-[9px] justify-self-end rounded-full bg-accent" />
+              <span className="max-w-[24ch] justify-self-end text-right text-[13px] font-semibold text-accent max-[880px]:justify-self-start max-[880px]:text-left">
+                {role.metric}
+              </span>
             </div>
           ))}
         </div>
@@ -212,7 +223,7 @@ export default function Home() {
               <em className="text-accent-soft italic">next seat.</em>
             </>
           }
-          paragraph="Hiring an enterprise AE who self-sources pipeline and builds the AI behind it? I reply to every real message within 48 hours."
+          paragraph="I’m looking for a high-stakes enterprise AE role — ideally at a company building or selling AI, where self-sourced pipeline and a builder’s instinct are features, not extras."
           primary={{
             label: 'Get in touch',
             arrow: '→',
