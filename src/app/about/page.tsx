@@ -4,10 +4,6 @@ import Image from 'next/image'
 import { Wrap } from '@/components/Wrap'
 import { Eyebrow } from '@/components/Eyebrow'
 import { ClosingBand } from '@/components/ClosingBand'
-import image1 from '@/images/photos/image-1.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
 import studioImage11 from '@/images/photos/studio-image-11.png'
 
 export const metadata: Metadata = {
@@ -33,13 +29,6 @@ const principles = [
     lead: 'Operator’s reflex.',
     body: 'If a workflow is repeatable, I’d rather build the system than grind the reps.',
   },
-]
-
-const strip = [
-  { src: image3, alt: 'Alec hiking' },
-  { src: image5, alt: 'Alec at the lake' },
-  { src: image4, alt: 'Alec in the office' },
-  { src: image1, alt: 'Alec on the course' },
 ]
 
 const contactLinks: { label: string; href: string; newTab?: boolean }[] = [
@@ -169,25 +158,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <div className="mt-[30px] grid grid-cols-4 gap-[18px] max-[880px]:grid-cols-2">
-        {strip.map((photo, index) => (
-          <div
-            key={photo.alt}
-            className={`relative aspect-[9/10] overflow-hidden rounded-[14px] border-[5px] border-card shadow-strip ${
-              index % 2 === 0 ? 'rotate-2' : '-rotate-2'
-            }`}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 880px) 50vw, 280px"
-              className="object-cover"
-            />
-          </div>
-        ))}
-      </div>
 
       <ClosingBand
         heading={
