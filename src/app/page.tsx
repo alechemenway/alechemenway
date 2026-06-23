@@ -6,7 +6,7 @@ import { PremiumButton } from '@/components/PremiumButton'
 import { SectionHead } from '@/components/SectionHead'
 import { ProjectCard, type Project } from '@/components/ProjectCard'
 import { ClosingBand } from '@/components/ClosingBand'
-import portrait from '@/images/photos/image-2.jpg'
+import portrait from '@/images/photos/studio-image-1.png'
 
 const featuredProjects: Project[] = [
   {
