@@ -2,6 +2,8 @@ import { type Metadata } from 'next'
 
 import { Wrap } from '@/components/Wrap'
 import { Eyebrow } from '@/components/Eyebrow'
+import { Accent } from '@/components/Accent'
+import { Reveal, RevealGroup } from '@/components/motion/Reveal'
 import { ProjectCard, type Project } from '@/components/ProjectCard'
 import { ClosingBand } from '@/components/ClosingBand'
 
@@ -23,6 +25,7 @@ const projects: Project[] = [
     chips: ['Deal intelligence', 'Rep coaching', 'Sales AI'],
     link: 'Visit Rep Coaching',
     href: 'https://www.repcoaching.io/',
+    badge: 'Live',
   },
   {
     title: 'Apollo prospecting skill',
@@ -33,6 +36,7 @@ const projects: Project[] = [
     chips: ['Claude', 'Apollo API', 'Vercel Functions'],
     link: 'Open demo',
     href: GITHUB,
+    badge: 'Demo',
   },
   {
     title: 'TAO subnet scanner',
@@ -43,6 +47,7 @@ const projects: Project[] = [
     chips: ['Python', 'Bittensor SDK', 'Notion sync'],
     link: 'Read methodology',
     href: GITHUB,
+    badge: 'Research',
   },
   {
     title: 'GTM skill library',
@@ -53,6 +58,7 @@ const projects: Project[] = [
     chips: ['Claude Code', 'Bash', 'MDX'],
     link: 'View on GitHub',
     href: GITHUB,
+    badge: 'Open source',
   },
   {
     title: 'Skill eval harness',
@@ -63,6 +69,7 @@ const projects: Project[] = [
     chips: ['Claude API', 'Skills API', 'Notion DB'],
     link: 'See approach',
     href: GITHUB,
+    badge: 'Phase 0',
   },
   {
     title: 'Three-layer memory system',
@@ -73,6 +80,7 @@ const projects: Project[] = [
     chips: ['Claude Code', 'Notion API', 'PowerShell'],
     link: 'Read writeup',
     href: GITHUB,
+    badge: 'Infra',
   },
   {
     title: 'Land-the-screen outbound',
@@ -83,44 +91,43 @@ const projects: Project[] = [
     chips: ['Claude', 'Notion DB', 'Scheduled agents'],
     link: 'See pipeline',
     href: GITHUB,
+    badge: 'Pipeline',
   },
 ]
 
 export default function Projects() {
   return (
     <Wrap>
-      <header className="max-w-[42ch] pt-16 pb-2">
+      <header className="max-w-[46ch] pt-24 pb-2 max-[880px]:pt-16">
         <Eyebrow>Projects</Eyebrow>
-        <h1 className="font-serif text-[clamp(40px,5.4vw,76px)] leading-none tracking-[-0.01em]">
-          AI-native systems I’ve <em className="text-accent italic">shipped.</em>
+        <h1 className="text-[clamp(40px,5.4vw,76px)] leading-[1.0] font-extrabold tracking-[-0.04em]">
+          AI-native systems I&rsquo;ve <Accent>shipped.</Accent>
         </h1>
-        <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-prose-2">
-          A working catalogue of the AI workflows, skills, and operator tools
-          I’ve built and run in real revenue and personal-ops motions. Each one
-          has <b className="font-semibold text-espresso">receipts</b> — time
-          saved, outcomes hit, or a live link to the artifact itself.
-        </p>
+        <Reveal>
+          <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-ink-2">
+            A working catalogue of the AI workflows, skills, and operator tools
+            I&rsquo;ve built and run in real revenue and personal-ops motions.
+            Each one has{' '}
+            <b className="font-semibold text-ink">receipts</b> — time saved,
+            outcomes hit, or a live link to the artifact itself.
+          </p>
+        </Reveal>
       </header>
 
-      <div className="mt-8 grid grid-cols-3 gap-6 max-[880px]:grid-cols-1">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+      <RevealGroup className="mt-12 grid grid-cols-3 gap-6 max-[1024px]:grid-cols-2 max-[880px]:grid-cols-1">
+        {projects.map((project, i) => (
+          <ProjectCard key={project.title} project={project} seed={i + 1} />
         ))}
-      </div>
+      </RevealGroup>
 
       <ClosingBand
         heading={
           <>
-            Want one of these{' '}
-            <em className="text-accent-soft italic">wired into</em> your stack?
+            Want one of these <Accent>wired into</Accent> your stack?
           </>
         }
-        paragraph="Most of these are open-source or live demos. The rest I’m happy to walk through. I reply to every real message within 48 hours."
-        primary={{
-          label: 'Get in touch',
-          arrow: '→',
-          href: 'mailto:alec@hemenway.io',
-        }}
+        paragraph="Most of these are open-source or live demos. The rest I'm happy to walk through. I reply to every real message within 48 hours."
+        primary={{ label: 'Get in touch', arrow: '→', href: 'mailto:alec@hemenway.io' }}
         secondary={{ label: 'Browse GitHub', arrow: '↗', href: GITHUB }}
       />
     </Wrap>

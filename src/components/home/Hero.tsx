@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from 'motion/react'
 import { Wrap } from '@/components/Wrap'
 import { Button } from '@/components/Button'
 import { Accent } from '@/components/Accent'
-import { StatusPanel } from '@/components/StatusPanel'
 import { FlowField } from '@/components/motion/FlowField'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -103,17 +102,7 @@ export function Hero() {
           </p>
         </FadeUp>
 
-        <FadeUp delay={0.46} reduce={reduce} className="mt-7">
-          <StatusPanel
-            status="Open to enterprise AE / AI-GTM roles"
-            lines={[
-              'MINNEAPOLIS, MN  ·  REMOTE-READY',
-              'STACK: CLAUDE · APOLLO · NEXT.JS · NOTION',
-            ]}
-          />
-        </FadeUp>
-
-        <FadeUp delay={0.56} reduce={reduce} className="mt-8 flex flex-wrap items-center gap-3.5">
+        <FadeUp delay={0.46} reduce={reduce} className="mt-9 flex flex-wrap items-center gap-3.5">
           <Button href="/projects" variant="solid" arrow="→">
             View the work
           </Button>
@@ -128,7 +117,7 @@ export function Hero() {
           </Button>
         </FadeUp>
 
-        <FadeUp delay={0.64} reduce={reduce} className="mt-7 flex gap-6 font-mono text-[12px] tracking-[0.04em] text-ink-2">
+        <FadeUp delay={0.56} reduce={reduce} className="mt-7 flex gap-6 font-mono text-[12px] tracking-[0.04em] text-ink-2">
           <a href="https://github.com/alechemenway" className="transition-colors hover:text-accent">
             GitHub ↗
           </a>
