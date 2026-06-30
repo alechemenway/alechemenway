@@ -13,11 +13,11 @@ export function Eyebrow({
   return (
     <div
       className={clsx(
-        'mb-6 flex items-center gap-3 text-[13px] font-semibold tracking-[0.18em] text-accent uppercase',
+        'mb-6 flex items-center gap-3 font-mono text-[12px] tracking-[0.18em] text-accent uppercase',
         className,
       )}
     >
-      <span className="h-px w-[34px] bg-accent" />
+      <span className="h-px w-6 bg-accent" />
       {children}
     </div>
   )
