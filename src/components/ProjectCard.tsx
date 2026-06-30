@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { TiltCard } from '@/components/motion/TiltCard'
-import { ProjectCover } from '@/components/ProjectCover'
+import { ProjectCover, type ProjectCoverVariant } from '@/components/ProjectCover'
 
 export type Project = {
   title: string
@@ -10,6 +10,7 @@ export type Project = {
   outcome: string
   chips: string[]
   href: string
+  cover?: ProjectCoverVariant
   /** Footer link label (e.g. "Open demo"). Omit to hide the link row. */
   link?: string
   /** Cover badge, e.g. "Live" / "Open source" / "Demo". */
@@ -31,7 +32,7 @@ export function ProjectCard({
         className="group flex h-full flex-col overflow-hidden border border-line bg-surface transition-colors duration-300 hover:border-accent/50"
       >
         <div className="relative">
-          <ProjectCover seed={seed} className="aspect-[16/10]" />
+          <ProjectCover seed={seed} variant={project.cover} className="aspect-[16/10]" />
           <span className="absolute top-4 left-5 font-mono text-[13px] text-accent">
             {project.index}
           </span>
