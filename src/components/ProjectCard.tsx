@@ -1,5 +1,8 @@
 import Link from 'next/link'
 
+import { TiltCard } from '@/components/motion/TiltCard'
+import { ProjectCover } from '@/components/ProjectCover'
+
 export type Project = {
   title: string
   index: string
@@ -7,50 +10,67 @@ export type Project = {
   outcome: string
   chips: string[]
   href: string
-  /** Footer link label (e.g. "Open demo"). Omit to hide the `.link` row. */
+  /** Footer link label (e.g. "Open demo"). Omit to hide the link row. */
   link?: string
+  /** Cover badge, e.g. "Live" / "Open source" / "Demo". */
+  badge?: string
 }
 
-/**
- * Premium `.pcard` — used on the Home (4-up) and Projects (6-up) grids.
- */
-export function ProjectCard({ project }: { project: Project }) {
+/** Image-led project card with a generative cover and 3D pointer-tilt. */
+export function ProjectCard({
+  project,
+  seed = 0,
+}: {
+  project: Project
+  seed?: number
+}) {
   return (
-    <Link
-      href={project.href}
-      className="group flex flex-col rounded-[18px] border border-line bg-card p-[30px] pb-[26px] transition duration-200 hover:-translate-y-1 hover:shadow-card-hover"
-    >
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="font-serif text-[27px] leading-[1.1] tracking-[-0.005em]">
-          {project.title}
-        </h3>
-        <span className="mt-1 shrink-0 text-[13px] font-semibold text-soft">
-          {project.index}
-        </span>
-      </div>
-      <p className="mt-3 text-[14.5px] leading-[1.6] text-prose-3">
-        {project.description}
-      </p>
-      <span className="mt-4 inline-flex items-center gap-[7px] text-[13px] font-bold text-accent">
-        <span className="h-px w-4 shrink-0 bg-accent" />
-        {project.outcome}
-      </span>
-      <div className="mt-4 flex flex-wrap gap-[7px]">
-        {project.chips.map((chip) => (
-          <span
-            key={chip}
-            className="rounded-full bg-cream-2 px-[11px] py-1 text-[12px] font-medium text-soft"
-          >
-            {chip}
+    <TiltCard className="h-full">
+      <Link
+        href={project.href}
+        className="group flex h-full flex-col overflow-hidden border border-line bg-surface transition-colors duration-300 hover:border-accent/50"
+      >
+        <div className="relative">
+          <ProjectCover seed={seed} className="aspect-[16/10]" />
+          <span className="absolute top-4 left-5 font-mono text-[13px] text-accent">
+            {project.index}
           </span>
-        ))}
-      </div>
-      {project.link && (
-        <div className="mt-5 flex items-center justify-between border-t border-line pt-[18px] text-[13px] font-semibold text-espresso transition-colors group-hover:text-accent">
-          <span>{project.link}</span>
-          <span aria-hidden="true">→</span>
+          {project.badge && (
+            <span className="absolute top-4 right-4 bg-accent px-2 py-1 font-mono text-[10.5px] tracking-[0.12em] text-bg uppercase">
+              {project.badge}
+            </span>
+          )}
         </div>
-      )}
-    </Link>
+        <div className="flex flex-1 flex-col p-7">
+          <h3 className="text-[23px] font-bold tracking-[-0.02em]">
+            {project.title}
+          </h3>
+          <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-2">
+            {project.description}
+          </p>
+          <div className="mt-auto pt-6">
+            <div className="text-[13px] font-semibold text-ink">
+              {project.outcome}
+            </div>
+            <div className="mt-3.5 flex flex-wrap gap-2">
+              {project.chips.map((chip) => (
+                <span
+                  key={chip}
+                  className="rounded-full border border-line px-2.5 py-1 font-mono text-[11px] text-ink-2"
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+            {project.link && (
+              <div className="mt-5 flex items-center justify-between border-t border-line pt-4 font-mono text-[12.5px] text-ink-2 transition-colors group-hover:text-accent">
+                <span>{project.link}</span>
+                <span aria-hidden="true">→</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </Link>
+    </TiltCard>
   )
 }

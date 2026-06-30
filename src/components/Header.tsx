@@ -59,7 +59,7 @@ function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-label={mounted ? (isDark ? 'Switch to light mode' : 'Switch to dark mode') : 'Toggle theme'}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className="grid size-9 place-items-center rounded-full border border-line text-ink-2 transition-colors hover:border-ink-2 hover:text-ink"
     >
