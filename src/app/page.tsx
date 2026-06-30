@@ -1,12 +1,10 @@
-import Image from 'next/image'
-
+import { Hero } from '@/components/home/Hero'
 import { Wrap } from '@/components/Wrap'
-import { Eyebrow } from '@/components/Eyebrow'
-import { PremiumButton } from '@/components/PremiumButton'
+import { Reveal, RevealGroup } from '@/components/motion/Reveal'
 import { SectionHead } from '@/components/SectionHead'
+import { Accent } from '@/components/Accent'
 import { ProjectCard, type Project } from '@/components/ProjectCard'
 import { ClosingBand } from '@/components/ClosingBand'
-import portrait from '@/images/photos/studio-image-1.png'
 
 const featuredProjects: Project[] = [
   {
@@ -18,6 +16,7 @@ const featuredProjects: Project[] = [
     chips: ['Deal intelligence', 'Rep coaching', 'Sales AI'],
     link: 'Visit Rep Coaching',
     href: 'https://www.repcoaching.io/',
+    badge: 'Live',
   },
   {
     title: 'Apollo prospecting skill',
@@ -28,6 +27,7 @@ const featuredProjects: Project[] = [
     chips: ['Claude', 'Apollo API', 'Vercel Functions'],
     link: 'Open demo',
     href: 'https://github.com/alechemenway',
+    badge: 'Demo',
   },
   {
     title: 'GTM skill library',
@@ -38,6 +38,7 @@ const featuredProjects: Project[] = [
     chips: ['Claude Code', 'Bash', 'MDX'],
     link: 'View on GitHub',
     href: 'https://github.com/alechemenway',
+    badge: 'Open source',
   },
   {
     title: 'Skill eval harness',
@@ -48,6 +49,7 @@ const featuredProjects: Project[] = [
     chips: ['Claude API', 'Skills API', 'Notion DB'],
     link: 'See approach',
     href: 'https://github.com/alechemenway',
+    badge: 'Phase 0',
   },
 ]
 
@@ -94,141 +96,86 @@ const roles = [
 export default function Home() {
   return (
     <>
-      <Wrap>
-        <section className="grid grid-cols-[1.15fr_0.85fr] items-center gap-[60px] pt-[70px] pb-16 max-[880px]:grid-cols-1">
-          <div>
-            <Eyebrow>Enterprise AE · AI-native</Eyebrow>
-            <h1 className="font-serif text-[clamp(46px,6.6vw,90px)] leading-none tracking-[-0.01em]">
-              I sell enterprise software — and build the{' '}
-              <em className="text-accent italic">AI</em> that sells it.
-            </h1>
-            <p className="mt-7 max-w-[44ch] text-lg leading-[1.65] text-prose-2">
-              Enterprise AE with 6+ years of quota-carrying success in technical
-              SaaS. Self-sourced{' '}
-              <b className="font-semibold text-espresso">$3M+ pipeline</b> across
-              my last two roles with zero SDR support.
-            </p>
-            <div className="mt-[34px] flex flex-wrap gap-[14px]">
-              <PremiumButton href="/work-with-me" variant="solid" arrow="→">
-                Work with me
-              </PremiumButton>
-              <PremiumButton
-                href="/alechemenway_resume2026.pdf"
-                variant="ghost"
-                arrow="↓"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download résumé
-              </PremiumButton>
-            </div>
-            <div className="mt-[30px] flex gap-5 text-[13px] font-semibold tracking-[0.04em] text-soft">
-              <a
-                href="https://github.com/alechemenway"
-                className="transition-colors hover:text-accent"
-              >
-                GitHub ↗
-              </a>
-              <a
-                href="https://www.linkedin.com/in/alec-hemenway/"
-                className="transition-colors hover:text-accent"
-              >
-                LinkedIn ↗
-              </a>
-            </div>
-          </div>
+      <Hero />
 
-          <div className="relative justify-self-center max-[880px]:order-first max-[880px]:mb-5">
-            <div className="relative aspect-[4/5] w-[340px] max-w-[42vw] rotate-3 overflow-hidden rounded-[18px] border-[6px] border-card shadow-portrait">
-              <Image
-                src={portrait}
-                alt="Alec Hemenway"
-                fill
-                sizes="340px"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="absolute bottom-[-18px] left-[-26px] -rotate-2 rounded-[14px] border border-line bg-card px-[18px] py-[14px] shadow-tagchip">
-              <div className="font-serif text-[30px] leading-none text-accent">
-                $1.6M
+      <Reveal className="border-y border-line bg-bg-2">
+        <Wrap>
+          <div className="grid grid-cols-4 max-[880px]:grid-cols-2 [&>div:last-child]:border-r-0 [&>div]:border-r [&>div]:border-line max-[880px]:[&>div:nth-child(2)]:border-r-0">
+            {metrics.map((m) => (
+              <div key={m.label} className="py-10 pr-7">
+                <div className="font-mono text-[clamp(32px,4vw,52px)] leading-none font-extrabold tracking-[-0.03em]">
+                  {m.main}
+                  <span className="text-accent">{m.unit}</span>
+                </div>
+                <div className="mt-3 max-w-[23ch] text-[13px] leading-[1.45] text-ink-2">
+                  {m.label}
+                </div>
               </div>
-              <div className="mt-[5px] text-[11.5px] font-semibold tracking-[0.05em] text-soft uppercase">
-                Pipeline · 7 months
-              </div>
-            </div>
+            ))}
           </div>
-        </section>
-      </Wrap>
-
-      {/* Metric band — full bleed */}
-      <div className="grid grid-cols-4 border-y border-line [&>div:last-child]:border-r-0 [&>div]:border-r [&>div]:border-line max-[880px]:grid-cols-2 max-[880px]:[&>div:nth-child(2)]:border-r-0">
-        {metrics.map((metric) => (
-          <div key={metric.label} className="px-[26px] py-[34px]">
-            <div className="font-serif text-[52px] leading-none tracking-[-0.01em]">
-              {metric.main}
-              <span className="text-accent">{metric.unit}</span>
-            </div>
-            <div className="mt-3 max-w-[22ch] text-[13.5px] leading-[1.5] text-soft">
-              {metric.label}
-            </div>
-          </div>
-        ))}
-      </div>
+        </Wrap>
+      </Reveal>
 
       <Wrap>
-        <SectionHead more={{ label: 'All projects →', href: '/projects' }}>
-          AI systems I’ve <em className="text-accent italic">shipped.</em>
-        </SectionHead>
-        <div className="mt-8 grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-
-        <SectionHead
-          more={{
-            label: 'Download résumé →',
-            href: '/alechemenway_resume2026.pdf',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          }}
-        >
-          Where I’ve <em className="text-accent italic">sold.</em>
-        </SectionHead>
-        <div className="mt-9 border-t border-line">
-          {roles.map((role) => (
-            <div
-              key={role.years}
-              className="grid grid-cols-[150px_1fr_auto] items-center gap-6 border-b border-line px-[6px] py-[26px] max-[880px]:grid-cols-1 max-[880px]:gap-2"
+        <section className="py-24 max-[880px]:py-16">
+          <Reveal>
+            <SectionHead
+              kicker="Selected work"
+              more={{ label: 'All projects →', href: '/projects' }}
             >
-              <span className="text-[13px] font-semibold tracking-[0.06em] text-soft">
-                {role.years}
-              </span>
-              <div>
-                <div className="font-serif text-[26px]">{role.company}</div>
-                <div className="mt-0.5 text-sm text-soft">{role.title}</div>
+              AI systems I&rsquo;ve <Accent>shipped.</Accent>
+            </SectionHead>
+          </Reveal>
+          <RevealGroup className="grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
+            {featuredProjects.map((project, i) => (
+              <ProjectCard key={project.title} project={project} seed={i + 1} />
+            ))}
+          </RevealGroup>
+        </section>
+
+        <section className="pb-24 max-[880px]:pb-16">
+          <Reveal>
+            <SectionHead
+              kicker="The receipts"
+              more={{
+                label: 'Download résumé →',
+                href: '/alechemenway_resume2026.pdf',
+                target: '_blank',
+                rel: 'noopener noreferrer',
+              }}
+            >
+              Where I&rsquo;ve <Accent>sold.</Accent>
+            </SectionHead>
+          </Reveal>
+          <RevealGroup className="border-t border-line">
+            {roles.map((role) => (
+              <div
+                key={role.years}
+                className="grid grid-cols-[180px_1fr_auto] items-center gap-6 border-b border-line py-6 transition-transform duration-300 hover:translate-x-1.5 max-[880px]:grid-cols-1 max-[880px]:gap-1.5"
+              >
+                <span className="font-mono text-[12px] text-ink-2">{role.years}</span>
+                <div>
+                  <div className="text-[22px] font-bold tracking-[-0.02em]">
+                    {role.company}
+                  </div>
+                  <div className="mt-0.5 text-sm text-ink-2">{role.title}</div>
+                </div>
+                <span className="max-w-[26ch] justify-self-end text-right text-[13px] font-semibold text-accent max-[880px]:justify-self-start max-[880px]:text-left">
+                  {role.metric}
+                </span>
               </div>
-              <span className="max-w-[24ch] justify-self-end text-right text-[13px] font-semibold text-accent max-[880px]:justify-self-start max-[880px]:text-left">
-                {role.metric}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </RevealGroup>
+        </section>
 
         <ClosingBand
           heading={
             <>
-              Let’s talk about the{' '}
-              <em className="text-accent-soft italic">next seat.</em>
+              Let&rsquo;s talk about the <Accent>next seat.</Accent>
             </>
           }
-          paragraph="I’m looking for a high-stakes enterprise AE role — ideally at a company building or selling AI, where self-sourced pipeline and a builder’s instinct are features, not extras."
-          primary={{
-            label: 'Get in touch',
-            arrow: '→',
-            href: 'mailto:alec@hemenway.io',
-          }}
+          paragraph="I'm looking for a high-stakes role where self-sourced pipeline and a builder's instinct are features, not extras — ideally at a company building or selling AI."
+          primary={{ label: 'Get in touch', arrow: '→', href: 'mailto:alec@hemenway.io' }}
           secondary={{
             label: 'Connect on LinkedIn',
             arrow: '↗',

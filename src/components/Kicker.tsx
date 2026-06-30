@@ -1,9 +1,7 @@
 import clsx from 'clsx'
 
-/**
- * Site container — max-width 1200px, 32px gutters (24px ≤880px).
- */
-export function Wrap({
+/** Mono uppercase amber section label. */
+export function Kicker({
   className,
   children,
 }: {
@@ -13,7 +11,7 @@ export function Wrap({
   return (
     <div
       className={clsx(
-        'mx-auto w-full max-w-[1200px] px-8 max-[880px]:px-6',
+        'font-mono text-[12px] tracking-[0.2em] text-accent uppercase',
         className,
       )}
     >

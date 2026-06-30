@@ -36,3 +36,9 @@ next-env.d.ts
 
 .vercel
 screenshots/
+
+# redesign scratch / reference material (not shipped)
+.design-mockups/
+references_portfolio/
+da5bf36f-*.png
+.claude/

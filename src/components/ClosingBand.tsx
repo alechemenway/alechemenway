@@ -1,9 +1,9 @@
-import { PremiumButton } from '@/components/PremiumButton'
+import { Button } from '@/components/Button'
 
 type BandButton = {
   label: string
   arrow?: string
-  /** Omit href for an inert placeholder (e.g. a not-yet-wired scheduling link). */
+  /** Omit href for an inert placeholder. */
   href?: string
 }
 
@@ -16,32 +16,26 @@ function BandButton({
 }) {
   if (button.href) {
     return (
-      <PremiumButton
-        tone="dark"
-        variant={variant}
-        href={button.href}
-        arrow={button.arrow}
-      >
+      <Button variant={variant} href={button.href} arrow={button.arrow}>
         {button.label}
-      </PremiumButton>
+      </Button>
     )
   }
   return (
-    <PremiumButton
-      tone="dark"
+    <Button
       variant={variant}
       arrow={button.arrow}
       aria-disabled="true"
-      className="cursor-not-allowed"
+      className="cursor-not-allowed opacity-60"
     >
       {button.label}
-    </PremiumButton>
+    </Button>
   )
 }
 
 /**
- * Premium `.closing` — espresso band that appears near the bottom of every page.
- * The caller supplies the heading node (with an accent-soft `<em>`).
+ * Closing CTA band — bottom amber glow on the dark canvas. Caller supplies the
+ * heading node (with an `<Accent>` word).
  */
 export function ClosingBand({
   heading,
@@ -55,14 +49,22 @@ export function ClosingBand({
   secondary: BandButton
 }) {
   return (
-    <section className="mt-20 mb-[70px] grid grid-cols-[1.3fr_1fr] items-center gap-10 rounded-[26px] bg-espresso px-14 py-16 text-cream max-[880px]:grid-cols-1 max-[880px]:px-9 max-[880px]:py-12">
-      <h2 className="font-serif text-[clamp(34px,4.6vw,58px)] leading-[1.02] tracking-[-0.01em]">
-        {heading}
-      </h2>
-      <div className="flex flex-col gap-[14px]">
-        <p className="text-base leading-[1.6] text-band-muted">{paragraph}</p>
-        <BandButton button={primary} variant="solid" />
-        <BandButton button={secondary} variant="ghost" />
+    <section className="relative overflow-hidden py-28 max-[880px]:py-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 [background:radial-gradient(60%_80%_at_50%_120%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)]"
+      />
+      <div className="relative">
+        <h2 className="max-w-[16ch] text-[clamp(36px,5.4vw,72px)] leading-[1.02] font-extrabold tracking-[-0.035em]">
+          {heading}
+        </h2>
+        <p className="mt-6 max-w-[52ch] text-lg leading-[1.6] text-ink-2">
+          {paragraph}
+        </p>
+        <div className="mt-9 flex flex-wrap gap-3.5">
+          <BandButton button={primary} variant="solid" />
+          <BandButton button={secondary} variant="ghost" />
+        </div>
       </div>
     </section>
   )

@@ -1,5 +1,5 @@
 import { type Metadata } from 'next'
-import { Hanken_Grotesk, Instrument_Serif } from 'next/font/google'
+import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 
 import { Providers } from '@/app/providers'
@@ -7,10 +7,10 @@ import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
 
-const hanken = Hanken_Grotesk({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-hanken',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -19,6 +19,13 @@ const instrument = Instrument_Serif({
   weight: '400',
   style: ['normal', 'italic'],
   variable: '--font-instrument',
+  display: 'swap',
+})
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-jetbrains',
   display: 'swap',
 })
 
@@ -39,10 +46,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased ${hanken.variable} ${instrument.variable}`}
+      className={`h-full antialiased ${inter.variable} ${instrument.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex h-full bg-cream font-sans text-espresso">
+      <body className="flex h-full bg-bg font-sans text-ink">
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>
