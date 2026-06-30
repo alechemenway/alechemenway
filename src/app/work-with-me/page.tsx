@@ -2,7 +2,9 @@ import { type Metadata } from 'next'
 
 import { Wrap } from '@/components/Wrap'
 import { Eyebrow } from '@/components/Eyebrow'
+import { Accent } from '@/components/Accent'
 import { SectionHead } from '@/components/SectionHead'
+import { Reveal, RevealGroup } from '@/components/motion/Reveal'
 import { ClosingBand } from '@/components/ClosingBand'
 
 export const metadata: Metadata = {
@@ -79,36 +81,34 @@ const fitRows = [
 export default function WorkWithMe() {
   return (
     <Wrap>
-      <header className="max-w-[42ch] pt-16 pb-2">
+      <header className="max-w-[46ch] pt-24 pb-2 max-[880px]:pt-16">
         <Eyebrow>Work with me</Eyebrow>
-        <h1 className="font-serif text-[clamp(40px,5.4vw,76px)] leading-none tracking-[-0.01em]">
-          The next seat I’m{' '}
-          <em className="text-accent italic">looking for.</em>
+        <h1 className="text-[clamp(40px,5.4vw,76px)] leading-[1.0] font-extrabold tracking-[-0.04em]">
+          The next seat I’m <Accent>looking for.</Accent>
         </h1>
-        <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-prose-2">
+        <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-ink-2">
           I’m looking for a high-stakes enterprise AE role — ideally at a company
           building or selling AI, where self-sourced pipeline and a builder’s
           instinct are features, not extras.
         </p>
       </header>
 
-      <div className="mt-10 grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
+      <RevealGroup className="mt-12 grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
         {panels.map((panel) => (
-          <div
-            key={panel.title}
-            className="rounded-[20px] border border-line bg-card px-9 py-[38px]"
-          >
-            <div className="mb-2 text-[12px] font-bold tracking-[0.12em] text-accent uppercase">
+          <div key={panel.title} className="border border-line bg-surface px-9 py-10">
+            <div className="mb-2 font-mono text-[12px] tracking-[0.12em] text-accent uppercase">
               {panel.label}
             </div>
-            <h3 className="mb-5 font-serif text-[30px]">{panel.title}</h3>
+            <h3 className="mb-5 text-[28px] font-bold tracking-[-0.02em]">
+              {panel.title}
+            </h3>
             <ul>
               {panel.items.map((item) => (
                 <li
                   key={item.lead}
-                  className="border-b border-line py-4 text-[15.5px] leading-[1.6] text-prose last:border-b-0"
+                  className="border-b border-line py-4 text-[15.5px] leading-[1.6] text-ink-2 last:border-b-0"
                 >
-                  <b className="mb-[2px] block text-[16px] font-semibold text-espresso">
+                  <b className="mb-0.5 block text-[16px] font-semibold text-ink">
                     {item.lead}
                   </b>
                   {item.body}
@@ -117,39 +117,40 @@ export default function WorkWithMe() {
             </ul>
           </div>
         ))}
-      </div>
+      </RevealGroup>
 
-      <SectionHead>
-        Am I a <em className="text-accent italic">fit?</em>
-      </SectionHead>
-      <div className="mt-6 border-t border-line">
-        {fitRows.map((row) => (
-          <div
-            key={row.question}
-            className="grid grid-cols-2 gap-[30px] border-b border-line py-[26px] max-[880px]:grid-cols-1 max-[880px]:gap-1.5"
-          >
-            <div className="font-serif text-[22px]">{row.question}</div>
-            <div className="text-[15px] leading-[1.6] text-prose">
-              <b className="font-semibold text-espresso">{row.verdict}</b>{' '}
-              {row.body}
+      <section className="mt-20">
+        <Reveal>
+          <SectionHead kicker="The fit">
+            Am I a <Accent>fit?</Accent>
+          </SectionHead>
+        </Reveal>
+        <RevealGroup className="border-t border-line">
+          {fitRows.map((row) => (
+            <div
+              key={row.question}
+              className="grid grid-cols-2 gap-8 border-b border-line py-6 max-[880px]:grid-cols-1 max-[880px]:gap-1.5"
+            >
+              <div className="text-[22px] font-bold tracking-[-0.02em]">
+                {row.question}
+              </div>
+              <div className="text-[15px] leading-[1.6] text-ink-2">
+                <b className="font-semibold text-accent">{row.verdict}</b>{' '}
+                {row.body}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </RevealGroup>
+      </section>
 
       <ClosingBand
         heading={
           <>
-            Let’s talk about{' '}
-            <em className="text-accent-soft italic">the number.</em>
+            Let’s talk about <Accent>the number.</Accent>
           </>
         }
         paragraph="Tell me about the seat, the territory, and the target. I reply to every real message within 48 hours."
-        primary={{
-          label: 'Email me',
-          arrow: '→',
-          href: 'mailto:alec@hemenway.io',
-        }}
+        primary={{ label: 'Email me', arrow: '→', href: 'mailto:alec@hemenway.io' }}
         secondary={{
           label: 'Book 20 minutes',
           arrow: '↗',

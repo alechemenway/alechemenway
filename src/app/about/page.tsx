@@ -3,8 +3,10 @@ import Image from 'next/image'
 
 import { Wrap } from '@/components/Wrap'
 import { Eyebrow } from '@/components/Eyebrow'
+import { Accent } from '@/components/Accent'
+import { Reveal } from '@/components/motion/Reveal'
 import { ClosingBand } from '@/components/ClosingBand'
-import studioImage11 from '@/images/photos/studio-image-11.png'
+import portrait from '@/images/portrait-2026.jpg'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -35,77 +37,79 @@ const contactLinks: { label: string; href: string; newTab?: boolean }[] = [
   { label: 'Email me ↗', href: 'mailto:alec@hemenway.io' },
   { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/alec-hemenway/' },
   { label: 'GitHub ↗', href: 'https://github.com/alechemenway' },
-  {
-    label: 'Download résumé ↓',
-    href: '/alechemenway_resume2026.pdf',
-    newTab: true,
-  },
+  { label: 'Download résumé ↓', href: '/alechemenway_resume2026.pdf', newTab: true },
 ]
 
 export default function About() {
   return (
     <Wrap>
-      <section className="grid grid-cols-[0.92fr_1.08fr] items-start gap-16 pt-[60px] pb-5 max-[880px]:grid-cols-1">
-        <div className="sticky top-[110px] max-[880px]:static">
-          <div className="aspect-[4/5] -rotate-3 overflow-hidden rounded-[20px] border-[7px] border-card shadow-figure max-[880px]:rotate-0">
+      <section className="pt-24 pb-2 text-center max-[880px]:pt-16">
+        <Eyebrow className="justify-center">About</Eyebrow>
+        <div className="relative mx-auto mt-2 w-[300px] max-w-[68vw]">
+          <div
+            aria-hidden
+            className="absolute -inset-8 -z-10 rounded-full opacity-50 blur-3xl"
+            style={{
+              background:
+                'radial-gradient(circle, color-mix(in oklab, var(--accent) 35%, transparent), transparent 70%)',
+            }}
+          />
+          <div className="overflow-hidden rounded-[28px] border border-line">
             <Image
-              src={studioImage11}
+              src={portrait}
               alt="Alec Hemenway, studio portrait"
-              className="h-full w-full object-cover"
-              sizes="(max-width: 880px) 100vw, 460px"
+              sizes="300px"
+              className="h-auto w-full"
               priority
+              placeholder="blur"
             />
           </div>
-          <div className="mt-[22px] -rotate-3 text-center text-[13px] text-soft max-[880px]:rotate-0">
-            <b className="block font-serif text-[17px] font-normal text-espresso">
-              Alec Hemenway
-            </b>
-            Minneapolis, MN · Enterprise AE
+          <div className="mt-4 font-mono text-[12px] tracking-[0.06em] text-ink-2">
+            Alec Hemenway · Minneapolis, MN
           </div>
         </div>
+        <h1 className="mx-auto mt-10 max-w-[18ch] text-[clamp(34px,5vw,60px)] leading-[1.04] font-extrabold tracking-[-0.035em]">
+          I sell enterprise SaaS — and <Accent>self-source</Accent> my own
+          pipeline with AI.
+        </h1>
+      </section>
 
-        <div>
-          <Eyebrow>About</Eyebrow>
-          <h1 className="mb-7 font-serif text-[clamp(38px,5vw,64px)] leading-[1.02] tracking-[-0.01em]">
-            I sell enterprise SaaS — and{' '}
-            <em className="text-accent italic">self-source</em> my own pipeline
-            with AI.
-          </h1>
-
-          <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
+      <div className="mx-auto mt-14 max-w-[680px]">
+        <Reveal>
+          <p className="text-[17px] leading-[1.75] text-ink-2">
             I’ve spent the last six years selling enterprise software, moving
             from SDR to Senior AE and never missing a number along the way. What
             changed in the last two is how I source: I stopped treating cold
             outbound as a volume problem and started treating it as a{' '}
-            <b className="font-semibold text-espresso">system problem</b>.
+            <b className="font-semibold text-ink">system problem</b>.
           </p>
-          <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
+          <p className="mt-6 text-[17px] leading-[1.75] text-ink-2">
             At Coram I self-sourced{' '}
-            <span className="font-semibold text-accent underline decoration-accent-soft">
+            <span className="font-semibold text-accent">
               $1.6M of pipeline in 7 months
             </span>{' '}
             and closed{' '}
-            <b className="font-semibold text-espresso">$102K net-new ARR</b> by
-            wiring Claude into every step that used to eat my week —
-            buyer-signal research, intent data, account prioritization, and the
-            first-touch outbound itself. The result isn’t a prompt I copy-paste.
-            It’s infrastructure: skills, MCPs, and eval harnesses I actually run
-            in production against real accounts.
+            <b className="font-semibold text-ink">$102K net-new ARR</b> by wiring
+            Claude into every step that used to eat my week — buyer-signal
+            research, intent data, account prioritization, and the first-touch
+            outbound itself. The result isn’t a prompt I copy-paste. It’s
+            infrastructure: skills, MCPs, and eval harnesses I actually run in
+            production against real accounts.
           </p>
-          <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
+          <p className="mt-6 text-[17px] leading-[1.75] text-ink-2">
             At Staffbase I ranked{' '}
-            <b className="font-semibold text-espresso">#2 of 22 AEs at 97%</b> of
+            <b className="font-semibold text-ink">#2 of 22 AEs at 97%</b> of
             $690K quota, generating{' '}
-            <span className="font-semibold text-accent underline decoration-accent-soft">
+            <span className="font-semibold text-accent">
               $1.4M in self-sourced pipeline
             </span>{' '}
             with 75% from net-new logos. I multi-threaded into CHRO, CIO, VP IT,
             Procurement, and CFO buying committees, displacing SharePoint and
             Workplace by Meta through competitive ROI positioning.
           </p>
-          <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
+          <p className="mt-6 text-[17px] leading-[1.75] text-ink-2">
             The AI part isn’t theater. I’ve published{' '}
-            <b className="font-semibold text-espresso">
+            <b className="font-semibold text-ink">
               60+ open-source Claude Code skills
             </b>
             , built a manual-eval-first harness to keep them honest, and run a
@@ -114,69 +118,58 @@ export default function About() {
             link, or open-source code you can read. I sell the category I build
             in — and I can talk to a CRO and an engineer in the same meeting.
           </p>
+        </Reveal>
 
-          <h2 className="mt-11 mb-2 font-serif text-[30px]">
-            What stays true in every seat
-          </h2>
-          <ul className="mt-2 mb-[22px]">
-            {principles.map((principle) => (
-              <li
-                key={principle.lead}
-                className="grid grid-cols-[auto_1fr] gap-[14px] border-b border-line py-3 text-[16px] leading-[1.6] text-prose"
-              >
-                <span className="mt-[9px] h-[7px] w-[7px] rounded-full bg-accent" />
-                <span>
-                  <b className="font-semibold text-espresso">
-                    {principle.lead}
-                  </b>{' '}
-                  {principle.body}
-                </span>
-              </li>
-            ))}
-          </ul>
+        <h2 className="mt-12 mb-3 text-[28px] font-bold tracking-[-0.02em]">
+          What stays true in every seat
+        </h2>
+        <ul className="mt-2">
+          {principles.map((principle) => (
+            <li
+              key={principle.lead}
+              className="grid grid-cols-[auto_1fr] gap-3.5 border-b border-line py-3.5 text-[16px] leading-[1.6] text-ink-2"
+            >
+              <span className="mt-[9px] size-[7px] rounded-full bg-accent" />
+              <span>
+                <b className="font-semibold text-ink">{principle.lead}</b>{' '}
+                {principle.body}
+              </span>
+            </li>
+          ))}
+        </ul>
 
-          <p className="mb-[22px] text-[17px] leading-[1.75] text-prose">
-            Outside the pipeline you’ll find me on a golf course, on a trail
-            somewhere, or shipping the next skill. I’m looking for the next
-            high-stakes enterprise AE seat — ideally at a company building or
-            selling AI.
-          </p>
+        <p className="mt-8 text-[17px] leading-[1.75] text-ink-2">
+          Outside the pipeline you’ll find me on a golf course, on a trail
+          somewhere, or shipping the next skill. I’m looking for the next
+          high-stakes enterprise AE seat — ideally at a company building or
+          selling AI.
+        </p>
 
-          <div className="mt-[30px] flex flex-wrap gap-3">
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                {...(link.newTab
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
-                className="inline-flex items-center gap-[9px] rounded-full border border-line bg-card px-[18px] py-[10px] text-sm font-semibold transition-colors hover:border-espresso hover:text-accent"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {contactLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              {...(link.newTab
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+              className="inline-flex items-center gap-2 border border-line px-[18px] py-2.5 font-mono text-[12.5px] text-ink-2 transition-colors hover:border-accent hover:text-accent"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
-      </section>
+      </div>
 
       <ClosingBand
         heading={
           <>
-            Think we’d <em className="text-accent-soft italic">work well</em>{' '}
-            together?
+            Think we’d <Accent>work well</Accent> together?
           </>
         }
         paragraph="I reply to every real message within 48 hours. Tell me about the seat and the number."
-        primary={{
-          label: 'See what I’m looking for',
-          arrow: '→',
-          href: '/work-with-me',
-        }}
-        secondary={{
-          label: 'Get in touch',
-          arrow: '↗',
-          href: 'mailto:alec@hemenway.io',
-        }}
+        primary={{ label: 'See what I’m looking for', arrow: '→', href: '/work-with-me' }}
+        secondary={{ label: 'Get in touch', arrow: '↗', href: 'mailto:alec@hemenway.io' }}
       />
     </Wrap>
   )
