@@ -6,51 +6,44 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Runtime-themed tokens: utilities reference these vars, values switch by class */
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, 'SFMono-Regular', monospace;
+
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+}
+
+/* Static design tokens */
 @theme {
-  /* Premium direction — fonts (wired to next/font CSS variables in layout.tsx) */
-  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
-
-  /* Premium direction — palette (single source of truth: design/premium.css) */
-  --color-cream: #f3ede2;
-  --color-cream-2: #ece3d4;
-  --color-espresso: #2a231b;
-  --color-soft: #857b6c;
-  --color-line: #d9cfbd;
-  --color-accent: oklch(0.55 0.13 48); /* warm terracotta */
-  --color-accent-soft: oklch(0.72 0.13 52);
-  --color-card: #faf6ee;
-  /* long-form prose browns */
-  --color-prose: #4d4438;
-  --color-prose-2: #534a3d;
-  --color-prose-3: #594f41;
-  --color-band-muted: #c9bda9; /* muted text on espresso closing band */
-
-  /* Premium direction — soft shadows */
-  --shadow-card-hover: 0 28px 50px -30px rgba(42, 35, 27, 0.42);
-  --shadow-portrait: 0 40px 70px -34px rgba(42, 35, 27, 0.5);
-  --shadow-figure: 0 44px 80px -36px rgba(42, 35, 27, 0.5);
-  --shadow-strip: 0 20px 40px -26px rgba(42, 35, 27, 0.4);
-  --shadow-tagchip: 0 14px 30px -16px rgba(42, 35, 27, 0.4);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.5rem;
   --text-sm: 0.875rem;
   --text-sm--line-height: 1.5rem;
   --text-base: 1rem;
-  --text-base--line-height: 1.75rem;
+  --text-base--line-height: 1.7rem;
   --text-lg: 1.125rem;
-  --text-lg--line-height: 1.75rem;
+  --text-lg--line-height: 1.7rem;
   --text-xl: 1.25rem;
   --text-xl--line-height: 2rem;
   --text-2xl: 1.5rem;
   --text-2xl--line-height: 2rem;
   --text-3xl: 1.875rem;
   --text-3xl--line-height: 2.25rem;
-  --text-4xl: 2rem;
+  --text-4xl: 2.25rem;
   --text-4xl--line-height: 2.5rem;
   --text-5xl: 3rem;
-  --text-5xl--line-height: 3.5rem;
+  --text-5xl--line-height: 1.05;
   --text-6xl: 3.75rem;
   --text-6xl--line-height: 1;
   --text-7xl: 4.5rem;
@@ -61,11 +54,51 @@
   --text-9xl--line-height: 1;
 }
 
+/* Light (default / fallback) */
+:root,
+.light {
+  --bg: #faf8f4;
+  --bg-2: #f2eee7;
+  --surface: #ffffff;
+  --ink: #171410;
+  --ink-2: #6b6358;
+  --line: rgba(0, 0, 0, 0.12);
+  --accent: #b97e12; /* darker gold for AA on light */
+  --accent-2: #e8b04b;
+}
+
+/* Dark (default theme via next-themes) */
+.dark {
+  --bg: #0a0a0b;
+  --bg-2: #111113;
+  --surface: #16151a;
+  --ink: #f4f1eb;
+  --ink-2: #9c968b;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #e8b04b;
+  --accent-2: #f6c66c;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
     line-height: 1.6;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  /* Visible focus ring on keyboard nav */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
