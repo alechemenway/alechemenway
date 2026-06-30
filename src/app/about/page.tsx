@@ -37,7 +37,7 @@ const contactLinks: { label: string; href: string; newTab?: boolean }[] = [
   { label: 'Email me ↗', href: 'mailto:alec@hemenway.io' },
   { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/alec-hemenway/' },
   { label: 'GitHub ↗', href: 'https://github.com/alechemenway' },
-  { label: 'Download résumé ↓', href: '/alechemenway_resume2026.pdf', newTab: true },
+  { label: 'Download résumé ↓', href: '/Alec_Hemenway_Ramp_MM_AE_1pg.pdf', newTab: true },
 ]
 
 export default function About() {

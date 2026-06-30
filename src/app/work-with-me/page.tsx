@@ -93,9 +93,9 @@ export default function WorkWithMe() {
         </p>
       </header>
 
-      <RevealGroup className="mt-12 grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
+      <RevealGroup className="mt-12 grid auto-rows-fr grid-cols-2 items-stretch gap-6 max-[880px]:grid-cols-1">
         {panels.map((panel) => (
-          <div key={panel.title} className="border border-line bg-surface px-9 py-10">
+          <div key={panel.title} className="h-full border border-line bg-surface px-9 py-10">
             <div className="mb-2 font-mono text-[12px] tracking-[0.12em] text-accent uppercase">
               {panel.label}
             </div>
