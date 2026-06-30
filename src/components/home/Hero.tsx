@@ -107,7 +107,7 @@ export function Hero() {
             View the work
           </Button>
           <Button
-            href="/alechemenway_resume2026.pdf"
+            href="/Alec_Hemenway_Ramp_MM_AE_1pg.pdf"
             variant="ghost"
             arrow="↓"
             target="_blank"

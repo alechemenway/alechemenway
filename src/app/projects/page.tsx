@@ -39,19 +39,8 @@ const projects: Project[] = [
     badge: 'Demo',
   },
   {
-    title: 'TAO subnet scanner',
-    index: '03',
-    description:
-      'Cross-subnet concentration scoring + tier ranking for Bittensor positions. Flags structurally healthy subnets before momentum traders pile in.',
-    outcome: '3 of 5 top subnets caught pre-runup',
-    chips: ['Python', 'Bittensor SDK', 'Notion sync'],
-    link: 'Read methodology',
-    href: GITHUB,
-    badge: 'Research',
-  },
-  {
     title: 'GTM skill library',
-    index: '04',
+    index: '03',
     description:
       '60+ open-source Claude Code skills for sales, marketing, and operator workflows. Drop-in skillpack for any Claude stack. Published v2-generalized branch.',
     outcome: 'Public skill catalogue, free to install',
@@ -61,37 +50,59 @@ const projects: Project[] = [
     badge: 'Open source',
   },
   {
-    title: 'Skill eval harness',
+    title: 'DailyOK',
+    index: '04',
+    description:
+      'Daily AI voice calls that check in on seniors and score eight dimensions of cognitive and emotional health from natural conversation — surfacing decline early for family and care teams. Caregiver dashboard, SMS alerts, HIPAA-grade data handling.',
+    outcome: 'HIPAA-grade voice pipeline, pilot-ready',
+    chips: ['Voice AI', 'Twilio', 'HIPAA'],
+    link: 'Read writeup',
+    href: 'https://github.com/alechemenway/dailyok-dashboard',
+    badge: 'PHASE 0',
+  },
+  {
+    title: 'AI ROI Teardown',
     index: '05',
     description:
-      'Manual-eval-first framework for Claude Code skills. Tracks per-skill quality with delay + backoff for rate limits and structured grader output.',
-    outcome: '58 tracked tasks, Phase 0 live',
-    chips: ['Claude API', 'Skills API', 'Notion DB'],
-    link: 'See approach',
-    href: GITHUB,
-    badge: 'Phase 0',
+      'Turns an AI use case into the teardown a buyer actually needs — token and infra cost model, accuracy bar, failure-mode taxonomy, build-vs-buy math. The bridge between what engineers ship and what a CFO will sign.',
+    outcome: 'Built as buyer + interview artifacts',
+    chips: ['Claude', 'Cost modeling', 'Eval design'],
+    link: 'Read a teardown',
+    href: '#', // TODO: link
+    badge: 'FRAMEWORK',
   },
   {
-    title: 'Three-layer memory system',
+    title: 'LLM Council',
     index: '06',
     description:
-      'Local auto-memory + Notion AI Memory Vault + weekly archive. Personal infrastructure for keeping Claude useful across months and projects.',
-    outcome: 'Survives every model + workspace migration',
-    chips: ['Claude Code', 'Notion API', 'PowerShell'],
-    link: 'Read writeup',
-    href: GITHUB,
-    badge: 'Infra',
+      "Routes a decision to five independent AI advisors, has them anonymously critique each other, then synthesizes a weighted verdict. Catches the blind spots a single model talks itself into. Modeled on Karpathy's LLM Council.",
+    outcome: '5 models, anonymous peer review',
+    chips: ['Claude', 'Multi-model', 'Peer review'],
+    link: 'See the method',
+    href: '#', // TODO: link
+    badge: 'FRAMEWORK',
   },
   {
-    title: 'Land-the-screen outbound',
+    title: 'Inbox Copilot',
     index: '07',
     description:
-      'Job-application-to-recruiter outreach pipeline. Daily auto-drafts post-application bumps from a Notion Applications Tracker.',
-    outcome: '25+ tracked applications, automated follow-up',
-    chips: ['Claude', 'Notion DB', 'Scheduled agents'],
-    link: 'See pipeline',
-    href: GITHUB,
-    badge: 'Pipeline',
+      'Reads important-unread mail, pulls deal and CRM context, and drafts replies matched to sender type — then learns from which drafts I send, edit, or kill. Drafts only; nothing leaves without me.',
+    outcome: 'Learns from every edit',
+    chips: ['Claude', 'Gmail API', 'Learning loop'],
+    link: 'Read the writeup',
+    href: '#', // TODO: link
+    badge: 'AUTOMATION',
+  },
+  {
+    title: 'Maintainer Orchestrator',
+    index: '08',
+    description:
+      'A control-plane agent that triages multi-repo work, hands implementation to worker subagents, and brings back decision-ready PRs. Coordination and execution on separate planes — a real multi-agent system, not one long prompt pretending to be one.',
+    outcome: 'Control plane + worker subagents',
+    chips: ['Claude Code', 'Subagents', 'GitHub'],
+    link: 'See the architecture',
+    href: '#', // TODO: link
+    badge: 'AGENTS',
   },
 ]
 
