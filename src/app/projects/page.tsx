@@ -25,6 +25,7 @@ const projects: Project[] = [
     chips: ['Deal intelligence', 'Rep coaching', 'Sales AI'],
     link: 'Visit Rep Coaching',
     href: 'https://www.repcoaching.io/',
+    cover: 'dashboard',
     badge: 'Live',
   },
   {
@@ -36,6 +37,7 @@ const projects: Project[] = [
     chips: ['Claude', 'Apollo API', 'Vercel Functions'],
     link: 'Open demo',
     href: GITHUB,
+    cover: 'leads',
     badge: 'Demo',
   },
   {
@@ -47,6 +49,7 @@ const projects: Project[] = [
     chips: ['Claude Code', 'Bash', 'MDX'],
     link: 'View on GitHub',
     href: GITHUB,
+    cover: 'skills',
     badge: 'Open source',
   },
   {
@@ -58,6 +61,7 @@ const projects: Project[] = [
     chips: ['Voice AI', 'Twilio', 'HIPAA'],
     link: 'Read writeup',
     href: 'https://github.com/alechemenway/dailyok-dashboard',
+    cover: 'voice',
     badge: 'PHASE 0',
   },
   {
@@ -69,6 +73,7 @@ const projects: Project[] = [
     chips: ['Claude', 'Cost modeling', 'Eval design'],
     link: 'Read a teardown',
     href: '#', // TODO: link
+    cover: 'teardown',
     badge: 'FRAMEWORK',
   },
   {
@@ -80,6 +85,7 @@ const projects: Project[] = [
     chips: ['Claude', 'Multi-model', 'Peer review'],
     link: 'See the method',
     href: '#', // TODO: link
+    cover: 'council',
     badge: 'FRAMEWORK',
   },
   {
@@ -91,6 +97,7 @@ const projects: Project[] = [
     chips: ['Claude', 'Gmail API', 'Learning loop'],
     link: 'Read the writeup',
     href: '#', // TODO: link
+    cover: 'inbox',
     badge: 'AUTOMATION',
   },
   {
@@ -102,6 +109,7 @@ const projects: Project[] = [
     chips: ['Claude Code', 'Subagents', 'GitHub'],
     link: 'See the architecture',
     href: '#', // TODO: link
+    cover: 'orchestrator',
     badge: 'AGENTS',
   },
 ]
