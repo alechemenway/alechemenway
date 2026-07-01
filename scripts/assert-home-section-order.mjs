@@ -8,6 +8,10 @@ const hero = readFileSync(
   resolve(__dirname, '../src/components/home/Hero.tsx'),
   'utf8',
 )
+const closingBand = readFileSync(
+  resolve(__dirname, '../src/components/ClosingBand.tsx'),
+  'utf8',
+)
 
 const soldSectionIndex = homePage.indexOf(
   'Where I&rsquo;ve <Accent>sold.</Accent>',
@@ -70,6 +74,10 @@ if (!hero.includes('pt-20 pb-[50px]')) {
   throw new Error(
     'Hero bottom padding should be 30px tighter than the top padding.',
   )
+}
+
+if (!closingBand.includes('py-[100px]')) {
+  throw new Error('Closing CTA band top and bottom padding should be 100px.')
 }
 
 console.log('Home page section order and metrics layout are correct.')
