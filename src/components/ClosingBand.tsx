@@ -49,7 +49,7 @@ export function ClosingBand({
   secondary: BandButton
 }) {
   return (
-    <section className="relative overflow-hidden py-28 max-[880px]:py-20">
+    <section className="relative overflow-hidden py-[100px] max-[880px]:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 [background:radial-gradient(60%_80%_at_50%_120%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)]"
