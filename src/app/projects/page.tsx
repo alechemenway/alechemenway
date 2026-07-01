@@ -26,6 +26,10 @@ const projects: Project[] = [
     link: 'Visit Rep Coaching',
     href: 'https://www.repcoaching.io/',
     cover: 'dashboard',
+    image: {
+      src: '/repcoach-card.png',
+      alt: 'RepCoach product screenshot',
+    },
     badge: 'Live',
   },
   {
@@ -62,6 +66,10 @@ const projects: Project[] = [
     link: 'Read writeup',
     href: 'https://github.com/alechemenway/dailyok-dashboard',
     cover: 'voice',
+    image: {
+      src: '/dailyok-card.png',
+      alt: 'DailyOK product screenshot',
+    },
     badge: 'PHASE 0',
   },
   {
@@ -126,9 +134,8 @@ export default function Projects() {
           <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-ink-2">
             A working catalogue of the AI workflows, skills, and operator tools
             I&rsquo;ve built and run in real revenue and personal-ops motions.
-            Each one has{' '}
-            <b className="font-semibold text-ink">receipts</b> — time saved,
-            outcomes hit, or a live link to the artifact itself.
+            Each one has <b className="font-semibold text-ink">receipts</b> —
+            time saved, outcomes hit, or a live link to the artifact itself.
           </p>
         </Reveal>
       </header>
@@ -146,7 +153,11 @@ export default function Projects() {
           </>
         }
         paragraph="Most of these are open-source or live demos. The rest I'm happy to walk through. I reply to every real message within 48 hours."
-        primary={{ label: 'Get in touch', arrow: '→', href: 'mailto:alec@hemenway.io' }}
+        primary={{
+          label: 'Get in touch',
+          arrow: '→',
+          href: 'mailto:alec@hemenway.io',
+        }}
         secondary={{ label: 'Browse GitHub', arrow: '↗', href: GITHUB }}
       />
     </Wrap>
