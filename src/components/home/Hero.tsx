@@ -59,7 +59,7 @@ export function Hero() {
   const reduce = useReducedMotion() ?? false
 
   return (
-    <header className="relative flex min-h-[64svh] items-center overflow-hidden py-20">
+    <header className="relative flex min-h-[64svh] items-center overflow-hidden pt-20 pb-[50px]">
       <FlowField className="absolute inset-0 h-full w-full" density={1.4} />
       <div
         aria-hidden
