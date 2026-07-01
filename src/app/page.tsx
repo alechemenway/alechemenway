@@ -59,10 +59,22 @@ const featuredProjects: Project[] = [
 ]
 
 const metrics = [
-  { main: '$3', unit: 'M+', label: 'Self-sourced pipeline across my last two roles' },
-  { main: '$1.6', unit: 'M', label: 'Self-sourced pipeline at Coram in 7 months' },
+  {
+    main: '$3',
+    unit: 'M+',
+    label: 'Self-sourced pipeline across my last two roles',
+  },
+  {
+    main: '$1.6',
+    unit: 'M',
+    label: 'Self-sourced pipeline at Coram in 7 months',
+  },
   { main: '#2', unit: '/22', label: '97% of $690K quota at Staffbase' },
-  { main: '112', unit: '%', label: 'Quota at Jamf · Pinnacle Club · top 5% globally' },
+  {
+    main: '112',
+    unit: '%',
+    label: 'Quota at Jamf · Pinnacle Club · top 5% globally',
+  },
 ]
 
 const roles = [
@@ -103,11 +115,14 @@ export default function Home() {
     <>
       <Hero />
 
-      <Reveal className="border-y border-line bg-bg-2">
+      <Reveal className="my-16 border-y border-line bg-bg-2 max-[880px]:my-10">
         <Wrap>
-          <div className="grid grid-cols-4 max-[880px]:grid-cols-2 [&>div:last-child]:border-r-0 [&>div]:border-r [&>div]:border-line max-[880px]:[&>div:nth-child(2)]:border-r-0">
+          <div className="grid auto-rows-fr grid-cols-4 max-[880px]:grid-cols-2 [&>div]:border-r [&>div]:border-line [&>div:last-child]:border-r-0 max-[880px]:[&>div:nth-child(2)]:border-r-0">
             {metrics.map((m) => (
-              <div key={m.label} className="px-7 py-10 max-[880px]:px-5">
+              <div
+                key={m.label}
+                className="flex min-h-[188px] flex-col items-center justify-center px-7 py-10 text-center max-[880px]:min-h-[168px] max-[880px]:px-5"
+              >
                 <div className="font-mono text-[clamp(32px,4vw,52px)] leading-none font-extrabold tracking-[-0.03em]">
                   {m.main}
                   <span className="text-accent">{m.unit}</span>
@@ -122,23 +137,7 @@ export default function Home() {
       </Reveal>
 
       <Wrap>
-        <section className="py-24 max-[880px]:py-16">
-          <Reveal>
-            <SectionHead
-              kicker="Selected work"
-              more={{ label: 'All projects →', href: '/projects' }}
-            >
-              AI systems I&rsquo;ve <Accent>shipped.</Accent>
-            </SectionHead>
-          </Reveal>
-          <RevealGroup className="grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
-            {featuredProjects.map((project, i) => (
-              <ProjectCard key={project.title} project={project} seed={i + 1} />
-            ))}
-          </RevealGroup>
-        </section>
-
-        <section className="pb-24 max-[880px]:pb-16">
+        <section className="pt-4 pb-24 max-[880px]:pb-16">
           <Reveal>
             <SectionHead
               kicker="The receipts"
@@ -158,7 +157,9 @@ export default function Home() {
                 key={role.years}
                 className="grid grid-cols-[180px_1fr_auto] items-center gap-6 border-b border-line py-6 transition-transform duration-300 hover:translate-x-1.5 max-[880px]:grid-cols-1 max-[880px]:gap-1.5"
               >
-                <span className="font-mono text-[12px] text-ink-2">{role.years}</span>
+                <span className="font-mono text-[12px] text-ink-2">
+                  {role.years}
+                </span>
                 <div>
                   <div className="text-[22px] font-bold tracking-[-0.02em]">
                     {role.company}
@@ -173,6 +174,22 @@ export default function Home() {
           </RevealGroup>
         </section>
 
+        <section className="pb-24 max-[880px]:pb-16">
+          <Reveal>
+            <SectionHead
+              kicker="Selected work"
+              more={{ label: 'All projects →', href: '/projects' }}
+            >
+              AI systems I&rsquo;ve <Accent>shipped.</Accent>
+            </SectionHead>
+          </Reveal>
+          <RevealGroup className="grid grid-cols-2 gap-6 max-[880px]:grid-cols-1">
+            {featuredProjects.map((project, i) => (
+              <ProjectCard key={project.title} project={project} seed={i + 1} />
+            ))}
+          </RevealGroup>
+        </section>
+
         <ClosingBand
           heading={
             <>
@@ -180,7 +197,11 @@ export default function Home() {
             </>
           }
           paragraph="I'm looking for a high-stakes role where self-sourced pipeline and a builder's instinct are features, not extras — ideally at a company building or selling AI."
-          primary={{ label: 'Get in touch', arrow: '→', href: 'mailto:alec@hemenway.io' }}
+          primary={{
+            label: 'Get in touch',
+            arrow: '→',
+            href: 'mailto:alec@hemenway.io',
+          }}
           secondary={{
             label: 'Connect on LinkedIn',
             arrow: '↗',
