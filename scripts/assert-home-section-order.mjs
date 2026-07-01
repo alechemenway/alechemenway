@@ -66,4 +66,10 @@ if (!hero.includes('min-h-[64svh]')) {
   )
 }
 
+if (!hero.includes('pt-20 pb-[50px]')) {
+  throw new Error(
+    'Hero bottom padding should be 30px tighter than the top padding.',
+  )
+}
+
 console.log('Home page section order and metrics layout are correct.')
