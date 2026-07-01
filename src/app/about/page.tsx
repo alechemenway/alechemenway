@@ -71,7 +71,7 @@ export default function About() {
             {proofPoints.map((point) => (
               <div
                 key={point.label}
-                className="py-5 pr-6 max-[700px]:border-b max-[700px]:border-line max-[700px]:last:border-b-0 min-[701px]:border-r min-[701px]:border-line min-[701px]:last:border-r-0"
+                className="px-6 py-5 max-[700px]:border-b max-[700px]:border-line max-[700px]:px-5 max-[700px]:last:border-b-0 min-[701px]:border-r min-[701px]:border-line min-[701px]:last:border-r-0"
               >
                 <div className="font-mono text-[24px] leading-none font-extrabold text-accent">
                   {point.value}
