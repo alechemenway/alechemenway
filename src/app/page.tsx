@@ -17,6 +17,10 @@ const featuredProjects: Project[] = [
     link: 'Visit Rep Coaching',
     href: 'https://www.repcoaching.io/',
     badge: 'Live',
+    image: {
+      src: '/repcoach-card.png',
+      alt: 'RepCoach product screenshot',
+    },
   },
   {
     title: 'Apollo prospecting skill',
@@ -41,15 +45,16 @@ const featuredProjects: Project[] = [
     badge: 'Open source',
   },
   {
-    title: 'Skill eval harness',
+    title: 'AI ROI Teardown',
     index: '04',
     description:
-      'Manual-eval-first framework tracking per-skill quality with backoff for rate limits and structured grading. 58 tracked tasks, Phase 0 live.',
-    outcome: '58 tracked tasks, Phase 0 live',
-    chips: ['Claude API', 'Skills API', 'Notion DB'],
-    link: 'See approach',
-    href: 'https://github.com/alechemenway',
-    badge: 'Phase 0',
+      'Turns an AI use case into the teardown a buyer actually needs — token and infra cost model, accuracy bar, failure-mode taxonomy, build-vs-buy math. The bridge between what engineers ship and what a CFO will sign.',
+    outcome: 'Built as buyer + interview artifacts',
+    chips: ['Claude', 'Cost modeling', 'Eval design'],
+    link: 'Read a teardown',
+    href: '#',
+    cover: 'teardown',
+    badge: 'FRAMEWORK',
   },
 ]
 
@@ -102,7 +107,7 @@ export default function Home() {
         <Wrap>
           <div className="grid grid-cols-4 max-[880px]:grid-cols-2 [&>div:last-child]:border-r-0 [&>div]:border-r [&>div]:border-line max-[880px]:[&>div:nth-child(2)]:border-r-0">
             {metrics.map((m) => (
-              <div key={m.label} className="py-10 pr-7">
+              <div key={m.label} className="px-7 py-10 max-[880px]:px-5">
                 <div className="font-mono text-[clamp(32px,4vw,52px)] leading-none font-extrabold tracking-[-0.03em]">
                   {m.main}
                   <span className="text-accent">{m.unit}</span>
