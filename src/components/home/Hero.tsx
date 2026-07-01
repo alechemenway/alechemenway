@@ -59,7 +59,7 @@ export function Hero() {
   const reduce = useReducedMotion() ?? false
 
   return (
-    <header className="relative flex min-h-[88svh] items-center overflow-hidden py-20">
+    <header className="relative flex min-h-[64svh] items-center overflow-hidden py-20">
       <FlowField className="absolute inset-0 h-full w-full" density={1.4} />
       <div
         aria-hidden
@@ -102,7 +102,11 @@ export function Hero() {
           </p>
         </FadeUp>
 
-        <FadeUp delay={0.46} reduce={reduce} className="mt-9 flex flex-wrap items-center gap-3.5">
+        <FadeUp
+          delay={0.46}
+          reduce={reduce}
+          className="mt-9 flex flex-wrap items-center gap-3.5"
+        >
           <Button href="/projects" variant="solid" arrow="→">
             View the work
           </Button>
@@ -117,14 +121,27 @@ export function Hero() {
           </Button>
         </FadeUp>
 
-        <FadeUp delay={0.56} reduce={reduce} className="mt-7 flex gap-6 font-mono text-[12px] tracking-[0.04em] text-ink-2">
-          <a href="https://github.com/alechemenway" className="transition-colors hover:text-accent">
+        <FadeUp
+          delay={0.56}
+          reduce={reduce}
+          className="mt-7 flex gap-6 font-mono text-[12px] tracking-[0.04em] text-ink-2"
+        >
+          <a
+            href="https://github.com/alechemenway"
+            className="transition-colors hover:text-accent"
+          >
             GitHub ↗
           </a>
-          <a href="https://www.linkedin.com/in/alec-hemenway/" className="transition-colors hover:text-accent">
+          <a
+            href="https://www.linkedin.com/in/alec-hemenway/"
+            className="transition-colors hover:text-accent"
+          >
             LinkedIn ↗
           </a>
-          <a href="mailto:alec@hemenway.io" className="transition-colors hover:text-accent">
+          <a
+            href="mailto:alec@hemenway.io"
+            className="transition-colors hover:text-accent"
+          >
             Email ↗
           </a>
         </FadeUp>
