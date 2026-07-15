@@ -11,7 +11,7 @@ import portrait from '@/images/portrait-2026.jpg'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Alec Hemenway — enterprise SaaS Account Executive who self-sources pipeline with AI. Six years selling, a four-year quota streak, and 60+ open-source Claude Code skills.',
+    'Alec Hemenway — enterprise SaaS Account Executive who self-sources pipeline with AI. seven years selling, a four-year quota streak, and 60+ open-source Claude Code skills.',
 }
 
 const principles = [
@@ -171,8 +171,8 @@ export default function About() {
         <div className="col-span-7 col-start-5 max-w-[720px] max-[880px]:col-span-1 max-[880px]:col-start-auto">
           <Reveal>
             <p className="text-[17px] leading-[1.75] text-ink-2">
-              I’ve spent the last six years selling enterprise software, moving
-              from SDR to Senior AE and never missing a number along the way. What
+              I’ve spent the last seven years selling enterprise software, moving
+              from SDR to Senior AE at or near 100% of quota every year. What
               changed in the last two is how I source: I stopped treating cold
               outbound as a volume problem and started treating it as a{' '}
               <b className="font-semibold text-ink">system problem</b>.

@@ -61,19 +61,19 @@ const featuredProjects: Project[] = [
 const metrics = [
   {
     main: '$3',
-    unit: 'M+',
+    unit: 'M',
     label: 'Self-sourced pipeline across my last two roles',
   },
-  {
-    main: '$1.6',
-    unit: 'M',
-    label: 'Self-sourced pipeline at Coram in 7 months',
-  },
-  { main: '#2', unit: '/22', label: '97% of $690K quota at Staffbase' },
   {
     main: '112',
     unit: '%',
     label: 'Quota at Jamf · Pinnacle Club · top 5% globally',
+  },
+  { main: '#2', unit: '/22', label: '97% of $690K quota at Staffbase' },
+  {
+    main: '60',
+    unit: '+',
+    label: 'Open-source AI sales skills, shipped and public',
   },
 ]
 
@@ -82,12 +82,12 @@ const roles = [
     years: 'Oct 2025 – May 2026',
     company: 'Coram AI',
     title: 'Enterprise Account Executive',
-    metric: '$1.6M self-sourced pipeline in 7 months',
+    metric: '$1.6M self-sourced pipeline in 7 months · $102K net-new ARR closed',
   },
   {
     years: 'Jul 2024 – Sep 2025',
     company: 'Staffbase',
-    title: 'Enterprise Account Executive · Top-2 of 22',
+    title: 'Enterprise Account Executive · #2 of 22',
     metric: '97% of $690K quota',
   },
   {
@@ -196,7 +196,7 @@ export default function Home() {
               Let&rsquo;s talk about the <Accent>next seat.</Accent>
             </>
           }
-          paragraph="I'm looking for a high-stakes role where self-sourced pipeline and a builder's instinct are features, not extras — ideally at a company building or selling AI."
+          paragraph="I'm looking for a high-stakes senior enterprise AE role where self-sourced pipeline and a builder's instinct are features, not extras — ideally at a company building or selling AI. Remote or Minneapolis-based."
           primary={{
             label: 'Get in touch',
             arrow: '→',
