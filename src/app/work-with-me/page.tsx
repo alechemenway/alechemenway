@@ -87,9 +87,9 @@ export default function WorkWithMe() {
           The next seat I’m <Accent>looking for.</Accent>
         </h1>
         <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-ink-2">
-          I’m looking for a high-stakes enterprise AE role — ideally at a company
-          building or selling AI, where self-sourced pipeline and a builder’s
-          instinct are features, not extras.
+          I’m looking for a high-stakes senior enterprise AE role — ideally at a
+          company building or selling AI, where self-sourced pipeline and a builder’s
+          instinct are features, not extras. Remote or Minneapolis-based.
         </p>
       </header>
 
