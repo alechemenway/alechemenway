@@ -82,7 +82,7 @@ const roles = [
     years: 'Oct 2025 – May 2026',
     company: 'Coram AI',
     title: 'Enterprise Account Executive',
-    metric: '$1.6M self-sourced pipeline in 7 months',
+    metric: '$1.6M self-sourced pipeline in 7 months · $102K net-new ARR closed',
   },
   {
     years: 'Jul 2024 – Sep 2025',
