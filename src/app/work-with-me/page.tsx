@@ -20,7 +20,7 @@ const panels = [
     items: [
       {
         lead: 'Self-sourced pipeline',
-        body: '$3M+ generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
+        body: '$3M generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
       },
       {
         lead: 'A four-year quota streak',
