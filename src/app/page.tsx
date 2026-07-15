@@ -143,7 +143,7 @@ export default function Home() {
               kicker="The receipts"
               more={{
                 label: 'Download résumé →',
-                href: '/Alec_Hemenway_Ramp_MM_AE_1pg.pdf',
+                href: '/Alec_Hemenway_Resume_2026_1pg_v4.pdf',
                 target: '_blank',
                 rel: 'noopener noreferrer',
               }}
