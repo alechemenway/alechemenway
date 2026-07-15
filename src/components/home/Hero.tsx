@@ -94,10 +94,10 @@ export function Hero() {
 
         <FadeUp delay={0.36} reduce={reduce}>
           <p className="mt-7 max-w-[52ch] text-[clamp(16px,1.35vw,19px)] leading-[1.62] text-ink-2">
-            Enterprise AE with a four-year quota streak, and a GTM developer who
-            ships the systems behind the number — prospecting skills, eval
-            harnesses, live products.{' '}
-            <b className="font-semibold text-ink">$3M+ self-sourced pipeline</b>{' '}
+            Enterprise AE at or near 100% of quota four years running, and a GTM
+            developer who ships the systems behind the number — prospecting
+            skills, eval harnesses, live products.{' '}
+            <b className="font-semibold text-ink">$3M self-sourced pipeline</b>{' '}
             is the proof, not the pitch.
           </p>
         </FadeUp>
