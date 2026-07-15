@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 const principles = [
   {
     lead: 'Self-sourced pipeline.',
-    body: '$3M+ generated across my last two roles without waiting on marketing or SDR coverage.',
+    body: '$3M generated across my last two roles without waiting on marketing or SDR coverage.',
   },
   {
     lead: 'Consistent attainment.',
-    body: 'Four-year quota streak at Jamf; #2 of 22 reps at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
+    body: '112% at Jamf with 100%+ the three prior years; #2 of 22 reps at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
   },
   {
     lead: 'Receipts over hype.',
