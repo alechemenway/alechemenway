@@ -196,7 +196,7 @@ export default function Home() {
               Let&rsquo;s talk about the <Accent>next seat.</Accent>
             </>
           }
-          paragraph="I'm looking for a high-stakes role where self-sourced pipeline and a builder's instinct are features, not extras — ideally at a company building or selling AI."
+          paragraph="I'm looking for a high-stakes senior enterprise AE role where self-sourced pipeline and a builder's instinct are features, not extras — ideally at a company building or selling AI. Remote or Minneapolis-based."
           primary={{
             label: 'Get in touch',
             arrow: '→',
