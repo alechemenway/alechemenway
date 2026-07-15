@@ -61,19 +61,19 @@ const featuredProjects: Project[] = [
 const metrics = [
   {
     main: '$3',
-    unit: 'M+',
+    unit: 'M',
     label: 'Self-sourced pipeline across my last two roles',
   },
-  {
-    main: '$1.6',
-    unit: 'M',
-    label: 'Self-sourced pipeline at Coram in 7 months',
-  },
-  { main: '#2', unit: '/22', label: '97% of $690K quota at Staffbase' },
   {
     main: '112',
     unit: '%',
     label: 'Quota at Jamf · Pinnacle Club · top 5% globally',
+  },
+  { main: '#2', unit: '/22', label: '97% of $690K quota at Staffbase' },
+  {
+    main: '60',
+    unit: '+',
+    label: 'Open-source AI sales skills, shipped and public',
   },
 ]
 
