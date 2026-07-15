@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const principles = [
   {
     lead: 'Self-sourced pipeline.',
-    body: '$3M+ generated across my last two roles without waiting on marketing or SDR coverage.',
+    body: '$3M generated across my last two roles without waiting on marketing or SDR coverage.',
   },
   {
     lead: 'Consistent attainment.',
