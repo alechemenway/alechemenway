@@ -23,8 +23,8 @@ const panels = [
         body: '$3M generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
       },
       {
-        lead: 'A four-year quota streak',
-        body: 'Never missed a number from SDR through Senior AE at Jamf; #2 of 22 at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
+        lead: 'At or near 100%, four years running',
+        body: '112% at Jamf (Pinnacle Club 2023, top 5% globally) with 100%+ the years prior; #2 of 22 at 97% attainment at Staffbase.',
       },
       {
         lead: 'Real AI infrastructure',
