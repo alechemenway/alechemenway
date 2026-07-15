@@ -87,7 +87,7 @@ const roles = [
   {
     years: 'Jul 2024 – Sep 2025',
     company: 'Staffbase',
-    title: 'Enterprise Account Executive · Top-2 of 22',
+    title: 'Enterprise Account Executive · #2 of 22',
     metric: '97% of $690K quota',
   },
   {
