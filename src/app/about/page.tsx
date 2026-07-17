@@ -6,7 +6,7 @@ import { Eyebrow } from '@/components/Eyebrow'
 import { Accent } from '@/components/Accent'
 import { Reveal } from '@/components/motion/Reveal'
 import { ClosingBand } from '@/components/ClosingBand'
-import portrait from '@/images/portrait-2026.jpg'
+import portrait from '@/images/about-hero-2026.png'
 
 export const metadata: Metadata = {
   title: 'About',
