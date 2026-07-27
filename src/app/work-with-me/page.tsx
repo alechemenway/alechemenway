@@ -20,11 +20,11 @@ const panels = [
     items: [
       {
         lead: 'Self-sourced pipeline',
-        body: '$3M+ generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
+        body: '$3M generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
       },
       {
-        lead: 'A four-year quota streak',
-        body: 'Never missed a number from SDR through Senior AE at Jamf; #2 of 22 at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
+        lead: 'At or near 100%, four years running',
+        body: '112% at Jamf (Pinnacle Club 2023, top 5% globally) with 100%+ the years prior; #2 of 22 at 97% attainment at Staffbase.',
       },
       {
         lead: 'Real AI infrastructure',
@@ -87,9 +87,9 @@ export default function WorkWithMe() {
           The next seat I’m <Accent>looking for.</Accent>
         </h1>
         <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-ink-2">
-          I’m looking for a high-stakes enterprise AE role — ideally at a company
-          building or selling AI, where self-sourced pipeline and a builder’s
-          instinct are features, not extras.
+          I’m looking for a high-stakes senior enterprise AE role — ideally at a
+          company building or selling AI, where self-sourced pipeline and a builder’s
+          instinct are features, not extras. Remote or Minneapolis-based.
         </p>
       </header>
 
