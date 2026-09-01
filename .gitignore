@@ -45,3 +45,8 @@ da5bf36f-*.png
 
 # designlang raw extraction output (bulky; curated tokens live in .design/)
 design-extract-output/
+
+# session continuity scaffolding (local, per-session; not shipped)
+/SESSION_HANDOFF.md
+/TODO.md
+/project-state-summary.html
