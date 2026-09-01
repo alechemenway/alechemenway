@@ -42,3 +42,6 @@ screenshots/
 references_portfolio/
 da5bf36f-*.png
 .claude/
+
+# designlang raw extraction output (bulky; curated tokens live in .design/)
+design-extract-output/

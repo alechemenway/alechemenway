@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Design score card for alechemenway.com — Grade A, 93 out of 100">
+  <defs>
+    <radialGradient id="glow" cx="80%" cy="12%" r="70%">
+      <stop offset="0%" stop-color="#e8b04b" stop-opacity="0.22"/>
+      <stop offset="45%" stop-color="#e8b04b" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#e8b04b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="grade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6c66c"/>
+      <stop offset="100%" stop-color="#e8b04b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="20" y="20" width="1160" height="590" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+
+  <!-- eyebrow -->
+  <text x="72" y="104" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="20" letter-spacing="5" fill="#e8b04b">DESIGN&#160;LANGUAGE</text>
+
+  <!-- title + subtitle -->
+  <text x="70" y="196" font-family="Inter, system-ui, sans-serif" font-size="74" font-weight="800" letter-spacing="-2" fill="#f4f1eb">alechemenway.com</text>
+  <text x="72" y="244" font-family="Inter, system-ui, sans-serif" font-size="27" font-weight="400" fill="#9c968b">Enterprise AE with an AI-native edge</text>
+
+  <!-- grade block -->
+  <text x="1128" y="112" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="18" letter-spacing="4" fill="#9c968b">GRADE</text>
+  <text x="1140" y="232" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="150" font-weight="800" fill="url(#grade)">A</text>
+  <text x="1128" y="280" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="700" fill="#f4f1eb">93 / 100</text>
+
+  <!-- palette -->
+  <text x="72" y="336" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="18" letter-spacing="4" fill="#9c968b">PALETTE</text>
+  <g font-family="'JetBrains Mono', ui-monospace, monospace" font-size="17" fill="#9c968b">
+    <rect x="72"  y="356" width="168" height="72" rx="10" fill="#e8b04b"/>
+    <text x="82"  y="452">#e8b04b</text>
+    <rect x="252" y="356" width="168" height="72" rx="10" fill="#ce6f12"/>
+    <text x="262" y="452">#ce6f12</text>
+    <rect x="432" y="356" width="168" height="72" rx="10" fill="#f4f1eb"/>
+    <text x="442" y="452">#f4f1eb</text>
+    <rect x="612" y="356" width="168" height="72" rx="10" fill="#9c968b"/>
+    <text x="622" y="452">#9c968b</text>
+    <rect x="792" y="356" width="168" height="72" rx="10" fill="#16151a" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="802" y="452">#16151a</text>
+    <rect x="972" y="356" width="156" height="72" rx="10" fill="#0a0a0b" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="982" y="452">#0a0a0b</text>
+  </g>
+
+  <!-- footer stats -->
+  <line x1="72" y1="512" x2="1128" y2="512" stroke="#ffffff" stroke-opacity="0.08"/>
+  <g font-family="Inter, system-ui, sans-serif" font-size="24">
+    <text x="72"  y="560" fill="#f4f1eb" font-weight="600">Inter</text>
+    <text x="160" y="560" fill="#9c968b">· JetBrains Mono · Instrument Serif</text>
+    <text x="1128" y="560" text-anchor="end" fill="#f4f1eb" font-weight="600">WCAG 100%<tspan fill="#9c968b" font-weight="400">  ·  358 elements</tspan></text>
+  </g>
+  <text x="72" y="600" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="15" letter-spacing="2" fill="#554e42">measured by designlang · 2026-09-01</text>
+</svg>

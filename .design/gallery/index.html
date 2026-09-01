@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Gallery — Measured Designs</title>
+<meta name="description" content="A gallery of measured design languages. Each card is a real extraction: palette, type, tokens, and a design-system grade.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Design Gallery — Measured Designs">
+<meta property="og:description" content="Each card is a real extraction: palette, type, tokens, and a design-system grade.">
+<meta property="og:image" content="alechemenway-com/card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="alechemenway-com/card.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0b; --surface:#16151a; --ink:#f4f1eb; --ink-muted:#9c968b;
+    --line:rgb(255 255 255 / .10); --accent:#e8b04b; --accent-2:#f6c66c;
+    --sans:'Inter',ui-sans-serif,system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(70% 90% at 82% -5%, rgb(232 176 75 / .10), rgba(0,0,0,0) 55%);
+    background-repeat:no-repeat;}
+  .wrap{max-width:1120px;margin:0 auto;padding:48px 32px 96px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:2.4px;color:var(--accent);text-transform:uppercase}
+  h1{font-size:clamp(40px,6vw,64px);font-weight:800;letter-spacing:-2.2px;line-height:1.02;margin:.3em 0 .15em}
+  .lede{color:var(--ink-muted);font-size:18px;max-width:62ch;margin:0}
+  /* summary stats */
+  .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:40px 0 8px}
+  .stat{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface)}
+  .stat .k{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--ink-muted);text-transform:uppercase}
+  .stat .v{font-size:26px;font-weight:800;margin-top:6px;letter-spacing:-1px}
+  .stat .v small{font-size:14px;font-weight:400;color:var(--ink-muted)}
+  /* grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin-top:40px}
+  .card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:16px;
+    background:var(--surface);overflow:hidden;transition:border-color .3s cubic-bezier(.4,0,.2,1),transform .3s cubic-bezier(.4,0,.2,1)}
+  .card:hover{border-color:rgb(232 176 75 / .5);transform:translateY(-3px)}
+  .card .strip{display:flex;height:10px}
+  .card .strip span{flex:1}
+  .card .body{padding:20px}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .card .site{font-size:20px;font-weight:700;letter-spacing:-.4px}
+  .card .desc{color:var(--ink-muted);font-size:13.5px;margin:6px 0 0;line-height:1.5}
+  .badge{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    width:58px;height:58px;border-radius:12px;background:linear-gradient(160deg,rgb(232 176 75 / .16),rgb(232 176 75 / .04));
+    border:1px solid rgb(232 176 75 / .35)}
+  .badge .g{font-size:26px;font-weight:800;color:var(--accent);line-height:1}
+  .badge .s{font-family:var(--mono);font-size:10px;color:var(--ink-muted);margin-top:2px}
+  .card .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;font-family:var(--mono);font-size:11.5px;color:var(--ink-muted)}
+  .card .meta span{border:1px solid var(--line);border-radius:99px;padding:3px 10px}
+  footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--ink-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer a{color:var(--ink-muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Design Gallery</div>
+    <h1>Measured Designs</h1>
+    <p class="lede">Every card is a real extraction — palette, type specimens, and tokens behind a design-system grade. Sorted best score first.</p>
+  </header>
+
+  <div class="summary">
+    <div class="stat"><div class="k">Designs</div><div class="v">2</div></div>
+    <div class="stat"><div class="k">Avg grade</div><div class="v">92.5<small>/100 · A</small></div></div>
+    <div class="stat"><div class="k">Avg accessibility</div><div class="v">100<small>%</small></div></div>
+    <div class="stat"><div class="k">Updated</div><div class="v" style="font-size:18px;font-weight:600">2026-09-01</div></div>
+  </div>
+
+  <!-- Cards render best-score first. Add a new <a.card> block per extraction. -->
+  <div class="grid">
+
+    <a class="card" href="alechemenway-com/index.html">
+      <div class="strip">
+        <span style="background:#e8b04b"></span>
+        <span style="background:#ce6f12"></span>
+        <span style="background:#f4f1eb"></span>
+        <span style="background:#9c968b"></span>
+        <span style="background:#16151a"></span>
+        <span style="background:#0a0a0b"></span>
+      </div>
+      <div class="body">
+        <div class="top">
+          <div>
+            <div class="site">alechemenway.com</div>
+            <p class="desc">Enterprise AE with an AI-native edge. Dark, editorial, gold-on-ink.</p>
+          </div>
+          <div class="badge"><span class="g">A</span><span class="s">93</span></div>
+        </div>
+        <div class="meta">
+          <span>Inter</span><span>JetBrains Mono</span><span>Instrument Serif</span>
+          <span>WCAG 100%</span><span>Tailwind</span><span>358 el</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="kunalrajelli-com/index.html">
+      <div class="strip">
+        <span style="background:#ffca78"></span>
+        <span style="background:#ff9730"></span>
+        <span style="background:#f6dc6b"></span>
+        <span style="background:#c33b2a"></span>
+        <span style="background:#2b1a05"></span>
+        <span style="background:#efe9da"></span>
+      </div>
+      <div class="body">
+        <div class="top">
+          <div>
+            <div class="site">kunalrajelli.com</div>
+            <p class="desc">Product designer &amp; builder. Warm, editorial, hand-made — cream, amber, and espresso ink.</p>
+          </div>
+          <div class="badge"><span class="g">A</span><span class="s">92</span></div>
+        </div>
+        <div class="meta">
+          <span>Playfair Display</span><span>Inter</span><span>Caveat</span>
+          <span>WCAG 100%</span><span>Tailwind</span><span>386 el</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <span>measured by designlang</span>
+    <span><a href="https://github.com/Manavarya09/design-extract">design-extract</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
