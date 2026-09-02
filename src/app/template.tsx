@@ -1,10 +1,13 @@
 'use client'
 
 import { motion, useReducedMotion } from 'motion/react'
+import { usePathname } from 'next/navigation'
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const reduce = useReducedMotion()
-  if (reduce) return <>{children}</>
+  const pathname = usePathname()
+
+  if (reduce || pathname === '/about') return <>{children}</>
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
