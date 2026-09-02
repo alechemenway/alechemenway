@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en" data-slug="austinknight-com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>austinknight.com — Design Language</title>
+<meta name="description" content="Editorial, high-contrast, typographic. Inter Display · Instrument Serif · Times. Black on white with a classic electric-blue link accent. WCAG 100%. Design-system grade C (78/100). Measured by designlang.">
+
+<!-- Social unfurl. For a real deploy, prefix these with your base URL (see gallery README / --base-url). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="austinknight.com — Design Language (Grade C · 78/100)">
+<meta property="og:description" content="Editorial, high-contrast, typographic. Inter Display · Instrument Serif · Times. WCAG 100%. Measured by designlang.">
+<meta property="og:image" content="card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="austinknight.com — Design Language (Grade C · 78/100)">
+<meta name="twitter:description" content="Editorial, high-contrast, typographic. Black on white with electric-blue links. WCAG 100%.">
+<meta name="twitter:image" content="card.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff; --card:#ffffff; --panel:#f2f2f2; --gray:#d9d9d9; --input:#ebebeb;
+    --ink:#000000; --ink-muted:#5c5c5c; --line:rgb(0 0 0 / .14);
+    --blue:#0000ee; --near-black:#111111;
+    --display:'Inter Display','Inter',ui-sans-serif,system-ui,sans-serif;
+    --sans:'Inter',ui-sans-serif,system-ui,sans-serif;
+    --serif:'Instrument Serif',Georgia,serif;
+    --times:'Times','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 120% at 0% 0%, #ffffff 0%, #e4e4e4 100%);
+    background-attachment:fixed;background-repeat:no-repeat;}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 32px 96px}
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:3px;color:var(--blue);text-transform:uppercase}
+  .back{font-family:var(--sans);font-size:13px;color:var(--ink-muted);text-decoration:none;font-weight:500}
+  .back:hover{color:var(--ink)}
+  h1{font-family:var(--display);font-size:clamp(42px,7vw,72px);font-weight:500;letter-spacing:-2px;line-height:1.02;margin:.3em 0 .12em}
+  .lede{color:var(--ink-muted);font-size:18px;max-width:62ch;margin:0}
+  .lede .ital{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--ink)}
+  .lede a.link{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+  .card-hero{margin:40px 0;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--card);
+    box-shadow:rgba(0,0,0,0.1) 2px 2px 22px 0px}
+  .card-hero img{display:block;width:100%;height:auto}
+  section{margin:56px 0}
+  h2{font-family:var(--display);font-size:29px;font-weight:600;letter-spacing:-.4px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+  h2 .n{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--blue);letter-spacing:1px}
+  .sub{color:var(--ink-muted);font-size:14px;margin:0 0 24px;max-width:70ch}
+  /* grade */
+  .grade{display:grid;gap:10px}
+  .bar{display:grid;grid-template-columns:210px 1fr 48px;align-items:center;gap:16px;font-size:14px}
+  .bar .track{height:9px;border-radius:99px;background:rgb(0 0 0 / .08);overflow:hidden}
+  .bar .fill{height:100%;border-radius:99px;background:var(--blue)}
+  .bar .fill.low{background:repeating-linear-gradient(45deg,var(--blue),var(--blue) 6px,#4a4aff 6px,#4a4aff 12px)}
+  .bar .val{font-family:var(--sans);font-size:13px;color:var(--ink-muted);text-align:right;font-variant-numeric:tabular-nums}
+  .bar .lab{color:var(--ink)}
+  /* palette */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+  .sw .chip{height:76px}
+  .sw.edge .chip{box-shadow:inset 0 0 0 1px rgb(0 0 0 / .12)}
+  .sw .meta{padding:10px 12px}
+  .sw .hex{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink)}
+  .sw .role{font-size:12px;color:var(--ink-muted);margin-top:2px}
+  /* type */
+  .type-row{border-top:1px solid var(--line);padding:18px 0;display:flex;flex-direction:column;gap:6px}
+  .type-row:last-child{border-bottom:1px solid var(--line)}
+  .type-spec{font-family:var(--sans);font-size:11.5px;font-weight:500;color:var(--ink-muted);letter-spacing:.5px}
+  .specimen{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .specimen a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+  /* spacing */
+  .space-row{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:16px;margin:10px 0;font-family:var(--sans);font-size:13px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+  .space-bar{height:14px;background:var(--blue);border-radius:3px}
+  /* tiles */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .tile{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
+  .tile .k{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.2px;color:var(--ink-muted);text-transform:uppercase}
+  .tile .v{font-family:var(--display);font-size:24px;font-weight:600;margin-top:6px}
+  .tile .v small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--ink-muted)}
+  /* motion */
+  .motion-demo{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}
+  .mcard{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px 20px;display:flex;align-items:center;gap:16px;flex:1;min-width:220px}
+  .mcard .cap{font-family:var(--sans);font-size:12px;color:var(--ink-muted)}
+  .mcard .cap strong{color:var(--ink);font-weight:600}
+  .spin{width:34px;height:34px;border-radius:50%;border:3px solid rgb(0 0 0 / .14);border-top-color:var(--blue);flex:none}
+  @media (prefers-reduced-motion: no-preference){.spin{animation:__framer-loading-spin 1.1s linear infinite}}
+  @keyframes __framer-loading-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+  .curve{flex:none}
+  ul.plan{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.plan li{border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:12px 16px;font-size:14px;background:var(--card)}
+  ul.plan li.good{border-left-color:#1f8a4c}
+  .kicker{font-family:var(--sans);font-size:12.5px;color:var(--ink-muted)}
+  code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.9em;background:rgb(0 0 0 / .06);padding:1px 6px;border-radius:5px}
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12px;color:var(--ink-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media(max-width:640px){.bar{grid-template-columns:120px 1fr 40px}.type-spec{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../index.html">&larr; Gallery</a>
+
+  <header>
+    <div class="eyebrow">Design Language</div>
+    <h1>austinknight.com</h1>
+    <p class="lede">Head of Design at Square, in Austin. The site is unmistakably web-native and <span class="ital">editorial</span>: black on white, oversized Inter Display headings, Instrument Serif italics for emphasis, Times body copy, and the classic unvisited-<a class="link" href="https://austinknight.com/">link blue</a> as its only accent.</p>
+  </header>
+
+  <div class="card-hero">
+    <img src="card.svg" alt="Design score card: austinknight.com, Grade C, 78 of 100">
+  </div>
+
+  <section>
+    <h2><span class="n">01</span> Design-System Score <span style="margin-left:auto;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--blue)">78 / 100 · C</span></h2>
+    <p class="sub">Seven weighted categories, measured across 1003 elements.</p>
+    <div class="grade">
+      <div class="bar"><span class="lab">Color discipline</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Typography consistency</span><span class="track"><span class="fill low" style="width:50%"></span></span><span class="val">50</span></div>
+      <div class="bar"><span class="lab">Spacing system</span><span class="track"><span class="fill" style="width:85%"></span></span><span class="val">85</span></div>
+      <div class="bar"><span class="lab">Shadow consistency</span><span class="track"><span class="fill" style="width:90%"></span></span><span class="val">90</span></div>
+      <div class="bar"><span class="lab">Border-radius consistency</span><span class="track"><span class="fill" style="width:65%"></span></span><span class="val">65</span></div>
+      <div class="bar"><span class="lab">Accessibility</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">CSS tokenization</span><span class="track"><span class="fill low" style="width:50%"></span></span><span class="val">50</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span> Palette</h2>
+    <p class="sub">A near-monochrome system — black ink on white paper, one near-black surface, two light grays — lifted by a single electric-blue accent: the classic unvisited-link <code>#0000ee</code>.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0000ee"></div><div class="meta"><div class="hex">#0000ee</div><div class="role">accent · link blue · 120×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#000000"></div><div class="meta"><div class="hex">#000000</div><div class="role">ink · text / border · 1641×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#111111"></div><div class="meta"><div class="hex">#111111</div><div class="role">surface · near-black · 102×</div></div></div>
+      <div class="sw edge"><div class="chip" style="background:#ffffff"></div><div class="meta"><div class="hex">#ffffff</div><div class="role">paper · white · 196×</div></div></div>
+      <div class="sw edge"><div class="chip" style="background:#d9d9d9"></div><div class="meta"><div class="hex">#d9d9d9</div><div class="role">bg · light gray · 2×</div></div></div>
+      <div class="sw edge"><div class="chip" style="background:#ebebeb"></div><div class="meta"><div class="hex">#ebebeb</div><div class="role">input bg · 1×</div></div></div>
+      <div class="sw edge"><div class="chip" style="background:#333333"></div><div class="meta"><div class="hex">#333333</div><div class="role">bg · 1×</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span> Type Specimens</h2>
+    <p class="sub">Four faces, almost all at weight 400 — hierarchy comes from size, not weight. Inter Display carries the oversized headings and giant nav links, Times sets the body, Instrument Serif adds the italic accent. Rendered at measured sizes.</p>
+
+    <div class="type-row">
+      <div class="type-spec">display · Inter Display 400 · 88px / 101.2 · -1.76</div>
+      <div class="specimen" style="font-family:var(--display);font-weight:400;font-size:min(88px,13vw);line-height:1;letter-spacing:-1.76px">Head of Design.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">nav link · Inter Display 400 · 55px · -1.1 · rgba(0,0,0,.6)</div>
+      <div class="specimen" style="font-family:var(--display);font-weight:400;font-size:min(55px,9vw);line-height:1.05;letter-spacing:-1.1px;color:rgba(0,0,0,.6)">work · writing · podcasts</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">h4 · Inter Display 400 · 35px / 42</div>
+      <div class="specimen" style="font-family:var(--display);font-weight:400;font-size:min(35px,7vw);line-height:1.2">Advisor at Sequoia Capital.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">body · Times 400 · 18px / 30.6</div>
+      <div class="specimen" style="font-family:var(--times);font-weight:400;font-size:18px;line-height:1.7;white-space:normal">Co-host of the UX &amp; Growth and Decrypting Crypto podcasts, and a <a href="https://austinknight.com/">mentor</a> at Columbia and Stanford.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">caption · Inter 300 · 14px / 16.8</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:300;font-size:14px;color:var(--ink-muted)">Previously at Google and HubSpot</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">accent · Instrument Serif italic 400 · 24px</div>
+      <div class="specimen" style="font-family:var(--serif);font-style:italic;font-size:28px;color:var(--ink)">designing for scale.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span> Spacing &amp; Layout</h2>
+    <p class="sub">A 2px base unit resolving to an 11-step ladder that reaches a 180px section gap. Layout is flex-only (Framer): 0 grid containers, 270 flex containers. Radius runs from a 5px chip to a 162px pill.</p>
+    <div class="space-row"><span>s1 · 6</span><span class="space-bar" style="width:6px"></span></div>
+    <div class="space-row"><span>s2 · 24</span><span class="space-bar" style="width:24px"></span></div>
+    <div class="space-row"><span>s4 · 40</span><span class="space-bar" style="width:40px"></span></div>
+    <div class="space-row"><span>s6 · 55</span><span class="space-bar" style="width:55px"></span></div>
+    <div class="space-row"><span>s8 · 64</span><span class="space-bar" style="width:64px"></span></div>
+    <div class="space-row"><span>s9 · 70</span><span class="space-bar" style="width:70px"></span></div>
+    <div class="tiles" style="margin-top:24px">
+      <div class="tile"><div class="k">Container</div><div class="v">1440<small>px</small></div></div>
+      <div class="tile"><div class="k">Gutter</div><div class="v">30<small>px</small></div></div>
+      <div class="tile"><div class="k">Radius (pill)</div><div class="v">100<small>px · 32×</small></div></div>
+      <div class="tile"><div class="k">Grid / flex</div><div class="v">0 <small>/ 270</small></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span> Motion</h2>
+    <p class="sub">Restrained and scroll-linked: a single 400ms duration and one custom easing curve drive color transitions, with a continuous spinner as the only keyframe. Reduced-motion honored.</p>
+    <div class="tiles">
+      <div class="tile"><div class="k">md · default</div><div class="v">400<small>ms</small></div></div>
+      <div class="tile"><div class="k">easing</div><div class="v">custom<small> · 14×</small></div></div>
+      <div class="tile"><div class="k">feel</div><div class="v">mixed</div></div>
+      <div class="tile"><div class="k">scroll-linked</div><div class="v">yes</div></div>
+    </div>
+    <div class="motion-demo">
+      <div class="mcard">
+        <svg class="curve" width="72" height="72" viewBox="0 0 72 72" aria-hidden="true">
+          <rect x="6" y="6" width="60" height="60" rx="6" fill="none" stroke="rgb(0 0 0 / .12)"/>
+          <path d="M6 66 C 32.4 66, 39.6 6, 66 6" fill="none" stroke="#0000ee" stroke-width="2.5"/>
+        </svg>
+        <div class="cap"><strong>cubic-bezier(0.44, 0, 0.56, 1)</strong><br>near-symmetric ease-in-out · <code>transition: color 400ms</code></div>
+      </div>
+      <div class="mcard">
+        <div class="spin"></div>
+        <div class="cap"><strong>__framer-loading-spin</strong><br>the one keyframe · <code>rotate 0&deg; → 360&deg;</code></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span> Correction Plan</h2>
+    <p class="sub">What holds the grade back, and what to keep.</p>
+    <ul class="plan">
+      <li><strong>Consolidate the type system.</strong> Typography 50/100 — the lowest score. Four families (Inter Display, Instrument Serif, Times, Inter) run at essentially one weight (400 covers 968 of 1003 elements). Cut to a display + a body pair, or add real weight contrast, so hierarchy stops leaning entirely on size.</li>
+      <li><strong>Tokenize and purge the CSS.</strong> CSS tokenization 50/100 — 2316 duplicate declarations, 15 <code>!important</code> overrides, and 67% of the CSS unused. Typical Framer export weight; consolidate the repeated transition groups and tree-shake the dead rules.</li>
+      <li><strong>Tame the radius set.</strong> Border-radius 65/100 — twelve distinct radii from a 5px chip to a 162px pill. Standardize on the pill (100px, used 32×) plus one small step and drop the in-betweens.</li>
+      <li class="good"><strong>Keep the color discipline and accessibility.</strong> Both 100/100 — a tight black / white / near-black system with one electric-blue accent, and a clean flat elevation (shadow 90/100). Strong contrast throughout; don't dilute the palette.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>measured by designlang · 2026-09-02</span>
+    <span><a class="back" href="https://austinknight.com/">austinknight.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

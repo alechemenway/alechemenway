@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-slug="alexcattoni-com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>alexcattoni.com — Design Language</title>
+<meta name="description" content="Bold, high-contrast, editorial. Times · Editors Note · Aperitif Serif on black with a neon-lime accent. WCAG 100% (nominal). Design-system grade C (73/100). Measured by designlang.">
+
+<!-- Social unfurl. For a real deploy, prefix these with your base URL (see gallery README / --base-url). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="alexcattoni.com — Design Language (Grade C · 73/100)">
+<meta property="og:description" content="Bold, high-contrast, editorial. Black canvas, neon-lime accent, giant serif headlines. WCAG 100% (nominal). Measured by designlang.">
+<meta property="og:image" content="card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="alexcattoni.com — Design Language (Grade C · 73/100)">
+<meta name="twitter:description" content="Bold, high-contrast, editorial. Black + neon lime. WCAG 100% (nominal). Measured by designlang.">
+<meta name="twitter:image" content="card.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000; --bg-2:#0a0a0a; --surface:#111111;
+    --ink:#ffffff; --ink-soft:#f7f7f7; --ink-muted:rgb(255 255 255 / .58); --line:rgb(255 255 255 / .14);
+    --neon:#dbff00; --purple:#aa40ca; --blue:#3228ff;
+    --serif:'Times New Roman',Times,Georgia,serif;
+    --editorial:Georgia,'Times New Roman',serif;
+    --sans:Arial,'Helvetica Neue',Helvetica,system-ui,sans-serif;
+    --condensed:'Bebas Neue','Oswald',Impact,'Arial Narrow',sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(72% 100% at 85% -4%, rgb(219 255 0 / .12), rgba(0,0,0,0) 52%),
+      radial-gradient(60% 80% at 6% 104%, rgb(170 64 202 / .16), rgba(0,0,0,0) 60%);
+    background-repeat:no-repeat;}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 32px 96px}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:3.4px;color:var(--neon);text-transform:uppercase}
+  .back{font-family:var(--sans);font-size:12.5px;color:var(--ink-muted);text-decoration:none;letter-spacing:.5px;font-weight:600}
+  .back:hover{color:var(--ink)}
+  h1{font-family:var(--serif);font-size:clamp(44px,8vw,78px);font-weight:700;letter-spacing:-1.6px;line-height:1.0;margin:.28em 0 .12em}
+  .lede{color:var(--ink-muted);font-size:18px;max-width:62ch;margin:0}
+  .lede em{font-family:var(--editorial);font-style:italic;color:var(--neon)}
+  .card-hero{margin:40px 0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg-2)}
+  .card-hero img{display:block;width:100%;height:auto}
+  section{margin:56px 0}
+  h2{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:-.4px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+  h2 .n{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--neon);letter-spacing:2px}
+  .sub{color:var(--ink-muted);font-size:14px;margin:0 0 24px}
+  /* grade */
+  .grade{display:grid;grid-template-columns:1fr;gap:10px}
+  .bar{display:grid;grid-template-columns:210px 1fr 48px;align-items:center;gap:16px;font-size:14px}
+  .bar .track{height:9px;border-radius:99px;background:rgb(255 255 255 / .07);overflow:hidden}
+  .bar .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--neon),var(--purple))}
+  .bar .val{font-family:var(--sans);font-size:13px;color:var(--ink-muted);text-align:right;font-variant-numeric:tabular-nums}
+  .bar .lab{color:var(--ink)}
+  /* palette */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .sw .chip{height:76px}
+  .sw .meta{padding:10px 12px}
+  .sw .hex{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink)}
+  .sw .role{font-size:12px;color:var(--ink-muted);margin-top:2px}
+  /* type */
+  .type-row{border-top:1px solid var(--line);padding:18px 0;display:flex;flex-direction:column;gap:8px}
+  .type-row:last-child{border-bottom:1px solid var(--line)}
+  .type-spec{font-family:var(--sans);font-size:11.5px;color:var(--ink-muted);letter-spacing:.5px}
+  .specimen{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  /* spacing */
+  .space-row{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:16px;margin:10px 0;font-family:var(--sans);font-size:13px;color:var(--ink-muted)}
+  .space-bar{height:14px;background:var(--neon);border-radius:3px}
+  /* tiles */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .tile{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface)}
+  .tile .k{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.4px;color:var(--ink-muted);text-transform:uppercase}
+  .tile .v{font-family:var(--serif);font-size:24px;font-weight:700;margin-top:6px}
+  .tile .v small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--ink-muted)}
+  ul.plan{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.plan li{border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:0 10px 10px 0;padding:12px 16px;font-size:14px;background:var(--surface)}
+  ul.plan li.good{border-left-color:var(--neon)}
+  .kicker{font-family:var(--sans);font-size:12.5px;color:var(--ink-muted)}
+  code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.9em;background:rgb(255 255 255 / .08);padding:1px 6px;border-radius:5px}
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12px;color:var(--ink-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media(max-width:640px){.bar{grid-template-columns:130px 1fr 40px}.type-spec{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../index.html">&larr; Gallery</a>
+
+  <header>
+    <div class="eyebrow">Design Language</div>
+    <h1>alexcattoni.com</h1>
+    <p class="lede">Messaging &amp; brand strategy for bold leaders. A black canvas with a single neon-lime accent, giant Times headlines, and proprietary editorial serifs — the identity of a 500k copywriting community on a mission to <em>de-douchify the internet</em>.</p>
+  </header>
+
+  <div class="card-hero">
+    <img src="card.svg" alt="Design score card: alexcattoni.com, Grade C, 73 of 100">
+  </div>
+
+  <section>
+    <h2><span class="n">01</span> Design-System Score <span style="margin-left:auto;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--neon)">73 / 100 · C</span></h2>
+    <p class="sub">Seven weighted categories, measured across 503 elements.</p>
+    <div class="grade">
+      <div class="bar"><span class="lab">Color discipline</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Typography consistency</span><span class="track"><span class="fill" style="width:40%"></span></span><span class="val">40</span></div>
+      <div class="bar"><span class="lab">Spacing system</span><span class="track"><span class="fill" style="width:55%"></span></span><span class="val">55</span></div>
+      <div class="bar"><span class="lab">Shadow consistency</span><span class="track"><span class="fill" style="width:85%"></span></span><span class="val">85</span></div>
+      <div class="bar"><span class="lab">Border-radius consistency</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Accessibility</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">CSS tokenization</span><span class="track"><span class="fill" style="width:50%"></span></span><span class="val">50</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span> Palette</h2>
+    <p class="sub">A ruthless two-color-plus-neon system: near-total black and white, one neon-lime signature, and purple / electric-blue gradient pops. Color discipline scores 100/100.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#dbff00"></div><div class="meta"><div class="hex">#dbff00</div><div class="role">primary · neon lime · 12×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#aa40ca"></div><div class="meta"><div class="hex">#aa40ca</div><div class="role">secondary · purple · 2×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#3228ff"></div><div class="meta"><div class="hex">#3228ff</div><div class="role">brand gradient · electric blue</div></div></div>
+      <div class="sw"><div class="chip" style="background:#2b0038"></div><div class="meta"><div class="hex">#2b0038</div><div class="role">gradient base · deep plum</div></div></div>
+      <div class="sw"><div class="chip" style="background:#000000;box-shadow:inset 0 0 0 1px rgb(255 255 255 / .14)"></div><div class="meta"><div class="hex">#000000</div><div class="role">ink · canvas · 840×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="meta"><div class="hex">#ffffff</div><div class="role">white · text / bg · 153×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#f7f7f7"></div><div class="meta"><div class="hex">#f7f7f7</div><div class="role">off-white · muted text</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span> Type Specimens</h2>
+    <p class="sub">Times is the workhorse (body and giant display). Editors Note and Aperitif Serif are proprietary editorial serifs, shown here in a serif fallback; Bebas Neue Pro sets the condensed caps. Rendered at measured sizes — sample copy pulled from the site.</p>
+
+    <div class="type-row">
+      <div class="type-spec">display-xl · Times 400 · 390px / 312 · -3.9</div>
+      <div class="specimen" style="font-family:var(--serif);font-weight:700;font-size:min(120px,15vw);line-height:.95;letter-spacing:-3px">Copy Posse</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">display · Editors Note 400 · 175px / 210</div>
+      <div class="specimen" style="font-family:var(--editorial);font-weight:400;font-size:min(92px,13vw);line-height:1;letter-spacing:-1px">de-douchify</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">h2 · Aperitif Serif 400 · 110px / 110</div>
+      <div class="specimen" style="font-family:var(--editorial);font-weight:400;font-size:min(68px,10vw);line-height:1">the full story</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">h3 · Times 400 · 60px / 60</div>
+      <div class="specimen" style="font-family:var(--serif);font-weight:400;font-size:min(52px,8vw);line-height:1">work with me</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">body · Times 400 · 20px / 32</div>
+      <div class="specimen" style="font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.6;white-space:normal">Award-winning marketer and founder of the Copy Posse — a global 500k community of storytellers and copywriters.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">display caps · Bebas Neue Pro Bold · condensed</div>
+      <div class="specimen" style="font-family:var(--condensed);font-weight:400;font-size:44px;letter-spacing:3px;color:var(--neon);text-transform:uppercase">Work with me</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span> Spacing &amp; Layout</h2>
+    <p class="sub">Only two spacing values were detected — 1px and 125px, with nothing between — so there is no consistent base unit (why Spacing scores 55). Buttons pad 12×32; pills round to 45–50px; the layout is full-bleed flex, not a grid.</p>
+    <div class="space-row"><span>s0 · 1px</span><span class="space-bar" style="width:2px"></span></div>
+    <div class="space-row"><span>button pad · 12 / 32</span><span class="space-bar" style="width:32px"></span></div>
+    <div class="space-row"><span>radius · 45–50</span><span class="space-bar" style="width:50px"></span></div>
+    <div class="space-row"><span>s1 · 125px</span><span class="space-bar" style="width:125px"></span></div>
+    <div class="tiles" style="margin-top:24px">
+      <div class="tile"><div class="k">Container</div><div class="v">100<small>%</small></div></div>
+      <div class="tile"><div class="k">Gutter</div><div class="v">0<small>px</small></div></div>
+      <div class="tile"><div class="k">Pill radius</div><div class="v">50<small>px</small></div></div>
+      <div class="tile"><div class="k">Grid / flex</div><div class="v">0 <small>/ 2</small></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span> Motion</h2>
+    <p class="sub">Two duration tokens and scroll-linked reveals. Transitions target opacity, color, fill, and background. No easing curve or named keyframes were captured, so none are invented here.</p>
+    <div class="tiles">
+      <div class="tile"><div class="k">md · default</div><div class="v">300<small>ms</small></div></div>
+      <div class="tile"><div class="k">lg</div><div class="v">500<small>ms</small></div></div>
+    </div>
+    <p class="kicker" style="margin-top:16px">feel <span style="color:var(--ink)">mixed</span> · scroll-linked <span style="color:var(--ink)">yes</span> &nbsp;·&nbsp; transitions on <code>opacity</code> · <code>color</code> · <code>fill</code> · <code>background</code> &nbsp;·&nbsp; easing not tokenized (browser default)</p>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span> Correction Plan</h2>
+    <p class="sub">What holds the grade back, and what to keep.</p>
+    <ul class="plan">
+      <li><strong>Collapse the type system.</strong> Typography scores 40/100 — the biggest drag. 11 font families and 24 distinct sizes (390 → 20px) with everything at weight 400. Pick two workhorses (one editorial serif + one sans) and a named scale; drop the seven single-use faces.</li>
+      <li><strong>Cut the CSS bloat.</strong> Tokenization sits at 50/100: 20,149 duplicate declarations, 357 <code>!important</code> rules, and 57% unused CSS. Purge and consolidate; replace overrides with tokens.</li>
+      <li><strong>Set a spacing base unit.</strong> Spacing scores 55 — values jump straight from 1px to 125px. Define a 4- or 8-px step ladder so rhythm is predictable.</li>
+      <li class="good"><strong>Keep the color and shape discipline.</strong> Color 100, Border-radius 100, Accessibility 100 — a black-and-neon palette and consistent 45–50px pills. Note: WCAG shows 0 passing / 0 failing pairs, so the 100% is nominal (no text/background pairs were sampled), not a proven contrast pass.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>measured by designlang · 2026-09-02</span>
+    <span><a class="back" href="https://alexcattoni.com/">alexcattoni.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

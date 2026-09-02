@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" data-slug="robin-noguier-com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>robin-noguier.com — Design Language</title>
+<meta name="description" content="Minimal dark portfolio. White Times serif on near-black with a single slate-blue accent. Times · Silka · Eksell. WCAG 100%. Design-system grade A (92/100). Measured by designlang.">
+
+<!-- Social unfurl. For a real deploy, prefix these with your base URL (see gallery README / --base-url). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="robin-noguier.com — Design Language (Grade A · 92/100)">
+<meta property="og:description" content="Minimal dark portfolio. Times serif on black, one slate accent. Times · Silka · Eksell. WCAG 100%. Measured by designlang.">
+<meta property="og:image" content="card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="robin-noguier.com — Design Language (Grade A · 92/100)">
+<meta name="twitter:description" content="Minimal dark portfolio. Times serif on black, one slate accent. WCAG 100%.">
+<meta name="twitter:image" content="card.svg">
+
+<!--
+  Fonts are the site's own: Times (system serif, the dominant face), plus the
+  commercial silka_rm (Silka) and eksell_rm_large (Eksell Display). None are on
+  Google Fonts, so this page renders them with web-safe fallback stacks.
+-->
+<style>
+  :root{
+    --bg:#000000; --bg-2:#0d0d0d; --surface:#1c1c1c;
+    --ink:#ffffff; --sage:#d5dedd;
+    --muted:rgb(213 222 221 / .66);
+    --faint:rgb(213 222 221 / .40);
+    --line:rgb(255 255 255 / .12);
+    --accent:#3d6681; --accent-2:#d5dedd;
+    --serif:'Times','Times New Roman',Georgia,serif;
+    --sans:'Silka',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    --display:'Eksell Display','eksell_rm_large','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(78% 110% at 82% -8%, rgb(61 102 129 / .32), rgba(0,0,0,0) 55%);
+    background-repeat:no-repeat;}
+  a{color:inherit}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 32px 96px}
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:3px;color:var(--sage);text-transform:uppercase}
+  .back{font-family:var(--sans);font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;letter-spacing:.3px}
+  .back:hover{color:var(--ink)}
+  h1{font-family:var(--serif);font-size:clamp(40px,7vw,72px);font-weight:400;letter-spacing:-1px;line-height:1.02;margin:.3em 0 .14em}
+  .lede{color:var(--muted);font-size:18px;max-width:62ch;margin:0}
+  .lede .sage{color:var(--sage)}
+  .card-hero{margin:40px 0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg-2)}
+  .card-hero img{display:block;width:100%;height:auto}
+  section{margin:56px 0}
+  h2{font-family:var(--serif);font-size:27px;font-weight:400;letter-spacing:-.3px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+  h2 .n{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--sage);letter-spacing:2px}
+  .sub{font-family:var(--serif);color:var(--muted);font-size:15px;margin:0 0 24px;max-width:70ch}
+  /* grade */
+  .grade{display:grid;gap:10px}
+  .bar{display:grid;grid-template-columns:210px 1fr 48px;align-items:center;gap:16px;font-size:14px}
+  .bar .track{height:8px;border-radius:99px;background:rgb(255 255 255 / .07);overflow:hidden}
+  .bar .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+  .bar .val{font-family:var(--sans);font-size:13px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+  .bar .lab{color:var(--ink);font-family:var(--sans);font-size:14px}
+  /* palette */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .sw .chip{height:76px}
+  .sw .meta{padding:10px 12px}
+  .sw .hex{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink)}
+  .sw .role{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:2px}
+  /* type */
+  .type-row{border-top:1px solid var(--line);padding:18px 0;display:flex;flex-direction:column;gap:8px}
+  .type-row:last-child{border-bottom:1px solid var(--line)}
+  .type-spec{font-family:var(--sans);font-size:11.5px;font-weight:500;color:var(--muted);letter-spacing:.5px}
+  .specimen{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  /* spacing */
+  .space-row{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:16px;margin:10px 0;font-family:var(--sans);font-size:13px;color:var(--muted)}
+  .space-bar{height:14px;background:var(--accent);border-radius:3px}
+  /* tiles */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .tile{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface)}
+  .tile .k{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.2px;color:var(--muted);text-transform:uppercase}
+  .tile .v{font-family:var(--serif);font-size:24px;font-weight:400;margin-top:6px;color:var(--ink)}
+  .tile .v small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted)}
+  ul.plan{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.plan li{border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;font-size:14px;background:var(--surface);font-family:var(--serif)}
+  ul.plan li.good{border-left-color:var(--sage)}
+  .kicker{font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+  code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.88em;background:rgb(255 255 255 / .07);padding:1px 6px;border-radius:5px;color:var(--sage)}
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media(max-width:640px){.bar{grid-template-columns:120px 1fr 40px}.type-spec{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../index.html">&larr; Gallery</a>
+
+  <header>
+    <div class="eyebrow">Design Language</div>
+    <h1>robin-noguier.com</h1>
+    <p class="lede">Robin Noguier is an interactive designer building apps and websites for startups, brands, and entrepreneurs. The language is spare and editorial: a near-black canvas, white <span class="sage">Times serif</span> at display scale, and one muted slate-blue accent.</p>
+  </header>
+
+  <div class="card-hero">
+    <img src="card.svg" alt="Design score card: robin-noguier.com, Grade A, 92 of 100">
+  </div>
+
+  <section>
+    <h2><span class="n">01</span> Design-System Score <span style="margin-left:auto;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--sage)">92 / 100 · A</span></h2>
+    <p class="sub">Seven weighted categories, measured across 190 elements.</p>
+    <div class="grade">
+      <div class="bar"><span class="lab">Color discipline</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Typography consistency</span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">80</span></div>
+      <div class="bar"><span class="lab">Spacing system</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Shadow consistency</span><span class="track"><span class="fill" style="width:85%"></span></span><span class="val">85</span></div>
+      <div class="bar"><span class="lab">Border-radius consistency</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Accessibility</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">CSS tokenization</span><span class="track"><span class="fill" style="width:50%"></span></span><span class="val">50</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span> Palette</h2>
+    <p class="sub">The whole site runs on six colors: white and black, a pale sage for secondary text and icons, and one slate-blue accent. Average saturation 0.095 — nearly monochrome.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#3d6681"></div><div class="meta"><div class="hex">#3d6681</div><div class="role">accent · slate blue · 2×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#d5dedd"></div><div class="meta"><div class="hex">#d5dedd</div><div class="role">secondary · pale sage · 11×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="meta"><div class="hex">#ffffff</div><div class="role">primary text / lines · 197×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#1c1c1c"></div><div class="meta"><div class="hex">#1c1c1c</div><div class="role">surface · modals</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0d0d0d"></div><div class="meta"><div class="hex">#0d0d0d</div><div class="role">bg · raised</div></div></div>
+      <div class="sw"><div class="chip" style="background:#000000"></div><div class="meta"><div class="hex">#000000</div><div class="role">bg · page · 179×</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span> Type Specimens</h2>
+    <p class="sub">Times carries the body and the 120px display headline; <code>silka_rm</code> (Silka) handles UI and links; <code>eksell_rm_large</code> (Eksell) is the display serif used sparingly. Rendered at measured sizes with web-safe fallbacks.</p>
+
+    <div class="type-row">
+      <div class="type-spec">display · Times 400 · 120px / 120</div>
+      <div class="specimen" style="font-family:var(--serif);font-weight:400;font-size:min(120px,15vw);line-height:1;letter-spacing:-1px">Robin Noguier</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">body-lg · Times 400 · 20px / 32</div>
+      <div class="specimen" style="font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.6;white-space:normal">Interactive designer working on apps and websites for startups, brands, and entrepreneurs.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">body · Times 400 · 15px / 22.5</div>
+      <div class="specimen" style="font-family:var(--serif);font-weight:400;font-size:15px;line-height:1.5;white-space:normal">Selected work across product, brand, and interactive web, designed end to end.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">link · silka_rm 700 · 16px</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:700;font-size:16px">Startups&nbsp;&nbsp;·&nbsp;&nbsp;Brands&nbsp;&nbsp;·&nbsp;&nbsp;Entrepreneurs</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">caption · silka_rm 400 · 14px / 14</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:400;font-size:14px;color:var(--muted)">Interactive design for apps and websites.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">display-accent · eksell_rm_large (serif fallback)</div>
+      <div class="specimen" style="font-family:var(--display);font-weight:400;font-size:44px;color:var(--sage)">Interactive Designer</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span> Spacing &amp; Layout</h2>
+    <p class="sub">A sparse scale on a 2px base unit: five steps from 5px to 176px, with wide jumps for editorial whitespace. Layout is all flex — nine containers, no CSS grid.</p>
+    <div class="space-row"><span>s0 · 5</span><span class="space-bar" style="width:5px"></span></div>
+    <div class="space-row"><span>s1 · 52</span><span class="space-bar" style="width:52px"></span></div>
+    <div class="space-row"><span>s2 · 70</span><span class="space-bar" style="width:70px"></span></div>
+    <div class="space-row"><span>s3 · 80</span><span class="space-bar" style="width:80px"></span></div>
+    <div class="space-row"><span>s4 · 176</span><span class="space-bar" style="width:176px"></span></div>
+    <div class="tiles" style="margin-top:24px">
+      <div class="tile"><div class="k">Base unit</div><div class="v">2<small>px</small></div></div>
+      <div class="tile"><div class="k">Radius (sm / full)</div><div class="v">4 <small>/ 32px</small></div></div>
+      <div class="tile"><div class="k">Grid / flex</div><div class="v">0 <small>/ 9</small></div></div>
+      <div class="tile"><div class="k">Flex row / col</div><div class="v">7 <small>/ 2</small></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span> Motion</h2>
+    <p class="sub">Smooth and scroll-linked. One duration, one easing, transform-based transitions. Reduced-motion honored.</p>
+    <div class="tiles">
+      <div class="tile"><div class="k">sm · default</div><div class="v">200<small>ms</small></div></div>
+      <div class="tile"><div class="k">easing</div><div class="v" style="font-size:20px">ease-in-out</div></div>
+      <div class="tile"><div class="k">scroll-linked</div><div class="v" style="font-size:20px">yes</div></div>
+      <div class="tile"><div class="k">feel</div><div class="v" style="font-size:20px">smooth</div></div>
+    </div>
+    <p class="kicker" style="margin-top:16px"><code>transition: transform 0.2s ease-in-out</code> &nbsp;·&nbsp; scroll-linked reveals · flat material, no shadows (no named keyframes captured)</p>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span> Correction Plan</h2>
+    <p class="sub">What holds the grade back, and what to keep.</p>
+    <ul class="plan">
+      <li><strong>Tokenize the CSS.</strong> CSS tokenization scored 50/100 — the single biggest deduction. The semantic variables came back malformed (<code>success/warning/error: [object Object]</code>) and values read as hard-coded. Promote color, type, and the 2px spacing scale to named custom properties.</li>
+      <li><strong>Fill in the type scale.</strong> Typography 80/100: five sizes across three families (Times, Silka, Eksell) with a large gap between the 120px display and the 14–20px body. Add mid-scale steps and consolidate to a named ramp.</li>
+      <li class="good"><strong>Keep the color discipline.</strong> 100/100. A six-color system — white, black, and pale sage with one slate-blue accent, average saturation 0.095.</li>
+      <li class="good"><strong>Keep the flat, disciplined base.</strong> Spacing 100/100, border-radius 100/100 (4 / 32px), accessibility 100/100. Flat material, no shadows, hairline borders.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>measured by designlang · 2026-09-02</span>
+    <span><a class="back" href="https://robin-noguier.com/">robin-noguier.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

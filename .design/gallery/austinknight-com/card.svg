@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Design score card for austinknight.com — Grade C, 78 out of 100">
+  <defs>
+    <radialGradient id="paper" cx="0%" cy="0%" r="150%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dcdcdc"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#paper)"/>
+  <rect x="20" y="20" width="1160" height="590" rx="24" fill="#ffffff" fill-opacity="0.5" stroke="#000000" stroke-opacity="0.16"/>
+
+  <!-- eyebrow -->
+  <text x="72" y="104" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="500" letter-spacing="5" fill="#0000ee">DESIGN&#160;LANGUAGE</text>
+
+  <!-- title + subtitle -->
+  <text x="70" y="196" font-family="'Inter Display', Inter, system-ui, sans-serif" font-size="74" font-weight="600" letter-spacing="-2.4" fill="#000000">austinknight.com</text>
+  <text x="72" y="242" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="400" fill="#5c5c5c">Editorial, high-contrast, typographic</text>
+  <rect x="72" y="262" width="56" height="4" fill="#0000ee"/>
+
+  <!-- grade block -->
+  <text x="1128" y="104" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" letter-spacing="4" fill="#5c5c5c">GRADE</text>
+  <text x="1142" y="230" text-anchor="end" font-family="'Inter Display', Inter, system-ui, sans-serif" font-size="150" font-weight="700" fill="#0000ee">C</text>
+  <text x="1128" y="278" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="700" fill="#000000">78 / 100</text>
+
+  <!-- palette -->
+  <text x="72" y="336" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" letter-spacing="4" fill="#5c5c5c">PALETTE</text>
+  <g font-family="Inter, system-ui, sans-serif" font-size="17" fill="#5c5c5c">
+    <rect x="72"  y="356" width="168" height="72" rx="12" fill="#0000ee"/>
+    <text x="82"  y="452">#0000ee</text>
+    <rect x="252" y="356" width="168" height="72" rx="12" fill="#000000"/>
+    <text x="262" y="452">#000000</text>
+    <rect x="432" y="356" width="168" height="72" rx="12" fill="#111111"/>
+    <text x="442" y="452">#111111</text>
+    <rect x="612" y="356" width="168" height="72" rx="12" fill="#ffffff" stroke="#000000" stroke-opacity="0.18"/>
+    <text x="622" y="452">#ffffff</text>
+    <rect x="792" y="356" width="168" height="72" rx="12" fill="#d9d9d9" stroke="#000000" stroke-opacity="0.12"/>
+    <text x="802" y="452">#d9d9d9</text>
+    <rect x="972" y="356" width="156" height="72" rx="12" fill="#ebebeb" stroke="#000000" stroke-opacity="0.12"/>
+    <text x="982" y="452">#ebebeb</text>
+  </g>
+
+  <!-- footer stats -->
+  <line x1="72" y1="512" x2="1128" y2="512" stroke="#000000" stroke-opacity="0.12"/>
+  <text x="72" y="560" font-family="Inter, system-ui, sans-serif" font-size="24"><tspan fill="#000000" font-weight="600">Inter Display</tspan><tspan fill="#5c5c5c" font-weight="400">  ·  Instrument Serif  ·  Times</tspan></text>
+  <text x="1128" y="560" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#000000" font-weight="600">WCAG 100%<tspan fill="#5c5c5c" font-weight="400">  ·  1003 elements</tspan></text>
+  <text x="72" y="600" font-family="Inter, system-ui, sans-serif" font-size="15" letter-spacing="1.5" fill="#5c5c5c" fill-opacity="0.85">measured by designlang · 2026-09-02</text>
+</svg>
