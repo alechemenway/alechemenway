@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" data-slug="julius-fm">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>julius.fm — Design Language</title>
+<meta name="description" content="Minimal, editorial, flat. Arial · Caveat. Near-black ink on white with the browser's default-blue hyperlink as the only accent. Design-system grade A (94/100). Measured by designlang.">
+
+<!-- Social unfurl. For a real deploy, prefix these with your base URL (see gallery README / --base-url). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="julius.fm — Design Language (Grade A · 94/100)">
+<meta property="og:description" content="Minimal, editorial, flat. Arial · Caveat. Default-blue links on white. WCAG 100%. Measured by designlang.">
+<meta property="og:image" content="card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="julius.fm — Design Language (Grade A · 94/100)">
+<meta name="twitter:description" content="Minimal, editorial, flat. Default-blue links on white, Arial + Caveat. WCAG 100%.">
+<meta name="twitter:image" content="card.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f7f7; --card:#ffffff; --alt:#f7f7f7;
+    --ink:#121212; --ink-muted:#767676; --ink-faint:#9a9a9a; --line:rgb(18 18 18 / .12);
+    --blue:#0000ee; --black:#000000;
+    --sans:Arial,Helvetica,'Helvetica Neue',sans-serif;
+    --hand:'Caveat',ui-rounded,cursive;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(64% 90% at 86% -6%, rgb(0 0 238 / .10), rgba(0,0,0,0) 55%);
+    background-repeat:no-repeat;}
+  a{color:var(--blue)}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 32px 96px}
+  .eyebrow{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:3px;color:var(--blue);text-transform:uppercase}
+  .back{font-family:var(--sans);font-size:13px;color:var(--ink-muted);text-decoration:none;font-weight:400}
+  .back:hover{color:var(--ink)}
+  h1{font-family:var(--sans);font-size:clamp(40px,7vw,68px);font-weight:800;letter-spacing:-2px;line-height:1.02;margin:.32em 0 .14em}
+  .lede{color:var(--ink-muted);font-size:18px;line-height:1.55;max-width:62ch;margin:0}
+  .lede .hand{font-family:var(--hand);font-size:26px;color:var(--blue);font-weight:700}
+  .lede a{text-decoration:underline;text-underline-offset:2px}
+  .card-hero{margin:40px 0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--card);
+    box-shadow:0 6px 24px rgb(0 0 0 / .12)}
+  .card-hero img{display:block;width:100%;height:auto}
+  section{margin:56px 0}
+  h2{font-family:var(--sans);font-size:28px;font-weight:700;letter-spacing:-.28px;margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+  h2 .n{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1px}
+  .sub{color:var(--ink-muted);font-size:14px;margin:0 0 24px}
+  /* grade */
+  .grade{display:grid;gap:10px}
+  .bar{display:grid;grid-template-columns:200px 1fr 48px;align-items:center;gap:16px;font-size:14px}
+  .bar .track{height:9px;border-radius:99px;background:rgb(18 18 18 / .07);overflow:hidden}
+  .bar .fill{height:100%;border-radius:99px;background:var(--blue)}
+  .bar .val{font-family:var(--sans);font-size:13px;color:var(--ink-muted);text-align:right;font-variant-numeric:tabular-nums}
+  .bar .lab{color:var(--ink)}
+  /* palette */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+  .sw .chip{height:76px}
+  .sw .meta{padding:10px 12px}
+  .sw .hex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:600;color:var(--ink)}
+  .sw .role{font-size:12px;color:var(--ink-muted);margin-top:2px}
+  /* type */
+  .type-row{border-top:1px solid var(--line);padding:18px 0;display:flex;flex-direction:column;gap:6px}
+  .type-row:last-child{border-bottom:1px solid var(--line)}
+  .type-spec{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--ink-muted);letter-spacing:.3px}
+  .specimen{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  /* spacing */
+  .space-row{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:16px;margin:10px 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--ink-muted)}
+  .space-bar{height:14px;background:var(--blue);border-radius:3px}
+  /* tiles */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .tile{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
+  .tile .k{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:1.2px;color:var(--ink-muted);text-transform:uppercase}
+  .tile .v{font-family:var(--sans);font-size:24px;font-weight:700;margin-top:6px}
+  .tile .v small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--ink-muted)}
+  ul.plan{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ul.plan li{border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:12px 16px;font-size:14px;line-height:1.5;background:var(--card)}
+  ul.plan li.good{border-left-color:#2f9e5f}
+  .kicker{font-family:var(--sans);font-size:12.5px;color:var(--ink-muted)}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:rgb(18 18 18 / .06);padding:1px 6px;border-radius:5px}
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:12px;color:var(--ink-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer a{color:var(--ink-muted);text-decoration:none}
+  footer a:hover{color:var(--blue)}
+  @media(max-width:640px){.bar{grid-template-columns:120px 1fr 40px}.type-spec{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../index.html">&larr; Gallery</a>
+
+  <header>
+    <div class="eyebrow">Design Language</div>
+    <h1>julius.fm</h1>
+    <p class="lede">Julius Gehrig — a designer living in Berlin who <span class="hand">grew up on the internet</span>. Deliberately minimal and editorial: near-black ink on white, the browser's own default-blue hyperlink as the only accent, Arial for the words and Caveat for the handwritten asides, and flat material with soft-shadowed rounded cards.</p>
+  </header>
+
+  <div class="card-hero">
+    <img src="card.svg" alt="Design score card: julius.fm, Grade A, 94 of 100">
+  </div>
+
+  <section>
+    <h2><span class="n">01</span> Design-System Score <span style="margin-left:auto;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--blue)">94 / 100 · A</span></h2>
+    <p class="sub">Seven weighted categories, measured across 492 elements.</p>
+    <div class="grade">
+      <div class="bar"><span class="lab">Color discipline</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Typography consistency</span><span class="track"><span class="fill" style="width:90%"></span></span><span class="val">90</span></div>
+      <div class="bar"><span class="lab">Spacing system</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Shadow consistency</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">Border-radius consistency</span><span class="track"><span class="fill" style="width:90%"></span></span><span class="val">90</span></div>
+      <div class="bar"><span class="lab">Accessibility</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">100</span></div>
+      <div class="bar"><span class="lab">CSS tokenization</span><span class="track"><span class="fill" style="width:75%"></span></span><span class="val">75</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span> Palette</h2>
+    <p class="sub">A near-monochrome ink-and-white system with a single, unmistakable accent: <code>#0000ee</code>, the web browser's default unstyled-hyperlink blue, used deliberately.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#0000ee"></div><div class="meta"><div class="hex">#0000ee</div><div class="role">primary · link blue · 20×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#121212"></div><div class="meta"><div class="hex">#121212</div><div class="role">ink · primary text · 740×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#767676"></div><div class="meta"><div class="hex">#767676</div><div class="role">muted text · 120×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#9a9a9a"></div><div class="meta"><div class="hex">#9a9a9a</div><div class="role">faint · captions · 74×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#4a4a4a"></div><div class="meta"><div class="hex">#4a4a4a</div><div class="role">dark gray · 8×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#000000"></div><div class="meta"><div class="hex">#000000</div><div class="role">black · bg + text · 20×</div></div></div>
+      <div class="sw"><div class="chip" style="background:#f7f7f7;box-shadow:inset 0 0 0 1px rgb(18 18 18 / .08)"></div><div class="meta"><div class="hex">#f7f7f7</div><div class="role">surface · alt bg</div></div></div>
+      <div class="sw"><div class="chip" style="background:#ffffff;box-shadow:inset 0 0 0 1px rgb(18 18 18 / .08)"></div><div class="meta"><div class="hex">#ffffff</div><div class="role">white · page bg · 54×</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span> Type Specimens</h2>
+    <p class="sub">Arial carries every word of the site; Caveat is the one self-hosted display face, reserved for handwritten asides. Rendered at measured sizes.</p>
+
+    <div class="type-row">
+      <div class="type-spec">lede · Arial 400 · 30px / 34.5</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:400;font-size:min(30px,7vw);line-height:1.15">I love computers and software.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">h1 · Arial 700 · 28px · -0.28</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:700;font-size:28px;letter-spacing:-.28px">Julius Gehrig</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">subhead · Arial 700 · 27px / 32.4</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:700;font-size:27px;line-height:1.2">Designer living in Berlin</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">body · Arial 400 · 18px / 27.9</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:400;font-size:18px;line-height:1.55;white-space:normal">I grew up on the internet and love computers and software.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">badge · Arial 500 · 17px · pill 999px</div>
+      <div class="specimen" style="font-family:var(--sans);font-weight:500;font-size:17px"><span style="background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px">computers</span> <span style="background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px">software</span> <span style="background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px">the internet</span></div>
+    </div>
+    <div class="type-row">
+      <div class="type-spec">accent · Caveat 700 · handwritten</div>
+      <div class="specimen" style="font-family:var(--hand);font-weight:700;font-size:40px;color:var(--blue)">grew up on the internet</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span> Spacing &amp; Layout</h2>
+    <p class="sub">A 2px base unit with a wide, generous rhythm from 54 → 210px. Content columns max at 540px, cards at 960px, the outer container at 1008px with 24px gutters. Signature grid: a symmetric two-column split (462 / 462 and 258 / 258).</p>
+    <div class="space-row"><span>54</span><span class="space-bar" style="width:54px"></span></div>
+    <div class="space-row"><span>72</span><span class="space-bar" style="width:72px"></span></div>
+    <div class="space-row"><span>96</span><span class="space-bar" style="width:96px"></span></div>
+    <div class="space-row"><span>120</span><span class="space-bar" style="width:120px"></span></div>
+    <div class="space-row"><span>166</span><span class="space-bar" style="width:166px"></span></div>
+    <div class="space-row"><span>210</span><span class="space-bar" style="width:210px"></span></div>
+    <div class="tiles" style="margin-top:24px">
+      <div class="tile"><div class="k">Container</div><div class="v">1008<small>px</small></div></div>
+      <div class="tile"><div class="k">Gutter</div><div class="v">24<small>px</small></div></div>
+      <div class="tile"><div class="k">Radius (xl)</div><div class="v">24<small>px</small></div></div>
+      <div class="tile"><div class="k">Grid / flex</div><div class="v">11 <small>/ 56</small></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span> Motion</h2>
+    <p class="sub">One dominant easing curve, a seven-step duration scale, and scroll-linked reveals — including a per-character "wave" that lifts elements on a 30ms stagger. Feel: responsive.</p>
+    <div class="tiles">
+      <div class="tile"><div class="k">instant</div><div class="v">80<small>ms</small></div></div>
+      <div class="tile"><div class="k">xs</div><div class="v">150<small>ms</small></div></div>
+      <div class="tile"><div class="k">md</div><div class="v">270<small>ms</small></div></div>
+      <div class="tile"><div class="k">lg</div><div class="v">450<small>ms</small></div></div>
+      <div class="tile"><div class="k">xl · reveal</div><div class="v">750<small>ms</small></div></div>
+      <div class="tile"><div class="k">xxl</div><div class="v">1.23<small>s</small></div></div>
+    </div>
+    <p class="kicker" style="margin-top:16px">easing <code>cubic-bezier(0.22, 1, 0.36, 1)</code> (113×) + <code>ease</code> &nbsp;·&nbsp; keyframes: <strong>wave</strong> (scroll lift) · <strong>quoteMaskSpin</strong> · scrollHintEnter (seat / pop / char) &nbsp;·&nbsp; scroll-wave pass 0.85s, 30ms stagger</p>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span> Correction Plan</h2>
+    <p class="sub">What holds the grade back, and what to keep.</p>
+    <ul class="plan">
+      <li><strong>Deduplicate CSS.</strong> 370 duplicate declarations — the only real deduction (CSS tokenization 75/100). Much of it is the scroll-wave: dozens of near-identical <code>transition</code> groups differing only by a stepped delay (0.15s → 1.53s). Generate those delays from one variable instead of hand-writing each rule.</li>
+      <li><strong>Name the type steps.</strong> Typography 90/100: nine sizes including a sub-pixel <code>13.3333px</code> button size. Round to a small named scale (e.g. 30 / 28 / 27 / 20 / 18 / 17 / 16 / 15 / 13) so the ladder is explicit.</li>
+      <li><strong>Collapse the radius cluster.</strong> Border-radius 90/100: seven distinct values (16, 24, 33, 36, 50, 56, 999). The 24px card and 999px pill carry nearly all usage — fold 33 / 36 / 50 / 56 into two named pill tokens.</li>
+      <li class="good"><strong>Keep the color discipline.</strong> 100/100. A near-monochrome ink-on-white system with the default-blue link as the single accent — ink on white measures 18.73:1 (AAA), white on black 21:1.</li>
+      <li class="good"><strong>Keep the flat material.</strong> Spacing, shadow, and accessibility all 100/100. No gradients, no backdrop blur, soft single-elevation shadows, and disciplined 2px-based spacing.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>measured by designlang · 2026-09-02</span>
+    <span><a href="https://julius.fm/">julius.fm</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
