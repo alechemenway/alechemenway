@@ -6,6 +6,13 @@ import { Wrap } from '@/components/Wrap'
 import { Button } from '@/components/Button'
 import { Accent } from '@/components/Accent'
 import { FlowField } from '@/components/motion/FlowField'
+import { IntroVideo } from '@/components/home/IntroVideo'
+import portrait from '@/images/portrait-2026.jpg'
+
+// Set to '/videos/intro.mp4' once the talking-head clip lands in public/videos/.
+// While undefined, IntroVideo renders poster-only (no play button) so the hero
+// never ships broken.
+const INTRO_VIDEO_SRC: string | undefined = undefined
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -145,6 +152,12 @@ export function Hero() {
             Email ↗
           </a>
         </FadeUp>
+
+        <div className="mt-12 flex justify-center min-[880px]:absolute min-[880px]:top-1/2 min-[880px]:right-8 min-[880px]:mt-0 min-[880px]:-translate-y-1/2 min-[880px]:justify-end">
+          <FadeUp delay={0.5} reduce={reduce}>
+            <IntroVideo src={INTRO_VIDEO_SRC} poster={portrait.src} />
+          </FadeUp>
+        </div>
       </Wrap>
     </header>
   )
