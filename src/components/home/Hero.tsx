@@ -111,10 +111,10 @@ export function Hero() {
             View the work
           </Button>
           <Button
-            href="/Alec_Hemenway_Resume_2026_v13_RIA.docx"
+            href="/Alec_Hemenway_Resume_2026_v14.pdf"
             variant="ghost"
             arrow="↓"
-            download="Alec_Hemenway_Resume_2026_v13_RIA.docx"
+            download="Alec_Hemenway_Resume_2026_v14.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >

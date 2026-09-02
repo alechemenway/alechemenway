@@ -5,15 +5,15 @@ import { dirname, resolve } from 'node:path'
 import ts from 'typescript'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const resumeFileName = 'Alec_Hemenway_Resume_2026_v13_RIA.docx'
+const resumeFileName = 'Alec_Hemenway_Resume_2026_v14.pdf'
 const expectedHash =
-  '3434faa7250403e8e648eb6febf6c356ca75fd25cf3d2d36e3cce18247365aae'
+  '1f99f596a0cd62256592fba22dc236758e3d6f9181cbf22379bcb733827782e9'
 
 const resume = readFileSync(resolve(__dirname, `../public/${resumeFileName}`))
 const actualHash = createHash('sha256').update(resume).digest('hex')
 
 if (actualHash !== expectedHash) {
-  throw new Error('The public résumé does not match the supplied DOCX.')
+  throw new Error('The public résumé does not match the supplied PDF.')
 }
 
 const heroPath = resolve(__dirname, '../src/components/home/Hero.tsx')
@@ -62,7 +62,7 @@ if (getStringAttribute('href') !== `/${resumeFileName}`) {
 
 if (getStringAttribute('download') !== resumeFileName) {
   throw new Error(
-    'The homepage Résumé button should explicitly download the DOCX.',
+    'The homepage Résumé button should explicitly download the PDF.',
   )
 }
 
@@ -76,4 +76,4 @@ if (getStringAttribute('rel') !== 'noopener noreferrer') {
   )
 }
 
-console.log('Homepage Résumé button downloads the supplied DOCX.')
+console.log('Homepage Résumé button downloads the supplied PDF.')

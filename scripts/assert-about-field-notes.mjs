@@ -116,12 +116,12 @@ const expectedReceipts = [
   {
     provenance: 'Self-reported context',
     label: 'Résumé — role and quota history',
-    href: '/Alec_Hemenway_Resume_2026_1pg_v4.pdf',
+    href: '/Alec_Hemenway_Resume_2026_v14.pdf',
   },
   {
     provenance: 'Self-reported context',
     label: 'Résumé — sourcing outcomes',
-    href: '/Alec_Hemenway_Resume_2026_1pg_v4.pdf',
+    href: '/Alec_Hemenway_Resume_2026_v14.pdf',
   },
   {
     provenance: 'Public artifact',
@@ -163,7 +163,7 @@ const expectedContactActions = [
   ['Email', 'mailto:alec@hemenway.io'],
   ['LinkedIn', 'https://www.linkedin.com/in/alec-hemenway/'],
   ['GitHub', 'https://github.com/alechemenway'],
-  ['Résumé', '/Alec_Hemenway_Resume_2026_1pg_v4.pdf'],
+  ['Résumé', '/Alec_Hemenway_Resume_2026_v14.pdf'],
 ]
 
 if (contactActions.length !== expectedContactActions.length) {

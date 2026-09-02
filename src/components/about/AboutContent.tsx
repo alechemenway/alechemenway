@@ -64,7 +64,7 @@ const contactLinks = [
   },
   {
     label: 'Résumé',
-    href: '/Alec_Hemenway_Resume_2026_1pg_v4.pdf',
+    href: '/Alec_Hemenway_Resume_2026_v14.pdf',
     newTab: true,
   },
 ]
@@ -574,7 +574,7 @@ export function AboutContent() {
         <a
           data-receipt
           data-provenance="Self-reported context"
-          href="/Alec_Hemenway_Resume_2026_1pg_v4.pdf"
+          href="/Alec_Hemenway_Resume_2026_v14.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className={receipt}
@@ -659,7 +659,7 @@ export function AboutContent() {
         <a
           data-receipt
           data-provenance="Self-reported context"
-          href="/Alec_Hemenway_Resume_2026_1pg_v4.pdf"
+          href="/Alec_Hemenway_Resume_2026_v14.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className={receipt}
