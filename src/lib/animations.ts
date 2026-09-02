@@ -1,75 +1,63 @@
-import { type Variants } from 'motion/react'
-
 export const easeOut = [0.22, 1, 0.36, 1] as const
 
-export const viewportOnce = {
-  once: true,
-  margin: '-80px',
+export function easeOutExpo(progress: number) {
+  if (progress <= 0) return 0
+  if (progress >= 1) return 1
+  return 1 - Math.pow(2, -10 * progress)
+}
+
+export const overQuotaCounter = {
+  mainDurationMs: 900,
+  pauseMs: 200,
+  overrunDurationMs: 250,
+  flickerDurationMs: 120,
+  viewportAmount: 0.35,
 } as const
 
-export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: easeOut },
-  },
-}
-
-export const fadeOnly: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.3, ease: easeOut },
-  },
-}
-
-export const stagger = (
-  staggerChildren: number,
-  delayChildren = 0,
-): Variants => ({
-  hidden: {},
-  visible: {
-    transition: { staggerChildren, delayChildren },
-  },
-})
-
-export const headlineWord: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: easeOut, delay },
-  }),
-}
-
-export const emphasisWord: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: easeOut, delay: 0.18 },
-  },
-}
-
-export const headlineMarker: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.3, ease: easeOut, delay: 1.04 },
-  },
-}
-
-export const highlightFlash: Variants = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 0,
-    transition: { duration: 0.8, ease: easeOut },
-  },
-}
-
-export const counterConfig = {
-  duration: 1200,
-  ease: (progress: number) =>
-    progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress),
+export const teletypeConfig = {
+  characterIntervalMs: 30,
+  cursorBlinkMs: 530,
+  lineDelayMs: 120,
+  viewportAmount: 0.2,
 } as const
+
+export function getTeletypeLineDelay(index: number) {
+  return index * teletypeConfig.lineDelayMs
+}
+
+export const scrollProgressConfig = {
+  desktopMediaQuery: '(min-width: 768px)',
+  opacity: 0.2,
+} as const
+
+export const systemHeadlineConfig = {
+  wordDurationSeconds: 0.4,
+  wordStaggerSeconds: 0.05,
+  wordOffsetPx: 16,
+  diagramDurationSeconds: 1.5,
+  diagramOpacity: 0.08,
+  viewportAmount: 0.35,
+} as const
+
+export const contextBarConfig = {
+  pulseDurationSeconds: 2,
+  pulseMinimumOpacity: 0.4,
+  scrambleDurationMs: 300,
+} as const
+
+export const ellipsisConfig = {
+  viewportOffset: ['start 65%', 'end 35%'],
+  thresholds: [0, 0.5, 1],
+} as const
+
+export function getEllipsisOpacities(progress: number) {
+  return ellipsisConfig.thresholds.map((threshold, index) =>
+    index === 0
+      ? progress > threshold
+        ? 1
+        : 0
+      : progress >= threshold
+        ? 1
+        : 0,
+  )
+}
