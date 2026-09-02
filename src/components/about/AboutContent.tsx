@@ -70,15 +70,11 @@ const contactLinks = [
 ]
 
 const headline = [
-  { word: 'I', delay: 0 },
-  { word: 'sell', delay: 0.04 },
-  { word: 'enterprise', delay: 0.08 },
-  { word: 'SaaS', delay: 0.12 },
-  { word: 'and', delay: 0.16 },
-  { word: 'self-source', delay: 0.6, emphasis: true },
-  { word: 'pipeline', delay: 0.2 },
-  { word: 'with', delay: 0.24 },
-  { word: 'AI.', delay: 0.28 },
+  { word: 'Enterprise', delay: 0 },
+  { word: 'AE', delay: 0.04 },
+  { word: 'with', delay: 0.08 },
+  { word: 'commit', delay: 0.12 },
+  { word: 'history.', delay: 0.16 },
 ]
 
 const bodyCopy =
@@ -114,13 +110,7 @@ function Headline({ motionEnabled }: { motionEnabled: boolean }) {
     'mx-auto mt-[34px] max-w-[13ch] text-[clamp(48px,7vw,92px)] leading-[0.98] font-extrabold tracking-[-0.055em] max-[760px]:mx-0 max-[760px]:mt-[26px] max-[760px]:text-[48px]'
 
   if (!motionEnabled) {
-    return (
-      <h1 className={className}>
-        I sell enterprise SaaS and{' '}
-        <em className="font-serif text-accent">self-source</em> pipeline with
-        AI.
-      </h1>
-    )
+    return <h1 className={className}>Enterprise AE with commit history.</h1>
   }
 
   return (
@@ -128,17 +118,15 @@ function Headline({ motionEnabled }: { motionEnabled: boolean }) {
       className={className}
       initial="hidden"
       animate="visible"
-      aria-label="I sell enterprise SaaS and self-source pipeline with AI."
+      aria-label="Enterprise AE with commit history."
     >
-      {headline.map(({ word, delay, emphasis }, index) => (
+      {headline.map(({ word, delay }, index) => (
         <Fragment key={word}>
           <motion.span
             custom={delay}
             variants={headlineWord}
             aria-hidden="true"
-            className={`inline-block ${
-              emphasis ? 'font-serif text-accent italic' : ''
-            }`}
+            className="inline-block"
           >
             {word}
           </motion.span>

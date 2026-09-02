@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from 'motion/react'
 
 import { Wrap } from '@/components/Wrap'
 import { Button } from '@/components/Button'
-import { Accent } from '@/components/Accent'
 import { FlowField } from '@/components/motion/FlowField'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -82,13 +81,7 @@ export function Hero() {
 
         <h1 className="mt-6 max-w-[15ch] text-[clamp(44px,7.4vw,104px)] leading-[0.96] font-extrabold tracking-[-0.04em]">
           <Line i={0} reduce={reduce}>
-            I sell enterprise
-          </Line>
-          <Line i={1} reduce={reduce}>
-            software — and build
-          </Line>
-          <Line i={2} reduce={reduce}>
-            the <Accent>AI</Accent> that sells it.
+            Enterprise AE with commit history.
           </Line>
         </h1>
 
