@@ -10,7 +10,7 @@ import { ClosingBand } from '@/components/ClosingBand'
 export const metadata: Metadata = {
   title: 'Work with me',
   description:
-    'The next seat Alec Hemenway is looking for — a high-stakes enterprise AE role at an AI-native company where self-sourced pipeline and a builder’s instinct are features, not extras.',
+    "The next seat Alec Hemenway is looking for — a high-stakes enterprise AE role at an AI-native company where self-sourced pipeline and a builder's instinct are part of the job description.",
 }
 
 const panels = [
@@ -20,15 +20,15 @@ const panels = [
     items: [
       {
         lead: 'Self-sourced pipeline',
-        body: '$3M+ generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
+        body: '$3M generated across my last two roles by wiring Claude into research, intent, and outbound. $1.6M at Coram in 7 months alone.',
       },
       {
-        lead: 'A four-year quota streak',
-        body: 'Never missed a number from SDR through Senior AE at Jamf; #2 of 22 at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
+        lead: 'Attainment on the record',
+        body: '112% of $460K at Jamf in 2023 (Pinnacle Club, top 5% globally), 100%+ in 2021 and 2022; 97% of $690K at Staffbase, #2 of 22.',
       },
       {
         lead: 'Real AI infrastructure',
-        body: '60+ open-source skills, custom MCPs, and eval harnesses I run in production — not slideware. Live product at repcoaching.io.',
+        body: '60+ open-source skills, custom MCPs, and eval harnesses I run in production. Live product at repcoaching.io.',
       },
       {
         lead: 'Full-cycle enterprise motion',
@@ -74,7 +74,7 @@ const fitRows = [
   {
     question: 'You want pure outbound volume',
     verdict: 'Let’s talk.',
-    body: 'I treat outbound as a system, not a dialing contest — the receipts come from leverage, not hours.',
+    body: 'I run outbound as a system: signal first, then the calls that deserve the time. The $1.6M at Coram came from that motion with zero SDR support.',
   },
 ]
 
@@ -88,8 +88,8 @@ export default function WorkWithMe() {
         </h1>
         <p className="mt-6 max-w-[56ch] text-lg leading-[1.65] text-ink-2">
           I’m looking for a high-stakes enterprise AE role — ideally at a company
-          building or selling AI, where self-sourced pipeline and a builder’s
-          instinct are features, not extras.
+          building or selling AI, where self-sourced pipeline and a builder&apos;s
+          instinct are part of the job description.
         </p>
       </header>
 

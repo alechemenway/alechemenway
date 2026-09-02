@@ -31,8 +31,8 @@ if (
 
 const counters = $('[data-count-up]')
 const expectedCounters = [
-  { value: '$3M+', target: '3', prefix: '$', suffix: 'M+' },
-  { value: '4 years', target: '4', prefix: '', suffix: ' years' },
+  { value: '$3M', target: '3', prefix: '$', suffix: 'M' },
+  { value: '2023', target: '2023', prefix: '', suffix: '' },
   { value: '60+', target: '60', prefix: '', suffix: '+' },
 ]
 
@@ -57,7 +57,7 @@ const highlightedStats = $('[data-highlight-stat]')
   .map((element) => $(element).text().trim())
 const expectedHighlightedStats = [
   '$1.6M',
-  '$102K',
+  '$112K',
   '#2 of 22',
   '97%',
   '$1.4M',
@@ -116,12 +116,12 @@ const expectedReceipts = [
   {
     provenance: 'Self-reported context',
     label: 'Résumé — role and quota history',
-    href: '/Alec_Hemenway_Resume_2026_1pg_v4.pdf',
+    href: '/Alec_Hemenway_Resume_2026_1pg_v5.1.pdf',
   },
   {
     provenance: 'Self-reported context',
     label: 'Résumé — sourcing outcomes',
-    href: '/Alec_Hemenway_Resume_2026_1pg_v4.pdf',
+    href: '/Alec_Hemenway_Resume_2026_1pg_v5.1.pdf',
   },
   {
     provenance: 'Public artifact',
@@ -154,8 +154,47 @@ expectedReceipts.forEach((expected, index) => {
   }
 })
 
-if (!pageText.includes('not customer adoption or commercial usage')) {
+if (
+  !pageText.includes(
+    'Published artifacts you can install today. No adoption numbers claimed.',
+  )
+) {
   throw new Error('The 60+ artifact count needs its approved qualifier.')
+}
+
+const expectedCopy = [
+  '$3M self-sourced pipeline·Pinnacle Club 2023 (top 5%)·60+ Claude Code skills',
+  'The number came first, and I carried it for 7 years before wiring in any AI.',
+  "I've spent the last 7 years selling enterprise software, SDR through Senior AE. The record: 100%+ at Jamf in 2021 and 2022 (#3 of ~30), 112% of $460K in 2023 (Pinnacle Club, top 5% globally).",
+  '100%+ in 2021 and 2022 (#3 of ~30); 97% of $690K at Staffbase, #2 of 22; Pinnacle Club 2023 (top 5% globally).',
+  'The change was the operating model: how I find and reach the right accounts.',
+  'closed $112K net-new ARR across 4 wins by wiring Claude into every step that used to eat my week: buyer-signal research,',
+  'The result is infrastructure: skills, MCPs, and eval harnesses I run in production against real accounts.',
+  'Every AI claim links to something you can read or run.',
+  "I've published 60+ open-source Claude Code skills",
+  'I sell the category I build in, and I can talk to a CRO and an engineer in the same meeting.',
+  'Open-source skills and eval infrastructure. The 60+ counts published artifacts.',
+  '112% at Jamf in 2023; 100%+ in 2021 and 2022; 97% at Staffbase, #2 of 22; Pinnacle Club 2023 (top 5% globally).',
+  'the next high-stakes enterprise AE seat, ideally at a company building or selling AI.',
+  'Tell me about the seat and the number.',
+]
+
+expectedCopy.forEach((copy) => {
+  if (!pageText.includes(copy)) {
+    throw new Error(`About is missing approved copy: ${copy}`)
+  }
+})
+
+const attainmentLabel = $('main div').filter(
+  (_, element) =>
+    $(element).text().trim() === 'of $460K quota, Jamf 2023',
+)
+
+if (
+  attainmentLabel.length !== 1 ||
+  attainmentLabel.prev('div').text().trim() !== '112%'
+) {
+  throw new Error('The Jamf 2023 attainment stat block is misconfigured.')
 }
 
 const contactActions = $('[data-contact-action]')
@@ -163,7 +202,7 @@ const expectedContactActions = [
   ['Email', 'mailto:alec@hemenway.io'],
   ['LinkedIn', 'https://www.linkedin.com/in/alec-hemenway/'],
   ['GitHub', 'https://github.com/alechemenway'],
-  ['Résumé', '/Alec_Hemenway_Resume_2026_1pg_v4.pdf'],
+  ['Résumé', '/Alec_Hemenway_Resume_2026_1pg_v5.1.pdf'],
 ]
 
 if (contactActions.length !== expectedContactActions.length) {
