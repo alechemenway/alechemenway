@@ -111,9 +111,10 @@ export function Hero() {
             View the work
           </Button>
           <Button
-            href="/Alec_Hemenway_Resume_2026_1pg_v4.pdf"
+            href="/Alec_Hemenway_Resume_2026_v13_RIA.docx"
             variant="ghost"
             arrow="↓"
+            download="Alec_Hemenway_Resume_2026_v13_RIA.docx"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -129,12 +130,16 @@ export function Hero() {
           <a
             href="https://github.com/alechemenway"
             className="transition-colors hover:text-accent"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub ↗
           </a>
           <a
             href="https://www.linkedin.com/in/alec-hemenway/"
             className="transition-colors hover:text-accent"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn ↗
           </a>
