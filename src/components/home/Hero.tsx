@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from 'motion/react'
 
 import { Wrap } from '@/components/Wrap'
 import { Button } from '@/components/Button'
-import { Accent } from '@/components/Accent'
 import { FlowField } from '@/components/motion/FlowField'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -82,27 +81,26 @@ export function Hero() {
 
         <h1 className="mt-6 max-w-[15ch] text-[clamp(44px,7.4vw,104px)] leading-[0.96] font-extrabold tracking-[-0.04em]">
           <Line i={0} reduce={reduce}>
-            I sell enterprise
-          </Line>
-          <Line i={1} reduce={reduce}>
-            software — and build
-          </Line>
-          <Line i={2} reduce={reduce}>
-            the <Accent>AI</Accent> that sells it.
+            Enterprise AE with commit history.
           </Line>
         </h1>
 
         <FadeUp delay={0.36} reduce={reduce}>
-          <p className="mt-7 max-w-[52ch] text-[clamp(16px,1.35vw,19px)] leading-[1.62] text-ink-2">
-            Enterprise AE: 112% of a $460K quota at Jamf in 2023 (Pinnacle
-            Club, top 5% globally), 97% of $690K at Staffbase (#2 of 22). I
-            build the systems behind the number too: prospecting skills, eval
-            harnesses, a live coaching product.{' '}
-            <b className="font-semibold text-ink">
-              $3M of self-sourced pipeline
-            </b>{' '}
-            across my last two seats came out of that stack.
-          </p>
+          <div className="mt-7 max-w-[52ch] text-[clamp(16px,1.35vw,19px)] leading-[1.62] text-ink-2">
+            <p>
+              Enterprise AE: 112% of a $460K quota at Jamf in 2023 (Pinnacle
+              Club, top 5% globally), 97% of $690K at Staffbase (#2 of 22).
+              Running that stack taught me where AI deals live or die: trust
+              and deployment. The conversations that win them are architecture
+              conversations: where the data can&apos;t go, who reviews AI output
+              before it touches the system of record, what the audit trail
+              shows.
+            </p>
+            <p className="mt-4">
+              That changes how I sell: signal-driven research before the first
+              call and ROI narratives that price the status quo.
+            </p>
+          </div>
         </FadeUp>
 
         <FadeUp

@@ -22,11 +22,9 @@ if ($('main h1').length !== 1 || $('main h1').hasClass('sr-only')) {
 
 if (
   $('main h1').text().replaceAll(/\s+/g, ' ').trim() !==
-  'I sell enterprise SaaS and self-source pipeline with AI.'
+  'Enterprise AE with commit history.'
 ) {
-  throw new Error(
-    'About H1 should restore the approved enterprise SaaS headline.',
-  )
+  throw new Error('About H1 should show the approved commit-history headline.')
 }
 
 const counters = $('[data-count-up]')
