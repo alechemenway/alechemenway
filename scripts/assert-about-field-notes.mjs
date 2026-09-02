@@ -16,20 +16,78 @@ const expectedChapters = [
   ['Field note 03', 'The system leaves artifacts.'],
 ]
 
-if ($('main h1').length !== 1 || !$('main h1').hasClass('sr-only')) {
-  throw new Error('About should render one screen-reader-only H1.')
-}
-
-if ($('main h1').text().trim() !== 'About Alec Hemenway') {
-  throw new Error(
-    'About H1 should name Alec without restoring the removed headline.',
-  )
+if ($('main h1').length !== 1 || $('main h1').hasClass('sr-only')) {
+  throw new Error('About should render one visible H1.')
 }
 
 if (
-  pageText.includes('I sell enterprise SaaS and self-source pipeline with AI.')
+  $('main h1').text().replaceAll(/\s+/g, ' ').trim() !==
+  'I sell enterprise SaaS and self-source pipeline with AI.'
 ) {
-  throw new Error('The removed About headline should not be visible.')
+  throw new Error(
+    'About H1 should restore the approved enterprise SaaS headline.',
+  )
+}
+
+const counters = $('[data-count-up]')
+const expectedCounters = [
+  { value: '$3M+', target: '3', prefix: '$', suffix: 'M+' },
+  { value: '4 years', target: '4', prefix: '', suffix: ' years' },
+  { value: '60+', target: '60', prefix: '', suffix: '+' },
+]
+
+if (counters.length !== expectedCounters.length) {
+  throw new Error('About should render exactly three count-up proof points.')
+}
+
+expectedCounters.forEach((expected, index) => {
+  const counter = counters.eq(index)
+  if (
+    counter.text().trim() !== expected.value ||
+    counter.attr('data-count-up') !== expected.target ||
+    (counter.attr('data-prefix') ?? '') !== expected.prefix ||
+    (counter.attr('data-suffix') ?? '') !== expected.suffix
+  ) {
+    throw new Error(`Count-up proof point ${index + 1} is misconfigured.`)
+  }
+})
+
+const highlightedStats = $('[data-highlight-stat]')
+  .toArray()
+  .map((element) => $(element).text().trim())
+const expectedHighlightedStats = [
+  '$1.6M',
+  '$102K',
+  '#2 of 22',
+  '97%',
+  '$1.4M',
+  '75%',
+]
+
+if (
+  highlightedStats.length !== expectedHighlightedStats.length ||
+  expectedHighlightedStats.some((stat) => !highlightedStats.includes(stat))
+) {
+  throw new Error(
+    'About should highlight the six approved recruiter-scan stats.',
+  )
+}
+
+const dividers = $('[data-motion-divider]')
+if (
+  dividers.length !== 3 ||
+  dividers.toArray().some((divider) => {
+    const dots = $(divider).children()
+    return (
+      dots.length !== 3 || dots.toArray().some((dot) => $(dot).text() !== '.')
+    )
+  })
+) {
+  throw new Error('About should render three literal "..." section dividers.')
+}
+
+if ($('[data-portrait-motion]').length !== 1) {
+  throw new Error('About should expose one portrait motion target.')
 }
 
 if ($('main [style*="opacity:0"]').length > 0) {
@@ -100,16 +158,29 @@ if (!pageText.includes('not customer adoption or commercial usage')) {
   throw new Error('The 60+ artifact count needs its approved qualifier.')
 }
 
-const primaryActions = $('[data-primary-action="true"]')
-if (
-  primaryActions.length !== 1 ||
-  primaryActions.attr('href') !== '/work-with-me'
-) {
-  throw new Error('About should expose one primary action to Work with me.')
+const contactActions = $('[data-contact-action]')
+const expectedContactActions = [
+  ['Email', 'mailto:alec@hemenway.io'],
+  ['LinkedIn', 'https://www.linkedin.com/in/alec-hemenway/'],
+  ['GitHub', 'https://github.com/alechemenway'],
+  ['Résumé', '/Alec_Hemenway_Resume_2026_1pg_v4.pdf'],
+]
+
+if (contactActions.length !== expectedContactActions.length) {
+  throw new Error('About should render exactly four closing contact actions.')
 }
 
-if ($('a[href="mailto:alec@hemenway.io"]').length !== 1) {
-  throw new Error('About should retain one restrained email link.')
+expectedContactActions.forEach(([label, href], index) => {
+  const action = contactActions.eq(index)
+  if (action.text().trim() !== label || action.attr('href') !== href) {
+    throw new Error(`Closing contact action ${index + 1} is misconfigured.`)
+  }
+})
+
+if ($('[data-primary-action="true"]').length !== 0) {
+  throw new Error(
+    'The four-link closing CTA should not retain a competing action.',
+  )
 }
 
 console.log('Rendered About page matches the approved Field Notes contract.')
