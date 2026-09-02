@@ -13,8 +13,8 @@ import {
 import clsx from 'clsx'
 
 const navLinks = [
-  { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
   { href: '/work-with-me', label: 'Work with me' },
 ]
 

@@ -66,4 +66,14 @@ if (getStringAttribute('download') !== resumeFileName) {
   )
 }
 
+if (getStringAttribute('target') !== '_blank') {
+  throw new Error('The homepage Résumé button should open in a new tab.')
+}
+
+if (getStringAttribute('rel') !== 'noopener noreferrer') {
+  throw new Error(
+    'The homepage Résumé button should protect the new-tab opener context.',
+  )
+}
+
 console.log('Homepage Résumé button downloads the supplied DOCX.')
