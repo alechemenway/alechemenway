@@ -93,16 +93,21 @@ export function Hero() {
         </h1>
 
         <FadeUp delay={0.36} reduce={reduce}>
-          <p className="mt-7 max-w-[52ch] text-[clamp(16px,1.35vw,19px)] leading-[1.62] text-ink-2">
-            Enterprise AE: 112% of a $460K quota at Jamf in 2023 (Pinnacle
-            Club, top 5% globally), 97% of $690K at Staffbase (#2 of 22). I
-            build the systems behind the number too: prospecting skills, eval
-            harnesses, a live coaching product.{' '}
-            <b className="font-semibold text-ink">
-              $3M of self-sourced pipeline
-            </b>{' '}
-            across my last two seats came out of that stack.
-          </p>
+          <div className="mt-7 max-w-[52ch] text-[clamp(16px,1.35vw,19px)] leading-[1.62] text-ink-2">
+            <p>
+              Enterprise AE: 112% of a $460K quota at Jamf in 2023 (Pinnacle
+              Club, top 5% globally), 97% of $690K at Staffbase (#2 of 22).
+              Running that stack taught me where AI deals live or die: trust
+              and deployment. The conversations that win them are architecture
+              conversations: where the data can&apos;t go, who reviews AI output
+              before it touches the system of record, what the audit trail
+              shows.
+            </p>
+            <p className="mt-4">
+              That changes how I sell: signal-driven research before the first
+              call and ROI narratives that price the status quo.
+            </p>
+          </div>
         </FadeUp>
 
         <FadeUp
