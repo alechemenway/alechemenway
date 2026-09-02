@@ -94,11 +94,14 @@ export function Hero() {
 
         <FadeUp delay={0.36} reduce={reduce}>
           <p className="mt-7 max-w-[52ch] text-[clamp(16px,1.35vw,19px)] leading-[1.62] text-ink-2">
-            Enterprise AE at or near 100% of quota four years running, and a GTM
-            developer who ships the systems behind the number — prospecting
-            skills, eval harnesses, live products.{' '}
-            <b className="font-semibold text-ink">$3M self-sourced pipeline</b>{' '}
-            is the proof, not the pitch.
+            Enterprise AE: 112% of a $460K quota at Jamf in 2023 (Pinnacle
+            Club, top 5% globally), 97% of $690K at Staffbase (#2 of 22). I
+            build the systems behind the number too: prospecting skills, eval
+            harnesses, a live coaching product.{' '}
+            <b className="font-semibold text-ink">
+              $3M of self-sourced pipeline
+            </b>{' '}
+            across my last two seats came out of that stack.
           </p>
         </FadeUp>
 
@@ -110,11 +113,12 @@ export function Hero() {
           <Button href="/projects" variant="solid" arrow="→">
             View the work
           </Button>
+          {/* TODO add Alec_Hemenway_Resume_2026_1pg_v5.1.pdf. */}
           <Button
-            href="/Alec_Hemenway_Resume_2026_v13_RIA.docx"
+            href="/Alec_Hemenway_Resume_2026_1pg_v5.1.pdf"
             variant="ghost"
             arrow="↓"
-            download="Alec_Hemenway_Resume_2026_v13_RIA.docx"
+            download="Alec_Hemenway_Resume_2026_1pg_v5.1.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
