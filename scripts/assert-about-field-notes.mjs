@@ -27,28 +27,23 @@ if (
   throw new Error('About H1 should show the approved commit-history headline.')
 }
 
-const counters = $('[data-count-up]')
-const expectedCounters = [
-  { value: '$3M', target: '3', prefix: '$', suffix: 'M' },
-  { value: '2023', target: '2023', prefix: '', suffix: '' },
-  { value: '60+', target: '60', prefix: '', suffix: '+' },
-]
-
-if (counters.length !== expectedCounters.length) {
-  throw new Error('About should render exactly three count-up proof points.')
+const overQuotaCounter = $('[data-over-quota-counter]')
+const overQuotaA11y = $('[data-over-quota-a11y]')
+const overQuotaVisual = $('[data-over-quota-visual]')
+if (
+  overQuotaCounter.length !== 1 ||
+  overQuotaVisual.length !== 1 ||
+  overQuotaVisual.attr('aria-hidden') !== 'true' ||
+  overQuotaVisual.find('[data-over-quota-value]').text().trim() !== '112' ||
+  overQuotaVisual.find('[data-over-quota-percent]').text() !== '%' ||
+  overQuotaVisual.text().replaceAll(/\s+/g, '') !== '112%' ||
+  overQuotaA11y.length !== 1 ||
+  overQuotaA11y.text().trim() !== '112%'
+) {
+  throw new Error(
+    'About should render one complete visual 112% counter and one stable accessible value.',
+  )
 }
-
-expectedCounters.forEach((expected, index) => {
-  const counter = counters.eq(index)
-  if (
-    counter.text().trim() !== expected.value ||
-    counter.attr('data-count-up') !== expected.target ||
-    (counter.attr('data-prefix') ?? '') !== expected.prefix ||
-    (counter.attr('data-suffix') ?? '') !== expected.suffix
-  ) {
-    throw new Error(`Count-up proof point ${index + 1} is misconfigured.`)
-  }
-})
 
 const highlightedStats = $('[data-highlight-stat]')
   .toArray()
@@ -71,7 +66,7 @@ if (
   )
 }
 
-const dividers = $('[data-motion-divider]')
+const dividers = $('[data-scroll-ellipsis]')
 if (
   dividers.length !== 3 ||
   dividers.toArray().some((divider) => {
@@ -81,14 +76,20 @@ if (
     )
   })
 ) {
-  throw new Error('About should render three literal "..." section dividers.')
+  throw new Error(
+    'About should render three complete scroll-driven ellipsis dividers.',
+  )
 }
 
-if ($('[data-portrait-motion]').length !== 1) {
-  throw new Error('About should expose one portrait motion target.')
+if ($('[data-scroll-progress-rule]').length !== 1) {
+  throw new Error('About should render one transform-driven progress rule.')
 }
 
-if ($('main [style*="opacity:0"]').length > 0) {
+const hiddenContent = $('main [style]').filter((_, element) =>
+  /(?:^|;)\s*opacity:\s*0(?:;|$)/u.test($(element).attr('style') ?? ''),
+)
+
+if (hiddenContent.length > 0) {
   throw new Error('About content should remain visible without JavaScript.')
 }
 
@@ -108,6 +109,42 @@ expectedChapters.forEach(([kicker, heading], index) => {
     )
   }
 })
+
+const fieldNoteTeletype = $('[data-teletype="field-note-02"]')
+if (
+  fieldNoteTeletype.length !== 1 ||
+  fieldNoteTeletype.text().trim() !== 'Field note 02'
+) {
+  throw new Error('Field note 02 needs a complete static teletype fallback.')
+}
+
+const methodTeletype = $('[data-teletype-method]')
+const expectedMethodLines = [
+  '[Method]',
+  'Buyer-signal research',
+  'Intent data',
+  'Account prioritization',
+  'First-touch outbound',
+]
+if (
+  methodTeletype.length !== 1 ||
+  !expectedMethodLines.every(
+    (line, index) =>
+      methodTeletype.find('[data-teletype-line]').eq(index).text().trim() ===
+      line,
+  )
+) {
+  throw new Error('The Method marginalia needs five complete teletype lines.')
+}
+
+const systemDiagram = $('[data-system-diagram]')
+if (
+  systemDiagram.length !== 1 ||
+  systemDiagram.find('circle').length !== 6 ||
+  systemDiagram.find('line, path').length < 5
+) {
+  throw new Error('The system headline needs one inline six-node diagram.')
+}
 
 const receipts = $('[data-receipt]')
 const expectedReceipts = [
@@ -130,6 +167,16 @@ const expectedReceipts = [
 
 if (receipts.length !== expectedReceipts.length) {
   throw new Error('About should render exactly three receipt links.')
+}
+
+if (
+  $('[data-context-bar]').length !== 2 ||
+  $('[data-live-indicator]').length !== 2 ||
+  $('[data-scramble-label]').length !== 2
+) {
+  throw new Error(
+    'Both self-reported résumé bars need the live dot and fixed-width scramble label.',
+  )
 }
 
 expectedReceipts.forEach((expected, index) => {
@@ -184,13 +231,16 @@ expectedCopy.forEach((copy) => {
 })
 
 const attainmentLabel = $('main div').filter(
-  (_, element) =>
-    $(element).text().trim() === 'of $460K quota, Jamf 2023',
+  (_, element) => $(element).text().trim() === 'of $460K quota, Jamf 2023',
 )
 
 if (
   attainmentLabel.length !== 1 ||
-  attainmentLabel.prev('div').text().trim() !== '112%'
+  attainmentLabel
+    .prev('div')
+    .find('[data-over-quota-visual]')
+    .text()
+    .replaceAll(/\s+/g, '') !== '112%'
 ) {
   throw new Error('The Jamf 2023 attainment stat block is misconfigured.')
 }
