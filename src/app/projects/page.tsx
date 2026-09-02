@@ -37,7 +37,7 @@ const projects: Project[] = [
     index: '02',
     description:
       'Plain-English ICP → 50 ranked, enriched leads in under five minutes. Cuts a half-day prospecting workflow to one coffee. Live demo accepts your own Anthropic + Apollo keys.',
-    outcome: '4–6 hrs saved per ICP build',
+    outcome: '~5 hrs saved per ICP build',
     chips: ['Claude', 'Apollo API', 'Vercel Functions'],
     link: 'Open demo',
     href: GITHUB,
@@ -60,8 +60,8 @@ const projects: Project[] = [
     title: 'DailyOK',
     index: '04',
     description:
-      'Daily AI voice calls that check in on seniors and score eight dimensions of cognitive and emotional health from natural conversation — surfacing decline early for family and care teams. Caregiver dashboard, SMS alerts, HIPAA-grade data handling.',
-    outcome: 'HIPAA-grade voice pipeline, pilot-ready',
+      'Daily AI voice calls that check in on seniors and score eight dimensions of cognitive and emotional health from natural conversation — surfacing decline early for family and care teams. Caregiver dashboard, SMS alerts, HIPAA-aligned data handling.',
+    outcome: '265 calls scored across 3 live senior-caregiver pairs.',
     chips: ['Voice AI', 'Twilio', 'HIPAA'],
     link: 'Read writeup',
     href: 'https://github.com/alechemenway/dailyok-dashboard',
@@ -76,7 +76,7 @@ const projects: Project[] = [
     title: 'AI ROI Teardown',
     index: '05',
     description:
-      'Turns an AI use case into the teardown a buyer actually needs — token and infra cost model, accuracy bar, failure-mode taxonomy, build-vs-buy math. The bridge between what engineers ship and what a CFO will sign.',
+      'Turns an AI use case into the teardown a buyer needs — token and infra cost model, accuracy bar, failure-mode taxonomy, build-vs-buy math. The bridge between what engineers ship and what a CFO will sign.',
     outcome: 'Built as buyer + interview artifacts',
     chips: ['Claude', 'Cost modeling', 'Eval design'],
     link: 'Read a teardown',
@@ -112,7 +112,7 @@ const projects: Project[] = [
     title: 'Maintainer Orchestrator',
     index: '08',
     description:
-      'A control-plane agent that triages multi-repo work, hands implementation to worker subagents, and brings back decision-ready PRs. Coordination and execution on separate planes — a real multi-agent system, not one long prompt pretending to be one.',
+      'A control-plane agent that triages multi-repo work, hands implementation to worker subagents, and brings back decision-ready PRs. Coordination and execution run on separate planes: the control plane decides, worker subagents implement.',
     outcome: 'Control plane + worker subagents',
     chips: ['Claude Code', 'Subagents', 'GitHub'],
     link: 'See the architecture',
@@ -152,7 +152,7 @@ export default function Projects() {
             Want one of these <Accent>wired into</Accent> your stack?
           </>
         }
-        paragraph="Most of these are open-source or live demos. The rest I'm happy to walk through. I reply to every real message within 48 hours."
+        paragraph="Most of these are open-source or live demos. The rest I'm happy to walk through. Get in touch."
         primary={{
           label: 'Get in touch',
           arrow: '→',

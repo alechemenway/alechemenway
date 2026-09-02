@@ -38,7 +38,7 @@ const principles = [
   },
   {
     lead: 'Consistent attainment.',
-    body: '112% at Jamf with 100%+ the three prior years; #2 of 22 reps at 97% attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).',
+    body: '112% at Jamf in 2023; 100%+ in 2021 and 2022; 97% at Staffbase, #2 of 22; Pinnacle Club 2023 (top 5% globally).',
   },
   {
     lead: 'Receipts over hype.',
@@ -70,15 +70,11 @@ const contactLinks = [
 ]
 
 const headline = [
-  { word: 'I', delay: 0 },
-  { word: 'sell', delay: 0.04 },
-  { word: 'enterprise', delay: 0.08 },
-  { word: 'SaaS', delay: 0.12 },
-  { word: 'and', delay: 0.16 },
-  { word: 'self-source', delay: 0.6, emphasis: true },
-  { word: 'pipeline', delay: 0.2 },
-  { word: 'with', delay: 0.24 },
-  { word: 'AI.', delay: 0.28 },
+  { word: 'Enterprise', delay: 0 },
+  { word: 'AE', delay: 0.04 },
+  { word: 'with', delay: 0.08 },
+  { word: 'commit', delay: 0.12 },
+  { word: 'history.', delay: 0.16 },
 ]
 
 const bodyCopy =
@@ -114,13 +110,7 @@ function Headline({ motionEnabled }: { motionEnabled: boolean }) {
     'mx-auto mt-[34px] max-w-[13ch] text-[clamp(48px,7vw,92px)] leading-[0.98] font-extrabold tracking-[-0.055em] max-[760px]:mx-0 max-[760px]:mt-[26px] max-[760px]:text-[48px]'
 
   if (!motionEnabled) {
-    return (
-      <h1 className={className}>
-        I sell enterprise SaaS and{' '}
-        <em className="font-serif text-accent">self-source</em> pipeline with
-        AI.
-      </h1>
-    )
+    return <h1 className={className}>Enterprise AE with commit history.</h1>
   }
 
   return (
@@ -128,17 +118,15 @@ function Headline({ motionEnabled }: { motionEnabled: boolean }) {
       className={className}
       initial="hidden"
       animate="visible"
-      aria-label="I sell enterprise SaaS and self-source pipeline with AI."
+      aria-label="Enterprise AE with commit history."
     >
-      {headline.map(({ word, delay, emphasis }, index) => (
+      {headline.map(({ word, delay }, index) => (
         <Fragment key={word}>
           <motion.span
             custom={delay}
             variants={headlineWord}
             aria-hidden="true"
-            className={`inline-block ${
-              emphasis ? 'font-serif text-accent italic' : ''
-            }`}
+            className="inline-block"
           >
             {word}
           </motion.span>
@@ -209,7 +197,7 @@ function ProofPoints({ motionEnabled }: { motionEnabled: boolean }) {
         <CountUp
           target={3}
           prefix="$"
-          suffix="M+"
+          suffix="M"
           enabled={motionEnabled}
           start={isInView}
         />{' '}
@@ -217,13 +205,13 @@ function ProofPoints({ motionEnabled }: { motionEnabled: boolean }) {
       </span>
       <i className="px-2 text-accent not-italic max-[760px]:hidden">·</i>
       <span className="max-[760px]:block max-[760px]:py-[7px]">
+        Pinnacle Club{' '}
         <CountUp
-          target={4}
-          suffix=" years"
+          target={2023}
           enabled={motionEnabled}
           start={isInView}
         />{' '}
-        quota streak
+        (top 5%)
       </span>
       <i className="px-2 text-accent not-italic max-[760px]:hidden">·</i>
       <span className="max-[760px]:block max-[760px]:py-[7px]">
@@ -528,8 +516,8 @@ export function AboutContent() {
           className="mt-[22px] font-serif text-[31px] leading-[1.3] max-[760px]:text-[26px]"
           motionEnabled={motionEnabled}
         >
-          Before the systems, there was the number—and the discipline to keep
-          carrying it.
+          The number came first, and I carried it for 7 years before wiring in
+          any AI.
         </MotionParagraph>
         <aside
           className={`${marginNote} min-[1180px]:right-[calc(100%+62px)] min-[1180px]:text-right`}
@@ -541,8 +529,9 @@ export function AboutContent() {
           enters the record.
         </aside>
         <MotionParagraph className={bodyCopy} motionEnabled={motionEnabled}>
-          I’ve spent the last seven years selling enterprise software, moving
-          from SDR to Senior AE at or near 100% of quota every year. What
+          I&apos;ve spent the last 7 years selling enterprise software, SDR
+          through Senior AE. The record: 100%+ at Jamf in 2021 and 2022 (#3 of
+          ~30), 112% of $460K in 2023 (Pinnacle Club, top 5% globally). What
           changed in the last two is how I source: I stopped treating cold
           outbound as a volume problem and started treating it as a{' '}
           <strong className="font-semibold text-ink">system problem</strong>.
@@ -600,12 +589,14 @@ export function AboutContent() {
 
       <section className="mx-auto mt-[84px] max-w-[1040px] border-y border-line py-[72px] max-[760px]:mt-[61px] max-[760px]:py-[51px]">
         <div className="font-serif text-[clamp(92px,13vw,174px)] leading-[0.78] tracking-[-0.045em] text-accent max-[760px]:text-[clamp(76px,24vw,106px)]">
-          4 years
+          112%
         </div>
-        <div className="mt-6 text-[17px] font-semibold">quota streak</div>
+        <div className="mt-6 text-[17px] font-semibold">
+          of $460K quota, Jamf 2023
+        </div>
         <p className="mt-[18px] max-w-[54ch] text-[13px] leading-[1.7] text-ink-2">
-          112% at Jamf with 100%+ the three prior years; #2 of 22 reps at 97%
-          attainment at Staffbase; Pinnacle Club 2023 (top 5% globally).
+          100%+ in 2021 and 2022 (#3 of ~30); 97% of $690K at Staffbase, #2 of
+          22; Pinnacle Club 2023 (top 5% globally).
         </p>
       </section>
 
@@ -624,8 +615,8 @@ export function AboutContent() {
           className="mt-[22px] font-serif text-[31px] leading-[1.3] max-[760px]:text-[26px]"
           motionEnabled={motionEnabled}
         >
-          The change was not more activity. It was a different operating model
-          for finding and reaching the right accounts.
+          The change was the operating model: how I find and reach the right
+          accounts.
         </MotionParagraph>
         <aside className={`${marginNote} min-[1180px]:left-[calc(100%+62px)]`}>
           <b className="mb-[7px] block font-normal text-accent">[Method]</b>
@@ -643,18 +634,17 @@ export function AboutContent() {
           and closed{' '}
           <strong className="font-semibold text-ink">
             <HighlightedStat motionEnabled={motionEnabled}>
-              $102K
+              $112K
             </HighlightedStat>{' '}
-            net-new ARR
+            net-new ARR across 4 wins
           </strong>{' '}
-          by wiring Claude into every step that used to eat my week —
+          by wiring Claude into every step that used to eat my week:
           buyer-signal research, intent data, account prioritization, and the
           first-touch outbound itself.
         </MotionParagraph>
         <MotionParagraph className={bodyCopy} motionEnabled={motionEnabled}>
-          The result isn’t a prompt I copy-paste. It’s infrastructure: skills,
-          MCPs, and eval harnesses I actually run in production against real
-          accounts.
+          The result is infrastructure: skills, MCPs, and eval harnesses I run
+          in production against real accounts.
         </MotionParagraph>
         <a
           data-receipt
@@ -685,7 +675,7 @@ export function AboutContent() {
 
       <section className="mx-auto mt-[84px] max-w-[1040px] border-y border-line py-[72px] text-right max-[760px]:mt-[61px] max-[760px]:py-[51px] max-[760px]:text-left">
         <div className="font-serif text-[clamp(92px,13vw,174px)] leading-[0.78] tracking-[-0.045em] text-accent max-[760px]:text-[clamp(76px,24vw,106px)]">
-          $3M+
+          $3M
         </div>
         <div className="mt-6 text-[17px] font-semibold">
           self-sourced pipeline
@@ -711,18 +701,17 @@ export function AboutContent() {
           className="mt-[22px] font-serif text-[31px] leading-[1.3] max-[760px]:text-[26px]"
           motionEnabled={motionEnabled}
         >
-          The AI claim is strongest where the work can be inspected rather than
-          merely described.
+          Every AI claim links to something you can read or run.
         </MotionParagraph>
         <aside
           className={`${marginNote} min-[1180px]:right-[calc(100%+62px)] min-[1180px]:text-right`}
         >
           <b className="mb-[7px] block font-normal text-accent">[Artifact]</b>
-          Open-source skills and evaluation infrastructure—not a count presented
-          as customer adoption.
+          Open-source skills and eval infrastructure. The 60+ counts published
+          artifacts.
         </aside>
         <MotionParagraph className={bodyCopy} motionEnabled={motionEnabled}>
-          The AI part isn’t theater. I’ve published{' '}
+          I&apos;ve published{' '}
           <strong className="font-semibold text-ink">
             60+ open-source Claude Code skills
           </strong>
@@ -732,7 +721,7 @@ export function AboutContent() {
         </MotionParagraph>
         <MotionParagraph className={bodyCopy} motionEnabled={motionEnabled}>
           Every AI claim ships with a number, a live link, or open-source code
-          you can read. I sell the category I build in — and I can talk to a CRO
+          you can read. I sell the category I build in, and I can talk to a CRO
           and an engineer in the same meeting.
         </MotionParagraph>
         <a
@@ -768,8 +757,8 @@ export function AboutContent() {
         </div>
         <div className="mt-6 text-[17px] font-semibold">Claude Code skills</div>
         <p className="mx-auto mt-[18px] max-w-[54ch] text-[13px] leading-[1.7] text-ink-2 max-[760px]:mx-0">
-          Published open-source work. The count describes artifacts, not
-          customer adoption or commercial usage.
+          Published artifacts you can install today. No adoption numbers
+          claimed.
         </p>
       </section>
 
@@ -809,7 +798,7 @@ export function AboutContent() {
         <p className="mt-[18px] max-w-[65ch] text-[16px] leading-[1.75] text-ink-2">
           Outside the pipeline you’ll find me on a golf course, on a trail
           somewhere, or shipping the next skill. I’m looking for the next
-          high-stakes enterprise AE seat — ideally at a company building or
+          high-stakes enterprise AE seat, ideally at a company building or
           selling AI.
         </p>
       </aside>
@@ -823,8 +812,7 @@ export function AboutContent() {
           motionEnabled={motionEnabled}
         />
         <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.65] text-ink-2 max-[760px]:mx-0">
-          I reply to every real message within 48 hours. Tell me about the seat
-          and the number.
+          Tell me about the seat and the number.
         </p>
         <ContactActions motionEnabled={motionEnabled} />
       </section>

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     default: 'Alec Hemenway — Enterprise AE with an AI-native edge',
   },
   description:
-    'Enterprise Account Executive with a four-year quota streak and an AI-native edge. Self-sourced $1.6M of pipeline at Coram AI using Claude-powered buyer-signal research. 60+ open-source Claude Code skills.',
+    'Enterprise AE: 112% of quota at Jamf (Pinnacle Club 2023, top 5% globally), 97% of $690K at Staffbase. Self-sourced $1.6M of pipeline in 7 months at Coram AI using Claude-powered buyer-signal research. 60+ open-source Claude Code skills.',
 }
 
 export default function RootLayout({
