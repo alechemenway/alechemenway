@@ -244,7 +244,7 @@ function OverQuotaCounter({ motionEnabled }: { motionEnabled: boolean }) {
     <div
       ref={ref}
       data-over-quota-counter
-      className="font-serif text-[clamp(92px,13vw,174px)] leading-[0.78] tracking-[-0.045em] text-accent tabular-nums max-[760px]:text-[clamp(76px,24vw,106px)]"
+      className="font-serif text-[clamp(48px,7vw,96px)] leading-[0.78] tracking-[-0.045em] text-accent tabular-nums max-[760px]:text-[clamp(32px,9vw,44px)]"
     >
       <span data-over-quota-a11y className="sr-only">
         112%
@@ -272,6 +272,59 @@ function OverQuotaCounter({ motionEnabled }: { motionEnabled: boolean }) {
         </motion.span>
       </span>
     </div>
+  )
+}
+
+function StatsRow({ motionEnabled }: { motionEnabled: boolean }) {
+  const statLabel =
+    'mt-5 text-[15px] leading-tight font-semibold max-[760px]:mt-4 max-[760px]:text-[11px]'
+  const statDetail =
+    'mt-4 text-[11px] leading-[1.6] text-ink-2 max-[760px]:mt-3 max-[760px]:text-[9px] max-[760px]:leading-[1.5]'
+  const staticValue =
+    'font-serif text-[clamp(48px,7vw,96px)] leading-[0.78] tracking-[-0.045em] text-accent max-[760px]:text-[clamp(32px,9vw,44px)]'
+
+  return (
+    <section
+      data-about-stats-row
+      aria-label="Key stats"
+      className="mx-auto mt-[84px] grid max-w-[1040px] grid-cols-3 border-y border-line max-[760px]:mt-[61px]"
+    >
+      <article
+        data-about-stat="112%"
+        className="py-[56px] pr-8 max-[760px]:py-8 max-[760px]:pr-3"
+      >
+        <OverQuotaCounter motionEnabled={motionEnabled} />
+        <div className={statLabel}>of $460K quota, Jamf 2023</div>
+        <p className={statDetail}>
+          100%+ in 2021 and 2022 (#3 of ~30); 97% of $690K at Staffbase, #2 of
+          22; Pinnacle Club 2023 (top 5% globally).
+        </p>
+      </article>
+
+      <article
+        data-about-stat="$3M"
+        className="border-l border-line px-8 py-[56px] max-[760px]:px-3 max-[760px]:py-8"
+      >
+        <div className={staticValue}>$3M</div>
+        <div className={statLabel}>self-sourced pipeline</div>
+        <p className={statDetail}>
+          $3M generated across my last two roles without waiting on marketing or
+          SDR coverage.
+        </p>
+      </article>
+
+      <article
+        data-about-stat="60+"
+        className="border-l border-line py-[56px] pl-8 max-[760px]:py-8 max-[760px]:pl-3"
+      >
+        <div className={staticValue}>60+</div>
+        <div className={statLabel}>Claude Code skills</div>
+        <p className={statDetail}>
+          Published artifacts you can install today. No adoption numbers
+          claimed.
+        </p>
+      </article>
+    </section>
   )
 }
 
@@ -887,16 +940,7 @@ export function AboutContent() {
         />
       </section>
 
-      <section className="mx-auto mt-[84px] max-w-[1040px] border-y border-line py-[72px] max-[760px]:mt-[61px] max-[760px]:py-[51px]">
-        <OverQuotaCounter motionEnabled={motionEnabled} />
-        <div className="mt-6 text-[17px] font-semibold">
-          of $460K quota, Jamf 2023
-        </div>
-        <p className="mt-[18px] max-w-[54ch] text-[13px] leading-[1.7] text-ink-2">
-          100%+ in 2021 and 2022 (#3 of ~30); 97% of $690K at Staffbase, #2 of
-          22; Pinnacle Club 2023 (top 5% globally).
-        </p>
-      </section>
+      <StatsRow motionEnabled={motionEnabled} />
 
       <section
         data-field-note
@@ -931,19 +975,6 @@ export function AboutContent() {
           href="/Alec_Hemenway_Resume_2026_v14.pdf"
           detail="sourcing outcomes"
         />
-      </section>
-
-      <section className="mx-auto mt-[84px] max-w-[1040px] border-y border-line py-[72px] text-right max-[760px]:mt-[61px] max-[760px]:py-[51px] max-[760px]:text-left">
-        <div className="font-serif text-[clamp(92px,13vw,174px)] leading-[0.78] tracking-[-0.045em] text-accent max-[760px]:text-[clamp(76px,24vw,106px)]">
-          $3M
-        </div>
-        <div className="mt-6 text-[17px] font-semibold">
-          self-sourced pipeline
-        </div>
-        <p className="mt-[18px] ml-auto max-w-[54ch] text-[13px] leading-[1.7] text-ink-2 max-[760px]:ml-0">
-          $3M generated across my last two roles without waiting on marketing or
-          SDR coverage.
-        </p>
       </section>
 
       <section
@@ -1006,17 +1037,6 @@ export function AboutContent() {
             ↗
           </span>
         </a>
-      </section>
-
-      <section className="mx-auto mt-[84px] max-w-[1040px] border-y border-line py-[72px] text-center max-[760px]:mt-[61px] max-[760px]:py-[51px] max-[760px]:text-left">
-        <div className="font-serif text-[clamp(92px,13vw,174px)] leading-[0.78] tracking-[-0.045em] text-accent max-[760px]:text-[clamp(76px,24vw,106px)]">
-          60+
-        </div>
-        <div className="mt-6 text-[17px] font-semibold">Claude Code skills</div>
-        <p className="mx-auto mt-[18px] max-w-[54ch] text-[13px] leading-[1.7] text-ink-2 max-[760px]:mx-0">
-          Published artifacts you can install today. No adoption numbers
-          claimed.
-        </p>
       </section>
 
       <section className="mx-auto mt-[123px] max-w-[820px] max-[760px]:mt-[77px]">
