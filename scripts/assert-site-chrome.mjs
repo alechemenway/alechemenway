@@ -72,11 +72,10 @@ visitHeader(header.sourceFile)
 const expectedNavLinks = [
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
-  { href: '/work-with-me', label: 'Work with me' },
 ]
 
 if (JSON.stringify(navLinks) !== JSON.stringify(expectedNavLinks)) {
-  throw new Error('Top-level navigation should put About before Projects.')
+  throw new Error('Top-level navigation should contain only About and Projects.')
 }
 
 const hero = parse('../src/components/home/Hero.tsx')

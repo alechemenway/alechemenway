@@ -15,7 +15,6 @@ import clsx from 'clsx'
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
-  { href: '/work-with-me', label: 'Work with me' },
 ]
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
