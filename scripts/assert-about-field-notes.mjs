@@ -110,6 +110,30 @@ expectedChapters.forEach(([kicker, heading], index) => {
   }
 })
 
+const statsRow = $('[data-about-stats-row]')
+const stats = statsRow.children('[data-about-stat]')
+
+if (
+  statsRow.length !== 1 ||
+  !statsRow.hasClass('grid-cols-3') ||
+  !chapters.eq(0).next().is('[data-about-stats-row]')
+) {
+  throw new Error(
+    'The key stats should render as one three-column row directly after Field note 01.',
+  )
+}
+
+const expectedStats = ['112%', '$3M', '60+']
+
+if (
+  stats.length !== expectedStats.length ||
+  expectedStats.some(
+    (value, index) => stats.eq(index).attr('data-about-stat') !== value,
+  )
+) {
+  throw new Error('The stats row should contain 112%, $3M, and 60+ in order.')
+}
+
 const fieldNoteTeletype = $('[data-teletype="field-note-02"]')
 if (
   fieldNoteTeletype.length !== 1 ||
