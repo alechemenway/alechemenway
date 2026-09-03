@@ -1,28 +1,29 @@
 'use client'
 
+import { useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 
 import { Wrap } from '@/components/Wrap'
 import { Button } from '@/components/Button'
-import { FlowField } from '@/components/motion/FlowField'
+import { FigureMorph } from '@/components/motion/FigureMorph'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
 function Line({
   children,
   i,
-  reduce,
+  show,
 }: {
   children: React.ReactNode
   i: number
-  reduce: boolean
+  show: boolean
 }) {
   return (
     <span className="block overflow-hidden pb-[0.04em]">
       <motion.span
         className="block"
-        initial={reduce ? false : { y: '115%' }}
-        animate={reduce ? undefined : { y: '0%' }}
+        initial={show ? { y: '115%' } : false}
+        animate={show ? { y: '0%' } : { y: '115%' }}
         transition={{ duration: 0.9, ease: EASE, delay: 0.05 + i * 0.09 }}
       >
         {children}
@@ -34,19 +35,19 @@ function Line({
 function FadeUp({
   children,
   delay,
-  reduce,
+  show,
   className,
 }: {
   children: React.ReactNode
   delay: number
-  reduce: boolean
+  show: boolean
   className?: string
 }) {
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 16 }}
-      animate={reduce ? undefined : { opacity: 1, y: 0 }}
+      initial={show ? { opacity: 0, y: 16 } : false}
+      animate={show ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       transition={{ duration: 0.7, ease: EASE, delay }}
     >
       {children}
@@ -56,20 +57,29 @@ function FadeUp({
 
 export function Hero() {
   const reduce = useReducedMotion() ?? false
+  // Text appears when the morph fires 'rise' (color bleed + pose upright).
+  // Reduced motion / missing asset: FigureMorph fires both phases immediately.
+  const [revealed, setRevealed] = useState(reduce)
 
   return (
-    <header className="relative flex min-h-[64svh] items-center overflow-hidden pt-20 pb-[50px]">
-      <FlowField className="absolute inset-0 h-full w-full" density={1.4} />
+    <header className="relative flex min-h-[88svh] items-center overflow-hidden pt-20 pb-[50px]">
+      <FigureMorph
+        className="absolute inset-0 h-full w-full"
+        onPhase={(phase) => {
+          if (phase === 'rise') setRevealed(true)
+        }}
+      />
+      {/* keep text readable over the figure on the left */}
       <div
         aria-hidden
         className="absolute inset-0 z-[1]"
         style={{
           background:
-            'linear-gradient(90deg, var(--bg) 6%, color-mix(in oklab, var(--bg) 55%, transparent) 42%, transparent 78%), radial-gradient(120% 100% at 75% 35%, transparent 30%, var(--bg) 92%)',
+            'linear-gradient(90deg, var(--bg) 30%, color-mix(in oklab, var(--bg) 72%, transparent) 55%, transparent 80%)',
         }}
       />
       <Wrap className="relative z-[2]">
-        <FadeUp delay={0} reduce={reduce}>
+        <FadeUp delay={0} show={revealed}>
           <div className="flex items-center gap-3 font-mono text-[12px] tracking-[0.2em] text-ink-2 uppercase">
             <span className="h-px w-6 bg-accent" />
             <span>
@@ -79,33 +89,30 @@ export function Hero() {
           </div>
         </FadeUp>
 
-        <h1 className="mt-6 max-w-[15ch] text-[clamp(44px,7.4vw,104px)] leading-[0.96] font-extrabold tracking-[-0.04em]">
-          <Line i={0} reduce={reduce}>
-            Enterprise AE with commit history.
+        <h1 className="mt-6 max-w-[16ch] text-[clamp(44px,7.4vw,104px)] leading-[0.96] font-extrabold tracking-[-0.04em]">
+          <Line i={0} show={revealed}>
+            Everyone&apos;s selling you AI.
+          </Line>
+          <Line i={1} show={revealed}>
+            I&apos;ll help you figure out{' '}
+            <span className="text-accent">what&apos;s worth buying.</span>
           </Line>
         </h1>
 
-        <FadeUp delay={0.36} reduce={reduce}>
+        <FadeUp delay={0.4} show={revealed}>
           <div className="mt-7 max-w-[52ch] text-[clamp(16px,1.35vw,19px)] leading-[1.62] text-ink-2">
             <p>
               Enterprise AE: 112% of a $460K quota at Jamf in 2023 (Pinnacle
               Club, top 5% globally), 97% of $690K at Staffbase (#2 of 22).
               Running that stack taught me where AI deals live or die: trust
-              and deployment. The conversations that win them are architecture
-              conversations: where the data can&apos;t go, who reviews AI output
-              before it touches the system of record, what the audit trail
-              shows.
-            </p>
-            <p className="mt-4">
-              That changes how I sell: signal-driven research before the first
-              call and ROI narratives that price the status quo.
+              and deployment.
             </p>
           </div>
         </FadeUp>
 
         <FadeUp
-          delay={0.46}
-          reduce={reduce}
+          delay={0.5}
+          show={revealed}
           className="mt-9 flex flex-wrap items-center gap-3.5"
         >
           <Button href="/projects" variant="solid" arrow="→">
@@ -124,8 +131,8 @@ export function Hero() {
         </FadeUp>
 
         <FadeUp
-          delay={0.56}
-          reduce={reduce}
+          delay={0.6}
+          show={revealed}
           className="mt-7 flex gap-6 font-mono text-[12px] tracking-[0.04em] text-ink-2"
         >
           <a
