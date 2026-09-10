@@ -3,7 +3,6 @@ import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 
 import { Providers } from '@/app/providers'
-import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
 
@@ -32,10 +31,10 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     template: '%s · Alec Hemenway',
-    default: 'Alec Hemenway — Enterprise AE with an AI-native edge',
+    default: 'Alec Hemenway · AI sales & implementation',
   },
   description:
-    'Enterprise AE: 112% of quota at Jamf (Pinnacle Club 2023, top 5% globally), 97% of $690K at Staffbase. Self-sourced $1.6M of pipeline in 7 months at Coram AI using Claude-powered buyer-signal research. 60+ open-source Claude Code skills.',
+    'Enterprise sales and AI implementation. The people, workflows, and acceptance criteria between a promising demo and a successful enterprise customer.',
 }
 
 export default function RootLayout({
@@ -49,11 +48,9 @@ export default function RootLayout({
       className={`h-full antialiased ${inter.variable} ${instrument.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex h-full bg-bg font-sans text-ink">
+      <body className="flex min-h-full bg-bg font-sans text-ink">
         <Providers>
-          <div className="flex w-full">
-            <Layout>{children}</Layout>
-          </div>
+          <div className="flex w-full">{children}</div>
         </Providers>
         <Analytics />
       </body>
