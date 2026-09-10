@@ -71,8 +71,9 @@ assert.equal(resumeResponse.status, 200)
 assert.match(resumeResponse.headers.get('content-type'), /application\/pdf/)
 for (const slug of ['acceptance-criteria', 'workflow']) {
   const $ = pages.get(`/writing/${slug}`)
-  assert.match($('meta[name="robots"]').attr('content'), /noindex/)
-  assert.match($('.section-label').first().text(), /Essay draft/)
+  assert.doesNotMatch($('meta[name="robots"]').attr('content') || '', /noindex|nofollow/)
+  assert.match($('.section-label').first().text(), /Essay/)
+  assert.doesNotMatch($('main').text(), /Essay draft/)
   const expected = JSON.parse(
     readFileSync(new URL(`../tests/content/${slug}.json`, import.meta.url)),
   )
@@ -97,5 +98,5 @@ for (const [route, $] of pages) {
   }
 }
 console.log(
-  'PASS: 9 routes; homepage hierarchy, local links, evidence limits, exact essay text, draft robots, résumé, and legacy pages.',
+  'PASS: 9 routes; homepage hierarchy, local links, evidence limits, exact essay text, publication robots, résumé, and legacy pages.',
 )

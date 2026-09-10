@@ -5,7 +5,7 @@ export function AcceptanceCriteriaEssay() {
     <>
       <header className="reading-header">
         <p className="section-label">
-          AI sales &amp; implementation · Essay draft
+          AI sales &amp; implementation · Essay
         </p>
         <h1>
           The acceptance criteria

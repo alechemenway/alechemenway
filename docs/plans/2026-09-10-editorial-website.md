@@ -11,7 +11,7 @@
 ## Content boundaries
 
 - Synthetic RIA brief clearly labeled; one-advisor, single-session timing qualifier remains.
-- Author essay anecdotes originated fiction; retain draft labels and noindex metadata. This implementation is not publication approval or factual validation.
+- Author essay anecdotes originated fiction and were initially draft/noindex. Alec confirmed factual accuracy and authorized live publication on 2026-09-10; publication labels and metadata now reflect that confirmation.
 - Preserve existing résumé PDF; make it accessible from About, consistent with agreed career placement.
 - Preserve direct legacy routes and their content.
 
@@ -25,7 +25,7 @@
 - [x] Lint, typecheck, Next production build, SSR link/content/robots/evidence checks. Run development preview for visual checks.
 - [x] Review desktop/mobile, citation and anchor navigation, résumé, and legacy routes. Independent code review, fix material findings.
 - [x] Record release blockers and verification in `docs/editorial-implementation-review.md`.
-- [x] Alec approved the Cursor visual review on 2026-09-10: "Cursor review: approved". No push/PR/merge that would trigger a deployment without current deploy authorization.
+- [x] Alec approved the Cursor visual review on 2026-09-10: "Cursor review: approved". Alec subsequently authorized live deployment on 2026-09-10.
 
 ## Verification
 

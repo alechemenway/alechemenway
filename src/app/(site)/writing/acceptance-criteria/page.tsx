@@ -4,8 +4,8 @@ import { AcceptanceCriteriaEssay } from '@/components/editorial/AcceptanceCriter
 export const metadata: Metadata = {
   title: 'The acceptance criteria are the product',
   description:
-    'A draft essay on defining customer acceptance criteria during the sale.',
-  robots: { index: false, follow: false },
+    'An essay on defining customer acceptance criteria during the sale.',
+  robots: { index: true, follow: true },
 }
 export default function Page() {
   return (

@@ -1,6 +1,6 @@
 # Editorial website implementation review
 
-Implemented locally on `codex/editorial-website` in `/private/tmp/alechemenway-editorial`, based on `9976706`. Preview: http://127.0.0.1:4318 . The original main checkout is unchanged apart from its pre-existing untracked `.superpowers/` directory. Alec approved the Cursor review on 2026-09-10. Remote publication remains pending separate authorization.
+Implemented locally on `codex/editorial-website` in `/private/tmp/alechemenway-editorial`, based on `9976706`. Preview: http://127.0.0.1:4318 . The original main checkout is unchanged apart from its pre-existing untracked `.superpowers/` directory. Alec approved the Cursor review on 2026-09-10. Alec confirmed the anecdotes as factual and explicitly authorized live deployment on 2026-09-10 ("yes approved" in response to both conditions).
 
 ## Result
 
@@ -25,9 +25,9 @@ Superseded homepage/navigation/resume/old-About assertion scripts are replaced b
 ## Before commit and publication
 
 1. Cursor review complete: Alec explicitly approved the visual pass on 2026-09-10 ("Cursor review: approved"). The pre-commit review gate is satisfied.
-2. The two author-edited essay anecdotes originated in explicitly fictional draft slots. They remain labeled Essay draft with noindex/nofollow metadata. Before public release, Alec must verify those incidents and durations or approve replacement wording. Noindex is an indexing preference, not an access-control mechanism.
-3. The RIA timing is user-reported and narrowly qualified; it is not a firm-wide benchmark. Reference willingness/permission remains a publication check. The portfolio-access pilot is a recommendation, not a completed pilot.
-4. Deployment requires explicit current authorization. Keep push/merge that triggers Vercel publication pending that authorization.
+2. The two author-edited essay anecdotes originated in explicitly fictional draft slots. Alec subsequently confirmed their factual accuracy and approved publication on 2026-09-10. This is author confirmation, not independent verification. Essay draft labels and noindex/nofollow restrictions are removed; essay paragraphs remain unchanged.
+3. The RIA timing is user-reported and narrowly qualified; it is not a firm-wide benchmark. References remain available only on request; publication approval does not authorize sharing contact details without permission. The portfolio-access pilot is a recommendation, not a completed pilot.
+4. Live deployment explicitly authorized on 2026-09-10. Use the existing GitHub/Vercel release flow and verify production after merge.
 
 ## Files changed
 
@@ -81,4 +81,4 @@ Superseded homepage/navigation/resume/old-About assertion scripts are replaced b
 
 ## Follow-up needed
 
-Cursor review is approved. Resolve the essay publication checks and authorize deployment before publishing.
+Cursor review, factual confirmation, and deployment approval are complete. Push the reviewed branch, merge its PR after checks, and verify the resulting production deployment.

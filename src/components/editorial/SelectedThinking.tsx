@@ -34,7 +34,7 @@ export function SelectedThinking() {
               href="/writing/acceptance-criteria"
             >
               <span className="essay-meta">
-                From the RIA engagement · Essay draft
+                From the RIA engagement · Essay
               </span>
               <h3>
                 The acceptance criteria
@@ -47,7 +47,7 @@ export function SelectedThinking() {
             </Link>
             <Link className="essay essay-link" href="/writing/workflow">
               <span className="essay-meta">
-                Discovery &amp; scoping · Essay draft
+                Discovery &amp; scoping · Essay
               </span>
               <h3>
                 Understand the workflow

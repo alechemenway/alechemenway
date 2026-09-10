@@ -4,7 +4,7 @@ export function WorkflowEssay() {
   return (
     <>
       <header className="reading-header">
-        <p className="section-label">Discovery &amp; scoping · Essay draft</p>
+        <p className="section-label">Discovery &amp; scoping · Essay</p>
         <h1>
           Understand the workflow
           <br /> <em>before choosing the AI.</em>
