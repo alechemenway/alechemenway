@@ -64,6 +64,33 @@ for (const route of ['/', '/work/ria']) {
 }
 const about = pages.get('/about')
 assert.match(about('main').text(), /Open to the right full-time opportunity/)
+assert.equal(
+  about('.about-portrait-hero').length,
+  1,
+  'About uses approved Portrait layout',
+)
+assert.equal(
+  about('.about-portrait-hero a[href="mailto:alec@hemenway.io"]').length,
+  1,
+)
+assert.equal(about('.about-portrait-hero a[download]').length, 1)
+assert.equal(
+  about('.about-portrait-photo img').attr('alt'),
+  'Alec in a gray sweater',
+)
+assert.ok(about('.about-portrait-photo img').attr('sizes'))
+assert.equal(
+  about('.about-portrait-lead').text().replace(/\s+/g, ' ').trim(),
+  'My background is in enterprise sales, including roles at Jamf and Staffbase. My AI work now includes a client engagement with a wealth-management firm and product projects in sales and caregiver workflows.',
+)
+assert.equal(
+  about('.about-portrait-bio p').text().replace(/\s+/g, ' ').trim(),
+  'I’m interested in the decisions that connect a sale to a working implementation: what to solve, what to buy or build, and what the customer needs to see before trusting it. Outside work, you’ll find me on a golf course or a trail.',
+)
+assert.equal(
+  about('.about-portrait-opportunity a[href="mailto:alec@hemenway.io"]').length,
+  1,
+)
 const resume = about('a[download]')
 assert.equal(resume.attr('href'), '/Alec_Hemenway_Resume_2026_v14.pdf')
 const resumeResponse = await fetch(new URL(resume.attr('href'), base))
@@ -71,7 +98,10 @@ assert.equal(resumeResponse.status, 200)
 assert.match(resumeResponse.headers.get('content-type'), /application\/pdf/)
 for (const slug of ['acceptance-criteria', 'workflow']) {
   const $ = pages.get(`/writing/${slug}`)
-  assert.doesNotMatch($('meta[name="robots"]').attr('content') || '', /noindex|nofollow/)
+  assert.doesNotMatch(
+    $('meta[name="robots"]').attr('content') || '',
+    /noindex|nofollow/,
+  )
   assert.match($('.section-label').first().text(), /Essay/)
   assert.doesNotMatch($('main').text(), /Essay draft/)
   const expected = JSON.parse(
