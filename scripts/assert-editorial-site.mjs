@@ -43,6 +43,42 @@ assert.deepEqual(
   ['introduction', 'perspective', 'work', 'thinking', 'about', 'connect'],
 )
 assert.equal(home('#work article').length, 3)
+assert.deepEqual(
+  home('#value-process li h3')
+    .map((_, el) => home(el).text())
+    .get(),
+  ['Discover', 'Map', 'Implement', 'Prove'],
+  'Approved working principles must be readable in server-rendered HTML',
+)
+assert.deepEqual(
+  home('#value-process li p')
+    .map((_, el) => home(el).text())
+    .get(),
+  [
+    'Find the constraint. Establish the baseline.',
+    'Connect the data, definitions, and relationships.',
+    'Fit AI to the workflow, with clear ownership.',
+    'Measure the outcome, including adoption and costs.',
+  ],
+)
+assert.match(home('.value-pricing').text(), /expected ROI up front/)
+assert.equal(home('#value-process a[href="#work"]').length, 1)
+assert.equal(
+  home(
+    '#introduction .hero-footnote, #introduction figcaption, #introduction .explore',
+  ).length,
+  0,
+)
+assert.equal(
+  home('#introduction img').attr('alt'),
+  'Alec Hemenway seated in a tan suit',
+)
+assert.equal(
+  home('#value-process button').length,
+  0,
+  'No mockup controls in the website',
+)
+
 assert.match(
   home('.hero-description').text(),
   /founders and customer-facing leaders at AI companies/,

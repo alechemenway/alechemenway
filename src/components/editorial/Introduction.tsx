@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import { ValueProcess } from './ValueProcess'
+import '@/styles/homepage-value.css'
 import portraitSeated from '@/images/about-hero-2026.png'
 
 export function Introduction() {
@@ -6,7 +8,7 @@ export function Introduction() {
     <>
       <section
         id="introduction"
-        className="hero wrap"
+        className="hero value-hero wrap"
         aria-labelledby="hero-heading"
       >
         <div className="hero-copy">
@@ -38,29 +40,18 @@ export function Introduction() {
               Let’s talk for 20 minutes <span aria-hidden="true">↗</span>
             </a>
           </div>
-          <p className="hero-footnote">
-            Recent client work: AI meeting preparation at a Minneapolis
-            wealth-management firm.
-          </p>
         </div>
         <figure className="hero-portrait">
           <Image
             src={portraitSeated}
-            alt="Alec Hemenway"
+            alt="Alec Hemenway seated in a tan suit"
             width={832}
             height={1248}
             preload
-            sizes="(max-width: 760px) calc(100vw - 40px), 640px"
+            sizes="(max-width: 360px) calc(100vw - 32px), (max-width: 760px) 300px, 350px"
           />
-          <figcaption>
-            <span>Alec Hemenway</span>
-            <span>Minneapolis, Minnesota</span>
-          </figcaption>
         </figure>
-        <a className="explore" href="#work">
-          <span>Selected work &amp; ideas</span>
-          <span aria-hidden="true">↓</span>
-        </a>
+        <ValueProcess />
       </section>
     </>
   )
