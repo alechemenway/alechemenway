@@ -1,0 +1,209 @@
+/* Approved Portrait layout; scoped to About so reading pages stay unchanged. */
+.editorial .about-portrait-hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 70px;
+  padding: 60px 0 80px;
+  align-items: center;
+}
+.editorial .about-portrait h1 {
+  font-size: clamp(52px, 5.7vw, 86px);
+  margin: 28px 0 32px;
+}
+.editorial .about-portrait h1 em {
+  display: block;
+  color: var(--accent);
+}
+.editorial .about-portrait-lead {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.editorial .about-portrait-actions {
+  display: flex;
+  gap: 27px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+.editorial .about-portrait-actions .button {
+  gap: 42px;
+}
+.editorial .about-portrait-photo img {
+  height: 550px;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.editorial .about-portrait-photo figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+.editorial .about-portrait-personal {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 100px;
+  border-top: 1px solid var(--line);
+  padding: 74px 0 84px;
+}
+.editorial .about-portrait-number {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.editorial .about-portrait-personal h2 {
+  font-size: 47px;
+}
+.editorial .about-portrait-bio {
+  padding-top: 35px;
+}
+.editorial .about-portrait-bio p {
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+}
+.editorial .about-portrait-opportunity {
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  padding: 65px 0 75px;
+}
+.editorial .about-portrait-opportunity p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.editorial .about-portrait-opportunity h2 {
+  font-size: clamp(38px, 4.5vw, 64px);
+}
+.editorial .about-portrait-contact {
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  height: 76px;
+  width: 76px;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+}
+.editorial .about-portrait-contact:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+.editorial .about-portrait-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-top: 1px solid var(--line);
+  padding-block: 30px 38px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.editorial .about-portrait-footer .wordmark {
+  font-size: 17px;
+  color: var(--ink);
+}
+.editorial .about-portrait-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+@media (min-width: 1500px) {
+  .editorial .about-portrait-hero {
+    gap: 100px;
+  }
+  .editorial .about-portrait-photo img {
+    height: 620px;
+  }
+}
+@media (max-width: 1050px) {
+  .editorial .about-portrait-hero {
+    gap: 38px;
+  }
+  .editorial .about-portrait-photo img {
+    height: 490px;
+  }
+  .editorial .about-portrait h1 {
+    font-size: 57px;
+  }
+  .editorial .about-portrait-personal {
+    gap: 50px;
+  }
+}
+@media (max-width: 760px) {
+  .editorial .about-portrait-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: stretch;
+    padding: 37px 0 45px;
+  }
+  .editorial .about-portrait h1 {
+    font-size: clamp(44px, 8.5vw, 64px);
+    margin: 23px 0;
+  }
+  .editorial .about-portrait-lead {
+    font-size: 16px;
+  }
+  .editorial .about-portrait-actions {
+    margin-top: 27px;
+    gap: 23px;
+  }
+  .editorial .about-portrait-photo img {
+    height: auto;
+    aspect-ratio: 4 / 4.7;
+    object-position: center 35%;
+  }
+  .editorial .about-portrait-personal {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 39px 0 45px;
+  }
+  .editorial .about-portrait-personal h2 {
+    font-size: 39px;
+  }
+  .editorial .about-portrait-number {
+    margin-bottom: 14px;
+  }
+  .editorial .about-portrait-bio {
+    padding-top: 0;
+  }
+  .editorial .about-portrait-bio p {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+  .editorial .about-portrait-opportunity {
+    padding: 39px 0 45px;
+    align-items: end;
+    gap: 16px;
+  }
+  .editorial .about-portrait-opportunity h2 {
+    font-size: 37px;
+  }
+  .editorial .about-portrait-opportunity p {
+    font-size: 11px;
+    max-width: 26ch;
+  }
+  .editorial .about-portrait-contact {
+    height: 52px;
+    width: 52px;
+    font-size: 25px;
+  }
+  .editorial .about-portrait-footer {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-block: 25px;
+  }
+  .editorial .about-portrait-footer p {
+    order: 3;
+    width: 100%;
+  }
+}
